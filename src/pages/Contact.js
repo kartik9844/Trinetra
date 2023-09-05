@@ -1,32 +1,14 @@
-import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
-import HeaderTop from "../components/HeaderTop";
 import LabMembersContainer1 from "../components/LabMembersContainer1";
-
+import HeaderTop1 from "../components/HeaderTop1";
 const Contact = () => {
-  const navigate = useNavigate();
-
-  const onLogoImageClick = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
-
-  const onUserButtonContainerClick = useCallback(() => {
-    navigate("/user-login");
-  }, [navigate]);
-
-  const onAdminButtonContainerClick = useCallback(() => {
-    navigate("/admin-login");
-  }, [navigate]);
-
+  
   return (
     <div className="relative bg-dwhite w-full h-[1024px] flex flex-col items-center justify-start text-center text-21xl text-black font-roboto">
-      <HeaderTop
-        onLogoImageClick={onLogoImageClick}
-        onUserButtonContainerClick={onUserButtonContainerClick}
-        onAdminButtonContainerClick={onAdminButtonContainerClick}
-      />
+      
       <div className="self-stretch bg-dgray overflow-hidden flex flex-row py-[60px] px-[170px] items-center justify-center relative gap-[60px]">
+      
         <div className="flex-1 flex flex-col items-center justify-start gap-[24px] z-[0]">
+        <HeaderTop1 />
           <b className="relative leading-[48px] inline-block w-[520px]">
             Get in Touch with Us
           </b>
