@@ -33,7 +33,7 @@ const HeaderTop1 = () => {
 
   return (
     <div className="self-stretch overflow-y-auto flex flex-row items-start justify-start text-left text-base text-dwhite font-inter">
-      <div className="relative bg-gray-400 w-[1440px] h-[73px]">
+      <div className="relative bg-white w-[1440px] h-[73px]">
       <BsButton
           className="absolute top-[calc(50%_-_19.5px)] left-[calc(50%_+_525.54px)] cursor-pointer"
           variant="outline-primary"

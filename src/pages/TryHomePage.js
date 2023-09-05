@@ -4,7 +4,6 @@ import Footer from "../components/Footer";
 
 const TryHomePage = () => {
   return (
-    <div className="relative bg-dodgerblue w-full flex flex-col items-center justify-center text-left text-29xl text-black font-glass-antiqua">
       <div className="bg-dodgerblue w-[1440px] h-[1393px] overflow-auto shrink-0 flex flex-col items-center justify-start min-h-[810px]">
         <HeaderTop1 />
         <FormContainer />
@@ -18,20 +17,15 @@ const TryHomePage = () => {
             <div className="w-[600px] overflow-hidden flex flex-row items-start justify-start text-[28px] font-inter">
               <h1 className="m-0 relative text-inherit tracking-[-1.6px] leading-[41.6px] font-normal font-inherit inline-block max-w-[600px]">
                 <p className="m-0">
-                  From cutting-edge software development to eye
+                Infinity Studio, with IESA, Karnataka Govt., DST, Nidhi PRAYAS, offers mechatronics innovation: ideation-to-prototype, 3D & Smart Labs, cutting-edge fabrication tools.
                 </p>
-                <p className="m-0">{`catching user interfaces, we bring innovation to `}</p>
-                <p className="m-0">{`life in a way you never thought was possible. `}</p>
-                <p className="m-0">
-                  We're here for you every step of your journey.
-                </p>
+                Join us and unleash your mechatronics potential
               </h1>
             </div>
           </div>
         </div>
         <Footer />
       </div>
-    </div>
   );
 };
 
