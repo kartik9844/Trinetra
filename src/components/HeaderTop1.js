@@ -7,6 +7,10 @@ import { useNavigate } from "react-router-dom";
 const HeaderTop1 = () => {
   const navigate = useNavigate();
 
+  const onimgButtonClick = useCallback(() => {
+    navigate("/");
+  }, [navigate]);
+
   const onUserButtonClick = useCallback(() => {
     navigate("/user-login");
   }, [navigate]);
@@ -37,11 +41,6 @@ const HeaderTop1 = () => {
         >
           User
         </BsButton>
-
-
-
-
-        
         <BsButton
           className="absolute top-[calc(50%_-_19.5px)] left-[calc(50%_+_612.09px)] cursor-pointer"
           variant="outline-primary"
@@ -55,11 +54,13 @@ const HeaderTop1 = () => {
               className="relative rounded-3xs w-[270px] h-[76px] object-cover"
               alt=""
               src="/logo@2x.png"
+              onClick={onimgButtonClick}
             />
+            
+
           </div>
           <div
             className="absolute w-[calc(100%_-_1199px)] top-[27.4px] right-[96.84px] left-[1102.16px] flex flex-row pt-0 px-0 pb-[0.5999999046325684px] box-border items-start justify-start cursor-pointer"
-            onClick={onAboutContainerClick}
           >
             <div
               className="relative leading-[24px] font-medium cursor-pointer"
