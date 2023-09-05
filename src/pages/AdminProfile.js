@@ -52,20 +52,44 @@ const AdminProfile = () => {
           onIconUserClick={onIconUserClick}
           onUsersTextClick={onUsersTextClick}
         />
+        <div className="absolute top-[390px] left-[225px] w-[300px] h-[260px]py-1.5 overflow-hidden flex flex-col items-start justify-start gap-[38px]">
+            <div className="relative capitalize font-extrabold">Name:
+            <input
+                  type="text"
+                  name="Name"
+                  id="Name"
+                  autoComplete="given-name"
+                  className="absolute block w-wide rounded-md border-1 py-1.5 text-Black-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+            </div>
+            <div className="relative capitalize font-extrabold">Email:
+            <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  className="block w-wide rounded-md border-1 py-1.5 text-black-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+            </div>
+            <div className="relative capitalize font-extrabold">Password:
+            <input
+                  id="Password"
+                  name="Pasword"
+                  type="Password"
+                  autoComplete="password"
+                  className="block w-full rounded-md border-1 py-1.5 text-black-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-black-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+            </div>
+          </div>
         <div className="bg-dgray box-border w-[1121px] h-[733px] ml-[139px] border-[1px] border-solid border-black">
-          <div className="absolute top-[609px] left-[331px] w-[527px] h-[74px] overflow-hidden flex flex-row items-center justify-start gap-[77px]">
+          <div className="absolute top-[799px] left-[331px] w-[527px] h-[74px] overflow-hidden flex flex-row items-center justify-start gap-[77px]">
             <Button sx={{ width: 225 }} variant="contained" color="primary">
-              Button
+              Edit
             </Button>
             <Button sx={{ width: 225 }} variant="contained" color="primary">
-              Button
+              Save
             </Button>
-          </div>
-          <div className="absolute top-[83px] left-[54px] w-[195px] h-[239px] overflow-hidden flex flex-col items-start justify-start gap-[38px]">
-            <div className="relative capitalize font-extrabold">Name:</div>
-            <div className="relative capitalize font-extrabold">Email:</div>
-            <div className="relative capitalize font-extrabold">Password:</div>
-          </div>
+          </div> 
         </div>
       </div>
     </div>
