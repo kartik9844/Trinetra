@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 
+
 const Navbaradmin = ({
   dimensionCode,
   carDimensions,
@@ -88,7 +89,7 @@ const Navbaradmin = ({
             Orders
           </div>
           <div
-            className="absolute top-[3px] left-[186px] capitalize font-extrabold flex items-center w-[155px] h-[54px] cursor-pointer"
+            className="absolute top-[3px] left-[215px] capitalize font-extrabold flex items-center w-[155px] h-[54px] cursor-pointer"
             onClick={onAddTextClick}
             style={addStyle}
           >
@@ -101,7 +102,7 @@ const Navbaradmin = ({
             onClick={onIconUserClick}
           />
           <div
-            className="absolute top-[3px] left-[415px] capitalize font-extrabold flex items-center w-[130px] h-[54px] cursor-pointer"
+            className="absolute top-[3px] left-[380px] capitalize font-extrabold flex items-center w-[130px] h-[54px] cursor-pointer"
             onClick={onUsersTextClick}
           >
             Users
