@@ -15,7 +15,7 @@ const Footer = () => {
   }, [navigate]);
 
   return (
-    <footer className="w-[1440px] h-[245px] flex flex-col items-center justify-start text-left text-29xl text-black font-glass-antiqua">
+    <footer className=" h-[245px] flex flex-col items-center justify-start text-left text-29xl text-black font-glass-antiqua">
       <div className="self-stretch bg-dgray flex flex-col py-1 pr-[211.59994506835938px] pl-[211.60000610351562px] items-center justify-center">
         <div className="w-[1000px] overflow-hidden flex flex-col py-0 pr-[200px] pl-0 box-border items-start justify-start gap-[13.6px] max-w-[1423.199951171875px]">
           <div className="w-[800px] flex flex-row items-start justify-start">
