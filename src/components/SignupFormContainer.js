@@ -26,13 +26,15 @@ const SignupFormContainer = () => {
           <span className="uppercase">n</span>
           <span className="capitalize">ame</span>
         </b>
-        <div className="rounded-6xl box-border w-[539px] h-[65px] flex flex-row p-2.5 items-center justify-center text-xl font-fresca border-[2px] border-solid border-black">
-          <div className="relative inline-block w-[220px] shrink-0">
-            <span className="uppercase">e</span>
-            <span className="lowercase">{`nter your  `}</span>
-            <span className="capitalize">name</span>
-          </div>
-        </div>
+        <input
+                  type="text"
+                  name="Name"
+                  id="Name"
+                  autoComplete="given-name"
+                  placeholder={"enter your startup name"}
+                  className="rounded-6xl box-border w-[550px] h-[65px] flex flex-row p-1.5 items-center justify-center text-xl font-fresca border-[2px] border-solid border-black"
+                />      
+        
       </div>
       <div className="w-[539px] flex flex-col items-start justify-start font-inter">
         <b className="inline-block h-11 ml-1.5">
@@ -42,12 +44,14 @@ const SignupFormContainer = () => {
           </span>
           <span className="uppercase text-red">*</span>
         </b>
-        <div className="rounded-6xl box-border w-[539px] h-[65px] flex flex-row p-2.5 items-center justify-center text-xl font-fresca border-[2px] border-solid border-black">
-          <div className="relative inline-block w-[220px] shrink-0">
-            <span className="uppercase">e</span>
-            <span className="lowercase">nter your mail address</span>
-          </div>
-        </div>
+        <input
+                  type="text"
+                  name="first-name"
+                  id="first-name"
+                  autoComplete="given-name"
+                  placeholder={"enter your email"}
+                  className="rounded-6xl box-border w-[550px] h-[65px] flex flex-row p-1.5 items-center justify-center text-xl font-fresca border-[2px] border-solid border-black"
+                />      
       </div>
       <div className="w-[528px] flex flex-col items-start justify-start font-inter">
         <b className="inline-block h-11 ml-[7px]">
@@ -59,9 +63,14 @@ const SignupFormContainer = () => {
             <span className="text-red">*</span>
           </span>
         </b>
-        <div className="rounded-6xl box-border w-[528px] h-[60px] flex flex-row p-2.5 items-center justify-center text-xl font-fresca border-[2px] border-solid border-black">
-          <div className="relative capitalize">{`Enter password                                                               `}</div>
-        </div>
+        <input
+                  type="text"
+                  name="first-name"
+                  id="first-name"
+                  autoComplete="given-name"
+                  placeholder={"enter your password"}
+                  className="rounded-6xl box-border w-[550px] h-[65px] flex flex-row p-1.5 items-center justify-center text-xl font-fresca border-[2px] border-solid border-black"
+                />      
       </div>
       <div className="w-[531px] flex flex-col items-start justify-start font-inter">
         <b className="relative">
@@ -69,15 +78,20 @@ const SignupFormContainer = () => {
             <span className="uppercase">R</span>
             <span className="capitalize">{`enter `}</span>
             <span className="uppercase">P</span>
-            <span className="lowercase text-red">assword</span>
+            <span className="lowercase text-black">assword</span>
           </span>
           <span className="lowercase text-red">
             <span>*</span>
           </span>
         </b>
-        <div className="rounded-6xl box-border w-[531px] h-[60px] flex flex-row p-2.5 items-center justify-center text-xl font-fresca border-[2px] border-solid border-black">
-          <div className="relative capitalize">{`Enter password                                                               `}</div>
-        </div>
+        <input
+                  type="text"
+                  name="first-name"
+                  id="first-name"
+                  autoComplete="given-name"
+                  placeholder={"Renter your password"}
+                  className="rounded-6xl box-border w-[550px] h-[65px] flex flex-row p-1.5 items-center justify-center text-xl font-fresca border-[2px] border-solid border-black"
+                /> 
       </div>
       <div
         className="rounded-3xl bg-blueviolet w-[516px] h-[73px] flex flex-col py-0 px-[189px] box-border items-start justify-center cursor-pointer text-24xl text-dwhite"
@@ -120,8 +134,8 @@ const SignupFormContainer = () => {
         <span>
           <span className="capitalize">If you have a</span>
           <span className="lowercase">CC</span>
-          <span className="capitalize text-blueviolet">{`ount? `}</span>
-          <span className="capitalize text-blueviolet">
+          <span className="capitalize text-black">{`ount? `}</span>
+          <span className="capitalize text-black">
             <span className="[text-decoration:underline]">{` `}</span>
           </span>
         </span>
