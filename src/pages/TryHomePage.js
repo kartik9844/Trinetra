@@ -4,7 +4,6 @@ import Footer from "../components/Footer";
 
 const TryHomePage = () => {
   return (
-    <div className="relative bg-dodgerblue w-full flex flex-col items-center justify-center text-left text-29xl text-black font-glass-antiqua">
       <div className="bg-dodgerblue w-[1440px] h-[1393px] overflow-auto shrink-0 flex flex-col items-center justify-start min-h-[810px]">
         <HeaderTop1 />
         <FormContainer />
@@ -27,7 +26,6 @@ const TryHomePage = () => {
         </div>
         <Footer />
       </div>
-    </div>
   );
 };
 
