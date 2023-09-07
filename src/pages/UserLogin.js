@@ -42,8 +42,8 @@ const UserLogin = () => {
  
       </div>
       <div className="absolute top-[112px] left-[0px] w-[1440px] overflow-hidden flex flex-col items-end justify-center text-xl text-black font-fresca">
-        <div className="w-[1396px] h-[839px] overflow-hidden shrink-0 flex flex-row items-start justify-start">
-          <div className="rounded-23xl bg-dodgerblue w-[835px] h-[697px] flex flex-col pt-[52px] px-[24.937255859375px] pb-[46.057769775390625px] box-border items-start justify-start gap-[37px] mt-[138px]">
+        
+          <div className="rounded-23xl bg-dodgerblue w-[635px] h-[697px] flex flex-col pt-[52px] px-[24.937255859375px] pb-[46.057769775390625px] box-border justify-center gap-[37px] mt-[138px]">
             <div className="w-[574.37px] h-[384.67px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[13px]">
               <Container />
               <div className="w-[554.12px] h-[113.14px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[14px]">
@@ -91,17 +91,13 @@ const UserLogin = () => {
               />
             </div>
           </div>
-          <div className="w-[1040px] h-[839px] overflow-hidden shrink-0 flex flex-row items-start justify-start ml-[-296px] text-30xl font-inter">
-            <b className="relative uppercase inline-block w-[601px] h-[68px] shrink-0">
+          
+            <b className="relative uppercase inline-block w-[601px]  left-[10.67px] shrink-0 content-center">
               WELCOME BACK user
             </b>
-            <img
-              className="rounded-3xs w-[839px] h-[788px] object-cover mt-[51px] ml-[-305px]"
-              alt=""
-              src="/logo3@2x.png"
-            />
-          </div>
-        </div>
+           
+          
+        
       </div>
     </div>
   );
