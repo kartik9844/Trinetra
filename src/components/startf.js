@@ -42,7 +42,7 @@ const StartupForm = () => {
     <div className="max-w-lg mx-auto">
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label className="block mb-2 text-sm font-medium text-gray-700" htmlFor="email">
+          <label className="block mb-2 text-sm font-medium " htmlFor="email">
             Email *
           </label>
           <input
@@ -57,7 +57,7 @@ const StartupForm = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block mb-2 text-sm font-medium text-gray-700" htmlFor="whoAreYou">
+          <label className="block mb-2 text-sm font-medium" htmlFor="whoAreYou">
             Who are you? *
           </label>
           <select
@@ -77,7 +77,7 @@ const StartupForm = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block mb-2 text-sm font-medium text-gray-700" htmlFor="founderName">
+          <label className="block mb-2 text-sm font-medium" htmlFor="founderName">
             Founder Name *
           </label>
           <input
@@ -92,7 +92,7 @@ const StartupForm = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block mb-2 text-sm font-medium text-gray-700" htmlFor="startupName">
+          <label className="block mb-2 text-sm font-medium " htmlFor="startupName">
             Startup Name *
           </label>
           <input
@@ -107,7 +107,7 @@ const StartupForm = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block mb-2 text-sm font-medium text-gray-700" htmlFor="founderEmail">
+          <label className="block mb-2 text-sm font-medium " htmlFor="founderEmail">
             Founder's Email Id *
           </label>
           <input
@@ -122,7 +122,7 @@ const StartupForm = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block mb-2 text-sm font-medium text-gray-700" htmlFor="phoneNumber">
+          <label className="block mb-2 text-sm font-medium " htmlFor="phoneNumber">
             Phone Number *
           </label>
           <input
@@ -140,7 +140,7 @@ const StartupForm = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block mb-2 text-sm font-medium text-gray-700" htmlFor="hasFemaleCoFounder">
+          <label className="block mb-2 text-sm font-medium " htmlFor="hasFemaleCoFounder">
             Do you have a female co-founder? *
           </label>
           <div className="flex items-center">
@@ -172,7 +172,7 @@ const StartupForm = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block mb-2 text-sm font-medium text-gray-700" htmlFor="startupSector">
+          <label className="block mb-2 text-sm font-medium " htmlFor="startupSector">
             Startup Sector *
           </label>
           <select
@@ -194,7 +194,7 @@ const StartupForm = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block mb-2 text-sm font-medium text-gray-700" htmlFor="startupStage">
+          <label className="block mb-2 text-sm font-medium " htmlFor="startupStage">
             Startup Stage *
           </label>
           <select
@@ -218,7 +218,7 @@ const StartupForm = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block mb-2 text-sm font-medium text-gray-700" htmlFor="founderLinkedInId">
+          <label className="block mb-2 text-sm font-medium " htmlFor="founderLinkedInId">
             Founder's LinkedIn ID *
           </label>
           <input
@@ -233,7 +233,7 @@ const StartupForm = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block mb-2 text-sm font-medium text-gray-700" htmlFor="startupWebsite">
+          <label className="block mb-2 text-sm font-medium " htmlFor="startupWebsite">
             Startup's Website
           </label>
           <input
@@ -247,7 +247,7 @@ const StartupForm = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block mb-2 text-sm font-medium text-gray-700" htmlFor="isRegistered">
+          <label className="block mb-2 text-sm font-medium " htmlFor="isRegistered">
             Have you registered your startup? *
           </label>
           <div className="flex items-center">
@@ -279,12 +279,12 @@ const StartupForm = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block mb-2 text-sm font-medium text-gray-700" htmlFor="registrationYear">
+          <label className="block mb-2 text-sm font-medium " htmlFor="registrationYear">
             Year of Registration
           </label>
           <input
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-            type="text"
+            type="date"
             id="registrationYear"
             name="registrationYear"
             value={formData.registrationYear}
@@ -293,7 +293,7 @@ const StartupForm = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block mb-2 text-sm font-medium text-gray-700" htmlFor="problemStatement">
+          <label className="block mb-2 text-sm font-medium " htmlFor="problemStatement">
             Problem Statement *
           </label>
           <textarea
@@ -307,7 +307,7 @@ const StartupForm = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block mb-2 text-sm font-medium text-gray-700" htmlFor="prototypingSupport">
+          <label className="block mb-2 text-sm font-medium " htmlFor="prototypingSupport">
             Do you need prototyping support? *
           </label>
           <div className="flex items-center">
@@ -339,7 +339,7 @@ const StartupForm = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block mb-2 text-sm font-medium text-gray-700" htmlFor="projectCompletionTime">
+          <label className="block mb-2 text-sm font-medium " htmlFor="projectCompletionTime">
             Project Completion Time *
           </label>
           <input
@@ -354,7 +354,7 @@ const StartupForm = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block mb-2 text-sm font-medium text-gray-700" htmlFor="projectBudget">
+          <label className="block mb-2 text-sm font-medium " htmlFor="projectBudget">
             Project Budget *
           </label>
           <input
@@ -369,7 +369,7 @@ const StartupForm = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block mb-2 text-sm font-medium text-gray-700" htmlFor="labSupport">
+          <label className="block mb-2 text-sm font-medium " htmlFor="labSupport">
             Do you need lab support? *
           </label>
           <div className="flex items-center">
@@ -383,7 +383,6 @@ const StartupForm = () => {
               onChange={handleInputChange}
               required
             />
-           ```jsx
             <label htmlFor="labSupportYes">Yes</label>
           </div>
           <div className="flex items-center">
@@ -402,7 +401,7 @@ const StartupForm = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block mb-2 text-sm font-medium text-gray-700" htmlFor="additionalComments">
+          <label className="block mb-2 text-sm font-medium " htmlFor="additionalComments">
             Additional Comments
           </label>
           <textarea
