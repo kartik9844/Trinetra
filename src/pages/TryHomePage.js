@@ -10,7 +10,7 @@ const TryHomePage = () => {
         <div className="self-stretch bg-dgreen overflow-hidden flex flex-col py-[100px] pr-[211.59994506835938px] pl-[211.60000610351562px] items-center justify-start">
           <div className="w-[1000px] h-[264px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[39px] max-w-[1000px]">
             <div className="w-[1000px] flex flex-row items-start justify-start">
-              <h1 className="m-0 relative text-inherit leading-[57.6px] font-normal font-inherit inline-block max-w-[1000px]">
+              <h1 className="m-0 relative text-lg leading-[57.6px] font-normal font-inherit inline-block max-w-[1000px]">
                 Our Offerings
               </h1>
             </div>
