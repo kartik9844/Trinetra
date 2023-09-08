@@ -6,7 +6,7 @@ const AddProduct = () => {
   return (
     <div className="relative w-full flex flex-col items-center justify-start">
       <Navbarhome />
-      <div className="bg-darkslategray-200 w-[1461px] h-[1332px] flex flex-col pt-[38px] px-0 pb-0 box-border items-center justify-start">
+      <div className="bg-white-200 w-[1461px] h-[1332px] flex flex-col pt-[38px] px-0 pb-0 box-border items-center justify-start">
         <main className="w-[1277px] h-[1245px] overflow-hidden shrink-0 flex flex-row py-0 px-[170px] box-border items-center justify-between relative">
           <section
             className="bg-dgray w-[1275px] h-[1240px] flex flex-col items-center justify-start gap-[45px] z-[0] text-center text-21xl text-black font-roboto"
