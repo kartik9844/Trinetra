@@ -5,11 +5,11 @@ const SignupFormContainer = () => {
   const navigate = useNavigate();
 
   const onSignUpContainerClick = useCallback(() => {
-    navigate("/register-from");
+    navigate("/register");
   }, [navigate]);
 
   const onGoogleContainerClick = useCallback(() => {
-    navigate("/register-from");
+    navigate("/register");
   }, [navigate]);
 
   const onIfYouHaveClick = useCallback(() => {
