@@ -33,16 +33,16 @@ const HeaderTop1 = () => {
 
   return (
     <div className="self-stretch overflow-y-auto flex flex-row items-start justify-start text-left text-base text-dwhite font-inter">
-      <div className="relative bg-white w-[1440px] h-[73px]">
+      <div className="relative bg-white w-[1550px] h-[80px]">
       <BsButton
-          className="absolute top-[calc(50%_-_19.5px)] left-[calc(50%_+_525.54px)] cursor-pointer"
+          className="absolute top-[calc(50%_-_20px)] left-[calc(50%_+_515.54px)] cursor-pointer"
           variant="outline-primary"
           onClick={onUserButtonClick}
         >
           User
         </BsButton>
         <BsButton
-          className="absolute top-[calc(50%_-_19.5px)] left-[calc(50%_+_612.09px)] cursor-pointer"
+          className="absolute top-[calc(50%_-_20px)] left-[calc(50%_+_612.09px)] cursor-pointer"
           variant="outline-primary"
           onClick={onAdminButtonClick}
         >
@@ -63,14 +63,14 @@ const HeaderTop1 = () => {
             className="absolute w-[calc(100%_-_1199px)] top-[27.4px] right-[96.84px] left-[1102.16px] flex flex-row pt-0 px-0 pb-[0.5999999046325684px] box-border items-start justify-start cursor-pointer"
           >
             <div
-              className="relative leading-[24px] font-medium cursor-pointer"
+              className="relative leading-[24px] font-medium cursor-pointer text-black"
               onClick={onAboutTextClick}
             >
               About
             </div>
           </div>
           <div
-            className="absolute w-[calc(100%_-_1184px)] top-[27.4px] right-[11.53px] left-[1172.47px] flex flex-row pt-0 px-0 pb-[0.5999999046325684px] box-border items-start justify-start cursor-pointer"
+            className="absolute w-[calc(100%_-_1184px)] top-[27.4px] right-[11.53px] left-[1172.47px] flex flex-row pt-0 px-0 pb-[0.5999999046325684px] box-border items-start justify-start cursor-pointer text-black"
             onClick={onContactContainerClick}
           >
             <div className="relative leading-[24px] font-medium">Contact</div>

@@ -55,7 +55,7 @@ const FormContainer = () => {
         </div>
       </div>
       <img
-        className="relative w-[711.6px] h-[600px] overflow-hidden shrink-0 object-cover"
+        className="relative w-[711.6px] h-[400px] m-14 overflow-hidden shrink-0 object-cover"
         alt=""
         src="/f4z9junbeullvmi8q0nh3kuxkf8jpg@2x.png"
       />

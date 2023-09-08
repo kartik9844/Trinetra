@@ -3,9 +3,9 @@ import HeaderTop1 from "../components/HeaderTop1";
 const Contact = () => {
   
   return (
-    <div className="relative bg-dwhite w-full h-[1024px] flex flex-col items-center justify-start text-center text-21xl text-black font-roboto">
+    <div className="relative bg-dwhite w-full h-[1010px] flex flex-col items-center justify-start text-center text-21xl text-black font-roboto">
       
-      <div className="self-stretch bg-dgray overflow-hidden flex flex-row py-[60px] px-[170px] items-center justify-center relative gap-[60px]">
+      <div className="self-stretch bg-dgray overflow-hidden flex flex-row px-[170px] items-center justify-center relative gap-[60px]">
       
         <div className="flex-1 flex flex-col items-center justify-start gap-[24px] z-[0]">
         <HeaderTop1 />
