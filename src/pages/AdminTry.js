@@ -26,6 +26,11 @@ const AdminTry = () => {
     navigate("/userprofile-admin");
   }, [navigate]);
 
+  const onImageClick = useCallback(() => {
+    navigate("/admin-try");
+  }, [navigate]);
+
+
   return (
     <div className="relative bg-dgray w-full h-[1050px] overflow-hidden">
       <Navbaradmin
@@ -36,6 +41,7 @@ const AdminTry = () => {
         onAddTextClick={onAddTextClick}
         onIconUserClick={onIconUserClick}
         onUsersTextClick={onUsersTextClick}
+        onMaxresdefault3ImageClick={onImageClick}
       />
       <ContainerFrameRequests />
     </div>
