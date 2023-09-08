@@ -26,7 +26,7 @@ const UserHome = () => {
 
   return (
     <div className="relative bg-dwhite w-full h-[1024px] overflow-hidden text-left text-17xl text-black font-poppins">
-      <div className="absolute top-[221px] left-[94px] bg-gainsboro-200 w-[1260px] h-[300px] hidden" />
+      <div className="absolute top-[222px] left-[94px] bg-gainsboro-200 w-[1260px] h-[300px] hidden" />
       <div className="absolute top-[154px] left-[0px] w-[376px] overflow-hidden flex flex-col items-end justify-center">
         <div className="relative font-extrabold">Rented Products</div>
       </div>

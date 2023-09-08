@@ -36,7 +36,7 @@ const Navbaradmin = ({
     divframer11lg61rWidth,
     divframer11lg61rMarginBottom,
   ]);
-
+  
   const divframer11lg61rStyle = useMemo(() => {
     return {
       left: maxresdefault3IconLeft,
@@ -58,7 +58,7 @@ const Navbaradmin = ({
 
   return (
     <div
-      className="absolute top-[0px] left-[-10px] bg-white w-[1461px] h-20 text-left text-17xl text-black font-inter"
+      className="absolute top-[0px] left-[-10px] bg-white w-[1530px] h-20 text-left text-17xl text-black font-inter"
       style={divframerWgdw54Style}
     >
       <div
