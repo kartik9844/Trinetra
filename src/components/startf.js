@@ -307,118 +307,142 @@ const StartupForm = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block mb-2 text-sm font-medium " htmlFor="prototypingSupport">
-            Do you need prototyping support? *
+          <label className="block mb-2 text-sm font-medium " htmlFor="prototypingsupport">
+            What support are you looking from protyping lab ? *
           </label>
-          <div className="flex items-center">
-            <input
-              className="mr-2"
-              type="radio"
-              id="prototypingSupportYes"
-              name="prototypingSupport"
-              value="yes"
-              checked={formData.prototypingSupport === 'yes'}
-              onChange={handleInputChange}
-              required
-            />
-            <label htmlFor="prototypingSupportYes">Yes</label>
-          </div>
-          <div className="flex items-center">
-            <input
-              className="mr-2"
-              type="radio"
-              id="prototypingSupportNo"
-              name="prototypingSupport"
-              value="no"
-              checked={formData.prototypingSupport === 'no'}
-              onChange={handleInputChange}
-              required
-            />
-            <label htmlFor="prototypingSupportNo">No</label>
-          </div>
+          <select
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+            id="startupSector"
+            name="startupSector"
+            value={formData.prototypingSupport}
+            onChange={handleInputChange}
+            required
+          >
+            <option value="">Select an option</option>
+            <option value="rapidprototype">Rapid Prototype Support</option>
+            <option value="technicalconsultation">Technical Consultation</option>
+            <option value="designsupport">CAD design support</option>
+            <option value="technology">Access to Technology Lab</option>
+            <option value="other">Other:</option>
+          </select>
         </div>
 
         <div className="mb-4">
-          <label className="block mb-2 text-sm font-medium " htmlFor="projectCompletionTime">
-            Project Completion Time *
+          <label className="block mb-2 text-sm font-medium " htmlFor="projectcompletiontime">
+            Expected time of your Project completion *
           </label>
-          <input
+          <select
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-            type="text"
-            id="projectCompletionTime"
-            name="projectCompletionTime"
+            id="completiontime"
+            name="completiontime"
             value={formData.projectCompletionTime}
             onChange={handleInputChange}
             required
-          />
+          >
+            <option value="">Select an option</option>
+            <option value="rapidprototype">Less than 30 days</option>
+            <option value="technicalconsultation">Between 30 to 60 days</option>
+            <option value="designsupport">Between 60 to 90 days</option>
+            <option value="technology">More than 90 days</option>
+            <option value="other">Other:</option>
+          </select>
+        </div>
+
+        <div className="mb-4">
+          <label className="block mb-2 text-sm font-medium " htmlFor="labSupport">
+          Which lab support do you need ? *
+          </label>
+          <select
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+            id="completiontime"
+            name="completiontime"
+            value={formData.labSupport}
+            onChange={handleInputChange}
+            required
+          >
+            <option value="">Select an option</option>
+            <option value="rapidprototype">Mechanical Lab</option>
+            <option value="technicalconsultation">3D Printing Lab (3D Designing || 3D Printing</option>
+            <option value="designsupport">Smart Lab (Electronics || IoT || Robotics</option>
+            <option value="other">More than 50000 rupees</option>
+          </select>
         </div>
 
         <div className="mb-4">
           <label className="block mb-2 text-sm font-medium " htmlFor="projectBudget">
-            Project Budget *
+          Estimated budget of the project*
           </label>
-          <input
+          <select
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-            type="text"
             id="projectBudget"
             name="projectBudget"
             value={formData.projectBudget}
             onChange={handleInputChange}
             required
-          />
+          >
+            <option value="">Select an option</option>
+            <option value="rapidprototype">Less than 100 rupees</option>
+            <option value="technicalconsultation">100 - 5000 rupees</option>
+            <option value="designsupport">5000 - 25000 rupees</option>
+            <option value="technology">25000 - 50000 rupees</option>
+            <option value="other">More than 50000 rupees</option>
+          </select>
         </div>
-
         <div className="mb-4">
-          <label className="block mb-2 text-sm font-medium " htmlFor="labSupport">
-            Do you need lab support? *
+          <label className="block mb-2 text-sm font-medium " htmlFor="howDidYouKnow">
+          How did you get to know about us?*
           </label>
-          <div className="flex items-center">
-            <input
-              className="mr-2"
-              type="radio"
-              id="labSupportYes"
-              name="labSupport"
-              value="yes"
-              checked={formData.labSupport === 'yes'}
-              onChange={handleInputChange}
-              required
-            />
-            <label htmlFor="labSupportYes">Yes</label>
-          </div>
-          <div className="flex items-center">
-            <input
-              className="mr-2"
-              type="radio"
-              id="labSupportNo"
-              name="labSupport"
-              value="no"
-              checked={formData.labSupport === 'no'}
-              onChange={handleInputChange}
-              required
-            />
-            <label htmlFor="labSupportNo">No</label>
-          </div>
-        </div>
-
-        <div className="mb-4">
-          <label className="block mb-2 text-sm font-medium " htmlFor="additionalComments">
-            Additional Comments
-          </label>
-          <textarea
+          <select
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-            id="additionalComments"
-            name="additionalComments"
-            value={formData.additionalComments}
+            id="howDidYouKnow"
+            name="howDidYouKnow"
+            value={formData.howDidYouKnow}
             onChange={handleInputChange}
-          ></textarea>
+            required
+          >
+            <option value="">Select an option</option>
+            <option value="rapidprototype">LinkedIn</option>
+            <option value="technicalconsultation">Instagram</option>
+            <option value="designsupport">Deshpande Startups Website</option>
+            <option value="technology">College</option>
+            <option value="other">Reference</option>
+            <option value="other">WhatsApp</option>
+          </select>
+        </div>
+        <div className="mb-4">
+          <label className="block mb-2 text-sm font-medium " htmlFor="awareOfCharges">
+          Are you aware about the charges?*
+          </label>
+          <select
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+            id="howDidYouKnow"
+            name="howDidYouKnow"
+            value={formData.awareOfCharges}
+            onChange={handleInputChange}
+            required
+          >
+            <option value="">Select an option</option>
+            <option value="rapidprototype">Yes I'm aware.</option>
+            <option value="rapidprototype">No please share the details.</option>
+          </select>
         </div>
 
-        <div className="flex justify-end">
+        
+
+        <div className="flex justify-center">
           <button
             className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500"
             type="submit"
           >
             Submit
+          </button>
+        </div>
+        <div className="flex justify-end">
+          <button
+            className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500"
+            type="Clear form"
+          >
+           Clear form
           </button>
         </div>
       </form>
