@@ -17,7 +17,7 @@ const AdminLogin = () => {
           <div className="w-[509px] h-[98px] overflow-hidden shrink-0 ml-1">
             <b className="absolute top-[350px] left-[480px]">
               <span>Email</span>
-              <span className="text-firebrick">*</span>
+              <b className="font-inter text-red">*</b>
             </b>
             <Form.Group className="w-[490px] [border:none] bg-[transparent] absolute top-[390px] left-[480px]">
               <Form.Control type="text" placeholder="Enter your email" />

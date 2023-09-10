@@ -51,7 +51,7 @@ const Orders = () => {
         onUsersTextClick={onUsersTextClick}
       />
       <div className="absolute top-[134px] left-[-12px] w-[211px] overflow-hidden flex flex-col items-end justify-center">
-        <div className="relative tracking-[0.4px] leading-[24px] uppercase font-extrabold inline-block w-[168px] h-[26px] shrink-0">
+        <div className="relative tracking-[0.5px] leading-[30px] uppercase font-extrabold inline-block w-[170px] h-[30px] shrink-0">
           Orders
         </div>
       </div>

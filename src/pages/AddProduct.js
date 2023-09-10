@@ -1,15 +1,43 @@
-import Navbarhome from "../components/Navbarhome";
+import { useNavigate } from "react-router-dom";
+import { useCallback } from "react";
 import NameInputContainer from "../components/NameInputContainer";
 import StatusSelectionContainer from "../components/StatusSelectionContainer";
+import Navbaradmin from "../components/Navbaradmin";
 
 const AddProduct = () => {
+  const navigate = useNavigate();
+
+  const onEquipmentsTextClick = useCallback(() => {
+    navigate("/smart");
+  }, [navigate]);
+
+  const onOrdersTextClick = useCallback(() => {
+    navigate("/orders");
+  }, [navigate]);
+
+  const onAddTextClick = useCallback(() => {
+    navigate("/add-product");
+  }, [navigate]);
+
+  const onIconUserClick = useCallback(() => {
+    navigate("/admin-profile");
+  }, [navigate]);
+
+  const onUsersTextClick = useCallback(() => {
+    navigate("/userprofile-admin");
+  }, [navigate]);
+
+  const onImageClick = useCallback(() => {
+    navigate("/admin-try");
+  }, [navigate]);
+
   return (
     <div className="relative w-full flex flex-col items-center justify-start">
-      <Navbarhome />
-      <div className="bg-white-200 w-[1461px] h-[1332px] flex flex-col pt-[38px] px-0 pb-0 box-border items-center justify-start">
-        <main className="w-[1277px] h-[1245px] overflow-hidden shrink-0 flex flex-row py-0 px-[170px] box-border items-center justify-between relative">
+      <Navbaradmin/>
+      <div className="bg-white-200 w-[1461px] h-[1340px] flex -col pt-[190px] px-5 pb-5 box-border items-center justify-start">
+        <main className="w-[1250px] h-[1250px] overflow-hidden shrink-0 flex flex-row py-0.5 px-[170px] box-border items-center justify-between relative">
           <section
-            className="bg-dgray w-[1275px] h-[1240px] flex flex-col items-center justify-start gap-[45px] z-[0] text-center text-21xl text-black font-roboto"
+            className="bg-dgray w-[1275px] h-[1240px] flex flex-col items-center justify-start gap-[45px] z-[0] text-center text-21xl text-black font-popins"
             id="main"
           >
             <b className="relative leading-[48px] inline-block w-[520px]">
@@ -48,7 +76,7 @@ const AddProduct = () => {
             />
             <div className="w-[270px] overflow-hidden flex flex-col items-start justify-start text-17xl text-dwhite">
               <div className="self-stretch rounded-lg bg-dgreen flex flex-col p-3 items-center justify-center">
-                <div className="self-stretch relative leading-[24px] font-medium">
+                <div className="self-stretch relative leading-[30px] font-medium">
                   Add Equipment
                 </div>
               </div>
