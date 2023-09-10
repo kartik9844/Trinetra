@@ -14,44 +14,21 @@ const FormFrame = () => {
             <div className="relative tracking-[0.15px] leading-[12px] font-extrabold flex items-center w-[220px] h-7 shrink-0">
               Person name:
             </div>
-            <div className="self-stretch flex-1 relative text-xs font-inter text-dimgray-200 mt-[-4.5px]">
+            <div className="self-stretch flex-1 relative left-2 text-xs font-inter text-dimgray-200 mt-[-4.5px]">
               Who is ordering ?
             </div>
             <div className="self-stretch relative h-0.5 mt-[-4.5px]" />
           </div>
-          <TextField
-            className="[border:none] bg-[transparent] absolute top-[0px] left-[158px]"
-            sx={{ width: 220 }}
-            color="primary"
-            variant="standard"
-            defaultValue="Input"
-            type="text"
-            label="Label"
-            size="medium"
-            margin="none"
-          />
+          
         </div>
         <div className="relative w-[507px] h-[154px] overflow-hidden shrink-0 mt-[-49px]">
+          
           <TextField
-            className="absolute top-[31px] left-[287px]"
-            sx={{ width: 220 }}
-            color="primary"
-            variant="filled"
-            defaultValue="Text Area"
-            multiline
-            rows={3}
-            label="Label"
-            placeholder="Textarea placeholder"
-            margin="none"
-          />
-          <TextField
-            className="[border:none] bg-[transparent] absolute top-[0px] left-[47px]"
+            className="[border:none] bg-[transparent] absolute top-[0px] left-[155px]"
             sx={{ width: 220 }}
             color="primary"
             variant="standard"
-            defaultValue="Input"
             type="text"
-            label="Label"
             size="medium"
             margin="none"
           />

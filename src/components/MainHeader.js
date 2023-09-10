@@ -1,4 +1,10 @@
 import { useMemo } from "react";
+import { Fragment } from 'react'
+import { Disclosure, Menu, Transition } from '@headlessui/react'
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
 
 const MainHeader = ({
   propCursor,
@@ -12,6 +18,7 @@ const MainHeader = ({
   onContactContainerClick,
   onContactContainer1Click,
   onProductsTextClick,
+  onSingoutClick,
   onIconUserClick,
   onCa2ImageClick,
 }) => {
@@ -52,14 +59,14 @@ const MainHeader = ({
   }, [propCursor5]);
 
   return (
-    <div className="absolute top-[0px] left-[0px] bg-gray-400 w-[1440px] h-20 text-left text-16xl text-dwhite font-inter">
+    <div className="absolute top-[0px] left-[0px] bg-gray-400 w-[1518px] h-20 text-left text-16xl text-dwhite font-inter">
       <div
         className="absolute top-[calc(50%_-_41px)] left-[calc(50%_-_720px)] w-[248px] h-[73px] flex flex-row pt-[7px] px-0 pb-[3px] box-border items-center justify-between"
         style={logoFramStyle}
         onClick={onLogoFramContainerClick}
       >
         <img
-          className="relative w-[246.5px] h-[82px] object-cover cursor-pointer"
+          className="relative -left-10 w-[246.5px] h-[82px] object-cover cursor-pointer"
           alt=""
           src="/logo1@2x.png"
           onClick={onLogoImageClick}
@@ -88,18 +95,63 @@ const MainHeader = ({
         Products
       </div>
       <img
-        className="absolute h-[78.75%] w-[4.93%] top-[11.25%] right-[1.74%] bottom-[10%] left-[93.33%] max-w-full overflow-hidden max-h-full cursor-pointer"
-        alt=""
-        src="/-icon-user.svg"
-        onClick={onIconUserClick}
-      />
-      <img
-        className="absolute top-[7px] left-[1174px] w-[71px] h-[67px] object-cover cursor-pointer"
+        className="absolute top-[7px] left-[1274px] w-[71px] h-[67px] object-cover cursor-pointer"
         alt=""
         src="/ca-2@2x.png"
         onClick={onCa2ImageClick}
         style={ca2IconStyle}
       />
+      {/* <img
+        className="absolute h-[78.75%] w-[4.93%] top-[11.25%] right-[1.74%] bottom-[10%] left-[93.33%] max-w-full overflow-hidden max-h-full cursor-pointer"
+        alt=""
+        src="/-icon-user.svg"
+        onClick={onIconUserClick}
+      /> */}
+               <Menu as="div" className="relative ml-3">
+                  <div>
+                    <Menu.Button className="absolute h-[78.75%] w-[4.93%] top-6 right-[1.74%] bottom-[10%] left-[93.33%] max-w-full  flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                      <span className="absolute -inset-1.5" />
+                      <span className="sr-only">Open user menu</span>
+                      <img
+                        className="h-8 w-8 rounded-full"
+                        src="/-icon-user.svg"
+                      />
+                    </Menu.Button>
+                  </div>
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-100"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-75"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-95"
+                  >
+                    <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            href="#"
+                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-black')} onClick={onIconUserClick}
+                          >
+                            Your Profile
+                          </a>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            href="#"
+                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-black')} onClick={onSingoutClick}
+                          >
+                            Sign out
+                          </a>
+                        )}
+                      </Menu.Item>
+                    </Menu.Items>
+                  </Transition>
+                </Menu>
+      
     </div>
   );
 };
