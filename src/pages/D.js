@@ -5,16 +5,16 @@ import Navbaradmin from "../components/Navbaradmin";
 const D = () => {
   const navigate = useNavigate();
 
-  const onMaxresdefault3ImageClick = useCallback(() => {
-    navigate("/admin-try");
-  }, [navigate]);
-
   const onEquipmentsTextClick = useCallback(() => {
     navigate("/smart");
   }, [navigate]);
 
   const onOrdersTextClick = useCallback(() => {
     navigate("/orders");
+  }, [navigate]);
+
+  const onSingoutClick = useCallback(() => {
+    navigate("/");
   }, [navigate]);
 
   const onAddTextClick = useCallback(() => {
@@ -29,6 +29,10 @@ const D = () => {
     navigate("/userprofile-admin");
   }, [navigate]);
 
+  const onImageClick = useCallback(() => {
+    navigate("/admin-try");
+  }, [navigate]);
+
   const onTitleTextClick = useCallback(() => {
     navigate("/smart");
   }, [navigate]);
@@ -38,28 +42,20 @@ const D = () => {
   }, [navigate]);
 
   return (
-    <div className="relative w-full flex flex-col items-center justify-start text-center text-mini text-black font-roboto">
-      <Navbaradmin
-        dimensionCode="/maxresdefault-3@2x.png"
-        carDimensions="/-icon-user1.svg"
-        divframer11lg61rPosition="relative"
-        divframer11lg61rTop="unset"
-        divframer11lg61rLeft="unset"
-        divframer11lg61rWidth="1440px"
-        divframer11lg61rMarginBottom="unset"
-        maxresdefault3IconLeft="calc(50% - 725px)"
-        maxresdefault3IconCursor="unset"
-        frameCursor="pointer"
-        iconUserCursor="pointer"
-        onMaxresdefault3ImageClick={onMaxresdefault3ImageClick}
+    <div >
+    <Navbaradmin
+        dimensionCode="/maxresdefault-33@2x.png"
+        carDimensions="/-icon-user.svg"
         onEquipmentsTextClick={onEquipmentsTextClick}
         onOrdersTextClick={onOrdersTextClick}
         onAddTextClick={onAddTextClick}
         onIconUserClick={onIconUserClick}
         onUsersTextClick={onUsersTextClick}
+        onMaxresdefault3ImageClick={onImageClick}
+        onSingoutClick={onSingoutClick}
       />
-      <div className="bg-dwhite w-[1440px] h-[1024px] flex flex-col pt-20 pb-0 pr-0 pl-[220px] box-border items-center justify-start relative">
-        <div className="self-stretch my-0 mx-[!important] absolute h-full top-[0px] bottom-[0px] left-[0px] bg-gray-800 overflow-hidden flex flex-col py-3 px-0 box-border items-center justify-start z-[0]">
+      <div >
+        <div className="self-stretch my-0 mx-[!important] absolute h-full top-[80px] bottom-[0px] left-[0px] bg-gray-800 overflow-hidden flex flex-col py-3 px-0 box-border items-center justify-start z-[0]">
           <div className="self-stretch flex flex-row py-4 px-5 items-center justify-center gap-[12px]">
             <div className="rounded-xl bg-gray-800 w-6 flex flex-col items-center justify-center">
               <div className="self-stretch relative leading-[24px] flex items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap h-6 shrink-0">
