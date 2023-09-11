@@ -53,7 +53,7 @@ const Desktop2 = () => {
           </div>
           <div className=" relative -top-9 w-[550px] h-[435.03px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[19px]">
             <div className="w-[511px] h-[198px] overflow-hidden shrink-0 flex flex-col items-start justify-center gap-[19px]">
-              <div className="  w-[490px] h-[85px] overflow-hidden shrink-0 flex flex-col items-start justify-start ml-[21px]">
+              <div className="  w-[490px] h-[150px] overflow-hidden shrink-0 flex flex-col items-start justify-start ml-[21px]">
                 <div className="  h-11 overflow-hidden shrink-0 flex flex-col items-end justify-center">
                   <b className="relative inline-block w-[199px] h-11 shrink-0">
                     <span className="uppercase">P</span>
@@ -80,7 +80,7 @@ const Desktop2 = () => {
                 </div>
                 <div className="w-[480px] h-[45px] overflow-hidden shrink-0 flex flex-col items-end justify-center ml-[21px]">
                   <Form.Group className="text-blue-600 w-[468px] [border:none] bg-[transparent]">
-                  <Button variant="dark" className="w-[450px]" onClick={onSignUpContainerClick}>Sign up</Button>
+                  <Button variant="dark" className="w-[450px]" onClick={onSignUpContainerClick}>Login</Button>
                   
                   </Form.Group>
                   
@@ -113,7 +113,7 @@ const Desktop2 = () => {
                       src="/google-logo@2x.png"
                     />
                     <h3 className="m-0 relative text-inherit capitalize font-normal font-inherit inline-block w-[263.87px] h-[33.87px] shrink-0">
-                      Login with google
+                      sign up with google
                     </h3>
                   </div>
                   <div className="text-[15px] inline-block w-[344.2px] h-[23.028894424438477px] shrink-0 ml-36 text-white font-poppins">
