@@ -9,11 +9,11 @@ const Desktop2 = () => {
   const navigate = useNavigate();
 
   const onSignUpContainerClick = useCallback(() => {
-    navigate("/register");
+    navigate("/admin-try");
   }, [navigate]);
 
   const onGoogleContainerClick = useCallback(() => {
-    navigate("/register");
+    navigate("/admin-try");
   }, [navigate]);
 
   const onIfYouHaveClick = useCallback(() => {
@@ -80,7 +80,7 @@ const Desktop2 = () => {
                 </div>
                 <div className="w-[480px] h-[45px] overflow-hidden shrink-0 flex flex-col items-end justify-center ml-[21px]">
                   <Form.Group className="text-blue-600 w-[468px] [border:none] bg-[transparent]">
-                  <Button variant="dark" className="w-[450px]" onClick={onSignUpContainerClick}>Sign up</Button>
+                  <Button variant="dark" className="w-[450px]" onClick={onSignUpContainerClick}>Login</Button>
                   
                   </Form.Group>
                   

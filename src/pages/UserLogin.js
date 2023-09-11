@@ -9,15 +9,15 @@ const Desktop2 = () => {
   const navigate = useNavigate();
 
   const onSignUpContainerClick = useCallback(() => {
-    navigate("/register");
+    navigate("/UserHome");
   }, [navigate]);
 
   const onGoogleContainerClick = useCallback(() => {
-    navigate("/register");
+    navigate("/UserHome");
   }, [navigate]);
 
   const onIfYouHaveClick = useCallback(() => {
-    navigate("/user-login");
+    navigate("/sign-up");
   }, [navigate]);
   
   const onLogoImageClick = useCallback(() => {
@@ -116,7 +116,7 @@ const Desktop2 = () => {
                       Login with Google
                     </h3>
                   </div>
-                  <div className="text-[15px] inline-block w-[344.2px] h-[23.028894424438477px] shrink-0 ml-36 text-white font-poppins">
+                  <div className="text-[15px] inline-block w-[344.2px] h-[23.028894424438477px] shrink-0 ml-36 text-white font-poppins" onClick={onIfYouHaveClick}>
                     <span>
                       <span>
                         <span className="capitalize">{`Don’t `}</span>
