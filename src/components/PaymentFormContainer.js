@@ -49,9 +49,7 @@ const PaymentFormContainer = () => {
           onIconUserClick={onIconUserClick}
         />
       </div>
-      <div className="font-extrabold inline-block h-[54px] mr-[1105px]">
-        Order Summary
-      </div>
+      
     </div>
   );
 };

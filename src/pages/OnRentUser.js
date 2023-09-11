@@ -9,6 +9,10 @@ const OnRentUser = () => {
     navigate("/user-home");
   }, [navigate]);
 
+  const onSingoutClick = useCallback(() => {
+    navigate("/");
+  }, [navigate]);
+
   const onContactContainerClick = useCallback(() => {
     navigate("/payments");
   }, [navigate]);
@@ -30,7 +34,6 @@ const OnRentUser = () => {
   }, [navigate]);
 
   return (
-    <div className="relative w-full h-[1016px] flex flex-col items-center justify-start text-center text-mini text-black font-roboto">
       <div className="relative w-[1440px] h-[1016px]">
         <div className="absolute top-[0px] left-[0px] bg-dwhite w-[1440px] h-[1016px] flex flex-col pt-20 pb-0 pr-0 pl-[220px] box-border items-center justify-center">
           <div className="self-stretch my-0 mx-[!important] absolute h-[calc(100%_-_68px)] top-[68px] bottom-[0px] left-[0px] bg-gray-800 overflow-hidden flex flex-col py-3 px-0 box-border items-center justify-start z-[0]">
@@ -74,9 +77,10 @@ const OnRentUser = () => {
           onProductsTextClick={onProductsTextClick}
           onIconUserClick={onIconUserClick}
           onCa2ImageClick={onCa2ImageClick}
+          onSingoutClick={onSingoutClick}
         />
       </div>
-    </div>
+    
   );
 };
 

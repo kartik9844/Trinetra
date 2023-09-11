@@ -9,6 +9,14 @@ const UMechLab = () => {
     navigate("/user-home");
   }, [navigate]);
 
+  const onSingoutClick = useCallback(() => {
+    navigate("/");
+  }, [navigate]);
+
+  const onProductsTextClick = useCallback(() => {
+    navigate("/u-3dlab");
+  }, [navigate]);
+
   const onContactContainer1Click = useCallback(() => {
     navigate("/-on-rent-user");
   }, [navigate]);
@@ -89,8 +97,10 @@ const UMechLab = () => {
         propCursor5="pointer"
         onLogoImageClick={onLogoImageClick}
         onContactContainer1Click={onContactContainer1Click}
+        onProductsTextClick={onProductsTextClick}
         onIconUserClick={onIconUserClick}
         onCa2ImageClick={onCa2ImageClick}
+        onSingoutClick={onSingoutClick}
       />
     </div>
   );

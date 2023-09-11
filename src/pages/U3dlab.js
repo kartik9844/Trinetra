@@ -9,6 +9,14 @@ const U3dlab = () => {
     navigate("/user-home");
   }, [navigate]);
 
+  const onProductsTextClick = useCallback(() => {
+    navigate("/u-3dlab");
+  }, [navigate]);
+
+  const onSingoutClick = useCallback(() => {
+    navigate("/");
+  }, [navigate]);
+
   const onContactContainerClick = useCallback(() => {
     navigate("/payments");
   }, [navigate]);
@@ -101,8 +109,10 @@ const U3dlab = () => {
         onLogoFramContainerClick={onLogoFramContainerClick}
         onContactContainerClick={onContactContainerClick}
         onContactContainer1Click={onContactContainer1Click}
+        onProductsTextClick={onProductsTextClick}
         onIconUserClick={onIconUserClick}
         onCa2ImageClick={onCa2ImageClick}
+        onSingoutClick={onSingoutClick}
       />
     </div>
   );

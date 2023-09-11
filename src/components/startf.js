@@ -312,8 +312,8 @@ const StartupForm = () => {
           </label>
           <select
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-            id="startupSector"
-            name="startupSector"
+            id="protypinglab"
+            name="protypinglab"
             value={formData.prototypingSupport}
             onChange={handleInputChange}
             required
@@ -340,10 +340,10 @@ const StartupForm = () => {
             required
           >
             <option value="">Select an option</option>
-            <option value="rapidprototype">Less than 30 days</option>
-            <option value="technicalconsultation">Between 30 to 60 days</option>
-            <option value="designsupport">Between 60 to 90 days</option>
-            <option value="technology">More than 90 days</option>
+            <option value="less30">Less than 30 days</option>
+            <option value="btw 30 to 60">Between 30 to 60 days</option>
+            <option value="btw 60 to 90">Between 60 to 90 days</option>
+            <option value="more90">More than 90 days</option>
             <option value="other">Other:</option>
           </select>
         </div>
@@ -354,17 +354,16 @@ const StartupForm = () => {
           </label>
           <select
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-            id="completiontime"
-            name="completiontime"
+            id="support"
+            name="support"
             value={formData.labSupport}
             onChange={handleInputChange}
             required
           >
             <option value="">Select an option</option>
-            <option value="rapidprototype">Mechanical Lab</option>
-            <option value="technicalconsultation">3D Printing Lab (3D Designing || 3D Printing</option>
-            <option value="designsupport">Smart Lab (Electronics || IoT || Robotics</option>
-            <option value="other">More than 50000 rupees</option>
+            <option value="mechanical">Mechanical Lab</option>
+            <option value="3dlab">3D Printing Lab (3D Designing || 3D Printing</option>
+            <option value="smart">Smart Lab (Electronics || IoT || Robotics</option>
           </select>
         </div>
 
@@ -381,11 +380,11 @@ const StartupForm = () => {
             required
           >
             <option value="">Select an option</option>
-            <option value="rapidprototype">Less than 100 rupees</option>
-            <option value="technicalconsultation">100 - 5000 rupees</option>
-            <option value="designsupport">5000 - 25000 rupees</option>
-            <option value="technology">25000 - 50000 rupees</option>
-            <option value="other">More than 50000 rupees</option>
+            <option value="100">Less than 100 rupees</option>
+            <option value="5000">100 - 5000 rupees</option>
+            <option value="25000">5000 - 25000 rupees</option>
+            <option value="50000">25000 - 50000 rupees</option>
+            <option value="more50000">More than 50000 rupees</option>
           </select>
         </div>
         <div className="mb-4">
@@ -401,12 +400,12 @@ const StartupForm = () => {
             required
           >
             <option value="">Select an option</option>
-            <option value="rapidprototype">LinkedIn</option>
-            <option value="technicalconsultation">Instagram</option>
-            <option value="designsupport">Deshpande Startups Website</option>
-            <option value="technology">College</option>
-            <option value="other">Reference</option>
-            <option value="other">WhatsApp</option>
+            <option value="linkedin">LinkedIn</option>
+            <option value="instagram">Instagram</option>
+            <option value="website">Deshpande Startups Website</option>
+            <option value="college">College</option>
+            <option value="reference">Reference</option>
+            <option value="whatsapp">WhatsApp</option>
           </select>
         </div>
         <div className="mb-4">
@@ -415,15 +414,15 @@ const StartupForm = () => {
           </label>
           <select
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-            id="howDidYouKnow"
-            name="howDidYouKnow"
+            id="charges"
+            name="charges"
             value={formData.awareOfCharges}
             onChange={handleInputChange}
             required
           >
             <option value="">Select an option</option>
-            <option value="rapidprototype">Yes I'm aware.</option>
-            <option value="rapidprototype">No please share the details.</option>
+            <option value="yes">Yes I'm aware.</option>
+            <option value="no">No please share the details.</option>
           </select>
         </div>
 
@@ -437,14 +436,7 @@ const StartupForm = () => {
             Submit
           </button>
         </div>
-        <div className="flex justify-end">
-          <button
-            className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500"
-            type="Clear form"
-          >
-           Clear form
-          </button>
-        </div>
+        
       </form>
     </div>
   );

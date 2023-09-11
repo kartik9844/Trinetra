@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import MainHeader from "../components/MainHeader";
 
 const UserProfile = () => {
   const navigate = useNavigate();
@@ -9,16 +10,25 @@ const UserProfile = () => {
     navigate("/user-home");
   }, [navigate]);
 
+  const onSingoutClick = useCallback(() => {
+    navigate("/");
+  }, [navigate]);
+
+
+  const onProductsTextClick = useCallback(() => {
+    navigate("/u-3dlab");
+  }, [navigate]);
+
   const onContactContainerClick = useCallback(() => {
     navigate("/payments");
   }, [navigate]);
 
-  const onOrdersTextClick = useCallback(() => {
+  const onContactContainer1Click = useCallback(() => {
     navigate("/-on-rent-user");
   }, [navigate]);
 
-  const onProductsTextClick = useCallback(() => {
-    navigate("/u-3dlab");
+  const onIconUserClick = useCallback(() => {
+    navigate("/user-profile");
   }, [navigate]);
 
   const onCa2ImageClick = useCallback(() => {
@@ -29,8 +39,8 @@ const UserProfile = () => {
     <div className="relative w-full h-[1003px] text-left text-17xl text-black font-poppins">
       <div className="absolute top-[18px] left-[-2px] w-[1442px] h-[985px]">
         <div className="absolute top-[0px] left-[2px] bg-dwhite w-[1440px] h-[985px] flex flex-col pt-20 pb-0 pr-0 pl-[220px] box-border items-center justify-center">
-          <div className="relative w-[1121px] h-[792px] z-[0]">
-            <div className="absolute top-[0px] left-[0px] bg-silver w-[1121px] h-[703px]" />
+          <div className="relative -top-[300px] w-[1121px] h-[192px] z-[0]">
+            <div className="absolute top-[0px] left-[0px] bg-silver w-[1121px] h-[343px]" />
             <div className="absolute top-[22px] left-[44px] capitalize font-extrabold">
               Name:
             </div>
@@ -41,7 +51,7 @@ const UserProfile = () => {
               Password:
             </div>
             <Button
-              className="absolute top-[718px] left-[336px]"
+              className="absolute top-[418px] left-[336px]"
               sx={{ width: 225 }}
               variant="contained"
               color="primary"
@@ -49,7 +59,7 @@ const UserProfile = () => {
               Button
             </Button>
             <Button
-              className="absolute top-[718px] left-[703px]"
+              className="absolute top-[418px] left-[703px]"
               sx={{ width: 225 }}
               variant="contained"
               color="primary"
@@ -80,49 +90,20 @@ const UserProfile = () => {
             </div>
           </div>
         </div>
-        <div className="absolute top-[0px] left-[0px] bg-gray-400 w-[1440px] h-[76.1px] text-16xl text-dwhite font-inter">
-          <div
-            className="absolute top-[calc(50%_-_41.05px)] left-[calc(50%_-_720px)] w-[248px] h-[73px] flex flex-row pt-[7px] px-0 pb-[3px] box-border items-center justify-between cursor-pointer"
-            onClick={onLogoFramContainerClick}
-          >
-            <img
-              className="relative w-[246.5px] h-[82px] object-cover"
-              alt=""
-              src="/logo1@2x.png"
-            />
-          </div>
-          <div
-            className="absolute w-[calc(100%_-_1274px)] top-[24px] right-[666px] left-[608px] flex flex-row pt-0 px-0 pb-[0.5999999046325684px] box-border items-start justify-start cursor-pointer"
-            onClick={onContactContainerClick}
-          >
-            <div className="relative leading-[24px] font-medium">Payments</div>
-          </div>
-          <div className="absolute w-[calc(100%_-_1325px)] top-[26px] right-[444.5px] left-[880.5px] flex flex-row pt-0 px-0 pb-[0.5999999046325684px] box-border items-start justify-start">
-            <div
-              className="relative leading-[24px] font-medium cursor-pointer"
-              onClick={onOrdersTextClick}
-            >
-              Orders
-            </div>
-          </div>
-          <div
-            className="absolute top-[24px] left-[355px] leading-[24px] font-medium flex items-center w-40 h-7 cursor-pointer"
-            onClick={onProductsTextClick}
-          >
-            Products
-          </div>
-          <img
-            className="absolute h-[79.13%] w-[4.93%] top-[11.06%] right-[1.74%] bottom-[9.81%] left-[93.33%] max-w-full overflow-hidden max-h-full"
-            alt=""
-            src="/-icon-user2.svg"
-          />
-          <img
-            className="absolute top-[7px] left-[1174px] w-[71px] h-[67px] object-cover cursor-pointer"
-            alt=""
-            src="/ca-2@2x.png"
-            onClick={onCa2ImageClick}
-          />
-        </div>
+        <MainHeader
+        propCursor="pointer"
+        propCursor1="unset"
+        propCursor2="pointer"
+        propCursor3="pointer"
+        propCursor4="unset"
+        propCursor5="pointer"
+        onLogoFramContainerClick={onLogoFramContainerClick}
+        onContactContainerClick={onContactContainerClick}
+        onProductsTextClick={onProductsTextClick}
+        onIconUserClick={onIconUserClick}
+        onCa2ImageClick={onCa2ImageClick}
+        onSingoutClick={onSingoutClick}
+      />
       </div>
     </div>
   );

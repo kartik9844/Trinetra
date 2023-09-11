@@ -9,6 +9,14 @@ const USmartLab = () => {
     navigate("/user-home");
   }, [navigate]);
 
+  const onSingoutClick = useCallback(() => {
+    navigate("/");
+  }, [navigate]);
+
+  const onProductsTextClick = useCallback(() => {
+    navigate("/u-3dlab");
+  }, [navigate]);
+
   const onContactContainerClick = useCallback(() => {
     navigate("/payments");
   }, [navigate]);
@@ -94,8 +102,10 @@ const USmartLab = () => {
         onLogoFramContainerClick={onLogoFramContainerClick}
         onContactContainerClick={onContactContainerClick}
         onContactContainer1Click={onContactContainer1Click}
+        onProductsTextClick={onProductsTextClick}
         onIconUserClick={onIconUserClick}
         onCa2ImageClick={onCa2ImageClick}
+        onSingoutClick={onSingoutClick}
       />
     </div>
   );
