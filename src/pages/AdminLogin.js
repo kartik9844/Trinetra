@@ -53,7 +53,7 @@ const Desktop2 = () => {
           </div>
           <div className=" relative -top-9 w-[550px] h-[435.03px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[19px]">
             <div className="w-[511px] h-[198px] overflow-hidden shrink-0 flex flex-col items-start justify-center gap-[19px]">
-              <div className="  w-[490px] h-[150px] overflow-hidden shrink-0 flex flex-col items-start justify-start ml-[21px]">
+              <div className="  w-[500px] h-[150px] overflow-hidden shrink-0 flex flex-col items-start justify-start ml-[21px]">
                 <div className="  h-11 overflow-hidden shrink-0 flex flex-col items-end justify-center">
                   <b className="relative inline-block w-[199px] h-11 shrink-0">
                     <span className="uppercase">P</span>
