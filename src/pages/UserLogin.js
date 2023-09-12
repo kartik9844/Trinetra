@@ -41,8 +41,8 @@ const Desktop2 = () => {
       </header>
       <section className=" w-[1021px] h-[682px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[24px] text-left text-30xl text-gray font-poppins">
         
-        <div className="absolute rounded-23xl bg-dodgerblue w-[640px] h-[510px] flex flex-col pt-[38px] pb-[2.971099853515625px] pr-[47px] pl-12 box-border items-start justify-start gap-[23px] ml-[376px] text-xl text-white">
-          <div className="relative -top-4 left-6 w-[485px] h-[91px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[6px]">
+        <div className="absolute left-60 rounded-23xl bg-dodgerblue w-[340px] h-[410px] flex flex-col pt-[38px] pb-[2.971099853515625px] pr-[47px] pl-12 box-border items-start justify-start gap-[23px] ml-[376px] text-xl text-white">
+          <div className="relative -top-4 left-0 w-[250px] h-[91px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[6px]">
             <div className="relative -left-5 capitalize inline-block h-[30px] ml-5">
               <b>Email</b>
               <b className="font-inter text-firebrick">*</b>
@@ -51,7 +51,7 @@ const Desktop2 = () => {
               <Form.Control type="text" placeholder="Enter your email" />
             </Form.Group>
           </div>
-          <div className=" relative -top-9 w-[550px] h-[435.03px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[19px]">
+          <div className=" relative -top-9 -left-5 w-[450px] h-[465px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[19px]">
             <div className="w-[511px] h-[198px] overflow-hidden shrink-0 flex flex-col items-start justify-center gap-[19px]">
               <div className="  w-[500px] h-[150px] overflow-hidden shrink-0 flex flex-col items-start justify-start ml-[21px]">
                 <div className="  h-11 overflow-hidden shrink-0 flex flex-col items-end justify-center">
@@ -66,21 +66,19 @@ const Desktop2 = () => {
               </div>
             </div>
             <div className="relative -top-12
-            
-            
-            
              only:w-[600px] h-[218.03px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[18px] text-black font-fresca">
               <div className="w-[550px] h-[77px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[5px]">
-                <div className="w-[170.5px] h-[26.032663345336914px] overflow-hidden shrink-0 flex flex-row items-center justify-start gap-[9px] ml-3.5">
+                <div className="w-[150px] h-[26.032663345336914px] overflow-hidden shrink-0 flex flex-row items-center justify-start gap-[9px] ml-3.5">
                   <Form.Check className="relative" />
-                  <div className="relative capitalize inline-block w-[131.07px] h-[23.03px] shrink-0">
+                  <div className="relative capitalize inline-block  -top-3 w-[131.07px] h-[23.03px] shrink-0">
                     {" "}
                     remember me
                   </div>
                 </div>
-                <div className="w-[480px] h-[45px] overflow-hidden shrink-0 flex flex-col items-end justify-center ml-[21px]">
+                <div className="realtive left-20  
+                w-[480px] h-[45px] overflow-hidden shrink-0 flex flex-col items-end justify-center ml-[21px]">
                   <Form.Group className="text-blue-600 w-[468px] [border:none] bg-[transparent]">
-                  <Button variant="dark" className="w-[450px]" onClick={onSignUpContainerClick}>Login</Button>
+                  <Button variant="dark" className="relative -top-9 w-[260px]" onClick={onSignUpContainerClick}>Login</Button>
                   
                   </Form.Group>
                   
