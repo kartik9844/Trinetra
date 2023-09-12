@@ -3,19 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 const SignupFormContainer = () => {
   const navigate = useNavigate();
-
-  const onSignUpContainerClick = useCallback(() => {
-    navigate("/register");
-  }, [navigate]);
-
-  const onGoogleContainerClick = useCallback(() => {
-    navigate("/register");
-  }, [navigate]);
-
-  const onIfYouHaveClick = useCallback(() => {
-    navigate("/user-login");
-  }, [navigate]);
-
   return (
     <div className="rounded-51xl bg-dgray w-[640px] h-[875px] flex flex-col items-center justify-center gap-[23px] text-left text-17xl text-black font-fresca">
       <div className="relative text-29xl capitalize text-gray-300 text-right">{`Sign Up `}</div>
