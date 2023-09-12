@@ -4,6 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import HeaderTop1 from "../components/HeaderTop1";
+import { Auth,provider, signInWithPopup } from "firebase/auth";
+
 
 const Desktop2 = () => {
   const navigate = useNavigate();
