@@ -312,8 +312,8 @@ const StartupForm = () => {
           </label>
           <select
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-            id="protypinglab"
-            name="protypinglab"
+            id="prototypingSupport"
+            name="prototypingSupport"
             value={formData.prototypingSupport}
             onChange={handleInputChange}
             required
@@ -325,16 +325,17 @@ const StartupForm = () => {
             <option value="technology">Access to Technology Lab</option>
             <option value="other">Other:</option>
           </select>
+          
         </div>
 
         <div className="mb-4">
-          <label className="block mb-2 text-sm font-medium " htmlFor="projectcompletiontime">
+          <label className="block mb-2 text-sm font-medium " htmlFor="projectCompletionTime">
             Expected time of your Project completion *
           </label>
           <select
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-            id="completiontime"
-            name="completiontime"
+            id="projectCompletionTime"
+            name="projectCompletionTime"
             value={formData.projectCompletionTime}
             onChange={handleInputChange}
             required
@@ -354,8 +355,8 @@ const StartupForm = () => {
           </label>
           <select
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-            id="support"
-            name="support"
+            id="labSupport"
+            name="labSupport"
             value={formData.labSupport}
             onChange={handleInputChange}
             required
@@ -414,8 +415,8 @@ const StartupForm = () => {
           </label>
           <select
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-            id="charges"
-            name="charges"
+            id="awareOfCharges"
+            name="awareOfCharges"
             value={formData.awareOfCharges}
             onChange={handleInputChange}
             required
