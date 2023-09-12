@@ -1,5 +1,4 @@
 import { useMemo } from "react";
-import { CgProfile } from "react-icons/cg";
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 
