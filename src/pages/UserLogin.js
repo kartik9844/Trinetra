@@ -35,13 +35,13 @@ const Desktop2 = () => {
   
 
   return (
-    <div className="relative w-full h-[1024px] overflow-hidden flex flex-col py-0 px-px box-border items-start justify-start gap-[54px] bg-[url('/public/admin-login@3x.png')] bg-cover bg-no-repeat bg-[top]">
-      <header className="w-[1518px] overflow-hidden flex flex-col items-start justify-center text-left text-base text-black font-inter">
+    <div className="relative w-full h-[1024px] overflow-hidden flex flex-col py-0 px-px box-border items-start justify-start gap-[54px] bg-[url('/public/admin-login@3x.png')] bg-cover bg-no-repeat bg-[top]font-popins">
+      <header className="w-[1518px] overflow-hidden flex flex-col items-start justify-center text-left text-base text-black font-popins">
         <HeaderTop1/>
       </header>
       <section className=" w-[1021px] h-[682px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[24px] text-left text-30xl text-gray font-poppins">
         
-        <div className="absolute left-60 rounded-23xl bg-dodgerblue w-[340px] h-[410px] flex flex-col pt-[38px] pb-[2.971099853515625px] pr-[47px] pl-12 box-border items-start justify-start gap-[23px] ml-[376px] text-xl text-white">
+        <div className="absolute left-60 rounded-23xl bg-dodgerblue w-[340px] h-[410px] flex flex-col pt-[38px] pb-[2.971099853515625px] pr-[48px] pl-12 box-border items-start justify-start gap-[23px] ml-[376px] text-xl text-white">
           <div className="relative -top-4 left-0 w-[250px] h-[91px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[6px]">
             <div className="relative -left-5 capitalize inline-block h-[30px] ml-5">
               <b>Email</b>
@@ -51,26 +51,24 @@ const Desktop2 = () => {
               <Form.Control type="text" placeholder="Enter your email" />
             </Form.Group>
           </div>
-          <div className=" relative -top-9 -left-5 w-[450px] h-[465px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[19px]">
-            <div className="w-[511px] h-[198px] overflow-hidden shrink-0 flex flex-col items-start justify-center gap-[19px]">
-              <div className="  w-[500px] h-[150px] overflow-hidden shrink-0 flex flex-col items-start justify-start ml-[21px]">
-                <div className="  h-11 overflow-hidden shrink-0 flex flex-col items-end justify-center">
-                  <b className="relative inline-block w-[199px] h-11 shrink-0">
-                    <span className="uppercase">P</span>
-                    <span className="capitalize">assword*</span>
-                  </b>
-                </div>
-                <Form.Group className="[border:none] bg-[transparent] self-stretch mt-[-14px]">
-                  <Form.Control type="text" placeholder="Enter your Password" />
-                </Form.Group>
-              </div>
+          <div >
+            {/* <div className="w-[511px] h-[180px] overflow-hidden shrink-0 flex flex-col items-start justify-center gap-[19px]"> */}
+            <div className="relative -top-12 -left-[0px] w-[250px] h-[91px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[6px]">
+            <div className="relative -left-5 capitalize inline-block h-[30px] ml-5">
+              <b>Password</b>
+              <b className="font-inter text-firebrick">*</b>
             </div>
-            <div className="relative -top-12
-             only:w-[600px] h-[218.03px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[18px] text-black font-fresca">
-              <div className="w-[550px] h-[77px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[5px]">
-                <div className="w-[150px] h-[26.032663345336914px] overflow-hidden shrink-0 flex flex-row items-center justify-start gap-[9px] ml-3.5">
+            <Form.Group className="[border:none] bg-[transparent] self-stretch h-[55px] ml-0">
+              <Form.Control type="text" placeholder="Enter your password" />
+            </Form.Group>
+          </div>
+            {/* </div> */}
+            <div className="relative -top-10
+             only:w-[600px] h-[212.03px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[19px] text-black font-fresca">
+              <div className="w-[500px] h-[77px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[5px]">
+                <div className="w-[150px] h-[26.5px] overflow-hidden shrink-0 flex flex-row items-center justify-start gap-[9px] ml-3.5">
                   <Form.Check className="relative" />
-                  <div className="relative capitalize inline-block  -top-3 w-[131.07px] h-[23.03px] shrink-0">
+                  <div className="relative capitalize inline-block  -top-1 w-[131.07px] h-[23.03px] shrink-0">
                     {" "}
                     remember me
                   </div>
@@ -78,43 +76,43 @@ const Desktop2 = () => {
                 <div className="realtive left-20  
                 w-[480px] h-[45px] overflow-hidden shrink-0 flex flex-col items-end justify-center ml-[21px]">
                   <Form.Group className="text-blue-600 w-[468px] [border:none] bg-[transparent]">
-                  <Button variant="dark" className="relative -top-9 w-[260px]" onClick={onSignUpContainerClick}>Login</Button>
+                  <Button variant="dark" className="relative -top-1 -left-[10px] w-[210px]" onClick={onSignUpContainerClick}>Login</Button>
                   
                   </Form.Group>
                   
                 </div>
               </div>
               <div className="w-[550px] h-[123.03px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[18px] text-2xl">
-                <div className="relative w-[550px] h-[23px]">
+                <div className="relative w-[150px] h-[10px] -left-20">
                   <img
-                    className="absolute top-[10.51px] left-[0px] rounded-23xl w-[217.39px] h-px"
+                    className="absolute top-[10.5px] left-[7px] right-[6px] rounded-23xl w-[160px] h-px"
                     alt=""
                     src="/line-11.svg"
                   />
-                  <div className="absolute top-[0px] left-[219px] capitalize inline-block w-[117.22px] h-[23.03px]">
+                  <div className="absolute top-[0px] left-[170px] capitalize inline-block w-[117.22px] h-[23.03px]">
                     Or,Login with
                   </div>
                   <img
-                    className="absolute top-[10.01px] left-[335.67px] w-[214.19px] h-0.5"
+                    className="absolute top-[10.5px] left-[280px] w-[90px] h-1"
                     alt=""
                     src="/line-21.svg"
                   />
                 </div>
                 <div className="w-[500px] h-[82.03px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[11px] text-8xl">
                   <div
-                    className="rounded-23xl bg-slateblue w-[461px] h-12 flex flex-row pt-[8.009942054748535px] pb-[8.010161399841309px] pr-[71.39656829833984px] pl-[54px] box-border items-center justify-start gap-[29px] cursor-pointer ml-[39px]"
+                    className="rounded-23xl bg-slateblue w-[450px] h-12  flex flex-row pt-[8.009942054748535px] pb-[8.010161399841309px] pr-[71.39656829833984px] pl-[54px] box-border items-center justify-start gap-[29px] cursor-pointer ml-[39px]"
                     onClick={onGoogleContainerClick}
                   >
                     <img
-                      className="relative rounded-23xl w-10 h-10 object-cover"
+                      className="relative rounded-23xl w-8 h-8 -left-[90px] object-cover"
                       alt=""
                       src="/google-logo@2x.png"
                     />
-                    <h3 className="m-0 relative text-inherit capitalize font-normal font-inherit inline-block w-[263.87px] h-[33.87px] shrink-0">
+                    <h3 className="m-0 relative -left-[110px] text-inherit capitalize font-normal font-inherit inline-block w-[263.87px] h-[33.87px] shrink-0">
                       Login with Google
                     </h3>
                   </div>
-                  <div className="text-[15px] inline-block w-[344.2px] h-[23.028894424438477px] shrink-0 ml-36 text-white font-poppins" onClick={onIfYouHaveClick}>
+                  <div className=" relative -left-[140px]  text-[13px] inline-block w-[320.2px] h-[23.028894424438477px] shrink-0 ml-36 text-white font-poppins" onClick={onIfYouHaveClick}>
                     <span>
                       <span>
                         <span className="capitalize">{`Don’t `}</span>
