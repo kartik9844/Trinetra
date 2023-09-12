@@ -3,119 +3,129 @@ import { CgProfile } from "react-icons/cg";
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
+
 const Navbaradmin = ({
-  dimensionCode,
-  carDimensions,
-  divframer11lg61rPosition,
-  divframer11lg61rTop,
-  divframer11lg61rLeft,
-  divframer11lg61rWidth,
-  divframer11lg61rMarginBottom,
-  maxresdefault3IconLeft,
-  maxresdefault3IconCursor,
-  frameCursor,
-  iconUserCursor,
-  onDivframer11lg61rContainerClick,
-  onMaxresdefault3ImageClick,
+  propCursor,
+  propCursor1,
+  propCursor2,
+  propCursor3,
+  propCursor4,
+  propCursor5,
+  onLogoFramContainerClick,
+  onLogoImageClick,
   onEquipmentsTextClick,
   onOrdersTextClick,
   onAddTextClick,
   onIconUserClick,
   onUsersTextClick,
   onSingoutClick,
+  onMaxresdefault3ImageClick,
 }) => {
-  const divframerWgdw54Style = useMemo(() => {
+  const logoFramStyle = useMemo(() => {
     return {
-      position: divframer11lg61rPosition,
-      top: divframer11lg61rTop,
-      left: divframer11lg61rLeft,
-      width: divframer11lg61rWidth,
-      marginBottom: divframer11lg61rMarginBottom,
+      cursor: propCursor,
     };
-  }, [
-    divframer11lg61rPosition,
-    divframer11lg61rTop,
-    divframer11lg61rLeft,
-    divframer11lg61rWidth,
-    divframer11lg61rMarginBottom,
-  ]);
-  
-  const divframer11lg61rStyle = useMemo(() => {
-    return {
-      left: maxresdefault3IconLeft,
-      cursor: maxresdefault3IconCursor,
-    };
-  }, [maxresdefault3IconLeft, maxresdefault3IconCursor]);
+  }, [propCursor]);
 
-  const maxresdefault3IconStyle = useMemo(() => {
+  const logoIconStyle = useMemo(() => {
     return {
-      cursor: frameCursor,
+      cursor: propCursor1,
     };
-  }, [frameCursor]);
+  }, [propCursor1]);
 
-  const addStyle = useMemo(() => {
+  const contactStyle = useMemo(() => {
     return {
-      cursor: iconUserCursor,
+      cursor: propCursor2,
     };
-  }, [iconUserCursor]);
+  }, [propCursor2]);
+
+  const contact1Style = useMemo(() => {
+    return {
+      cursor: propCursor3,
+    };
+  }, [propCursor3]);
+
+  const productsStyle = useMemo(() => {
+    return {
+      cursor: propCursor4,
+    };
+  }, [propCursor4]);
+
+  const ca2IconStyle = useMemo(() => {
+    return {
+      cursor: propCursor5,
+    };
+  }, [propCursor5]);
 
   return (
-    <div
-      className="absolute top-[0px] left-[-10px] bg-white w-[1530px] h-20 text-left text-17xl text-black font-inter"
-      style={divframerWgdw54Style}
-    >
+    <div className="absolute top-[0px] left-[0px] bg-gray-4200 w-[1518px] h-20 text-left text-16xl text-dwhite font-inter">
       <div
-        className="absolute top-[calc(50%_-_50px)] left-[calc(50%_-_724.5px)] w-[252px] flex flex-row pt-[7px] px-0 pb-[3px] box-border items-center justify-between"
-        style={divframer11lg61rStyle}
-        onClick={onDivframer11lg61rContainerClick}
+        className="absolute top-[calc(50%_-_41px)] left-[calc(50%_-_720px)] w-[248px] h-[73px] flex flex-row pt-[7px] px-0 pb-[3px] box-border items-center justify-between"
+        style={logoFramStyle}
+        onClick={onLogoImageClick}
       >
         <img
-          className="relative w-[246.5px] h-[82px] object-cover"
+          className="relative -left-10 w-[246.5px] h-[82px] object-cover cursor-pointer"
           alt=""
-          src={dimensionCode}
-          style={maxresdefault3IconStyle}
+          src="/logo1@2x.png"
           onClick={onMaxresdefault3ImageClick}
+          style={logoIconStyle}
         />
       </div>
-      <div className="absolute top-[10px] left-[368px] w-[1031px] h-[57px] overflow-hidden flex flex-row items-start justify-start gap-[51px]">
-        <div
-          className="relative capitalize font-extrabold flex items-center w-[276px] h-[54px] shrink-0 cursor-pointer"
-          onClick={onEquipmentsTextClick}
-        >
-          Equipment's
-        </div>
-        <div className="relative w-[704px] h-[57px] overflow-hidden shrink-0">
-          <div
-            className="absolute top-[3px] left-[0px] capitalize font-extrabold flex items-center w-[154px] h-[54px] cursor-pointer"
-            onClick={onOrdersTextClick}
-          >
-            Orders
-          </div>
-          <div
-            className="absolute top-[3px] left-[215px] capitalize font-extrabold flex items-center w-[155px] h-[54px] cursor-pointer"
-            onClick={onAddTextClick}
-            style={addStyle}
-          >
-            add
-          </div>
-          <img
-            className="absolute h-full w-[9.66%] top-[0%] right-[0%] bottom-[0%] left-[90.34%] max-w-full overflow-hidden max-h-full cursor-pointer"
-            alt=""
-            src={carDimensions}
-            onClick={onIconUserClick}
-          />
-          <div
-            className="absolute top-[3px] left-[380px] capitalize font-extrabold flex items-center w-[130px] h-[54px] cursor-pointer"
-            onClick={onUsersTextClick}
-          >
-            Users 
-          </div>
-          <Menu as="div" className="relative ml-3">
+      <div
+        className="absolute w-[calc(100%_-_1274px)] top-[24px] right-[666px] left-[660px] flex flex-row pt-0 px-0 pb-[0.5999999046325684px] box-border items-start justify-start"
+        style={contactStyle}
+        onClick={onAddTextClick}
+      >
+        <div className="relative leading-[24px] text-black font-medium">Add</div>
+      </div>
+      <div
+        className="absolute w-[calc(100%_-_1325px)] top-[26px] right-[444.5px] left-[880.5px] flex flex-row pt-0 px-0 pb-[0.5999999046325684px] box-border items-start justify-start cursor-pointer"
+        onClick={onOrdersTextClick}
+        style={contact1Style}
+      >
+        <div className="relative leading-[24px] text-black font-medium">Orders</div>
+      </div>
+      <div
+        className="absolute w-[calc(100%_-_1325px)] top-[26px] right-[444.5px] left-[1080.5px] flex flex-row pt-0 px-0 pb-[0.5999999046325684px] box-border items-start justify-start cursor-pointer"
+        onClick={onUsersTextClick}
+        style={contact1Style}
+      >
+
+        <div className="relative leading-[24px] text-black font-medium">User</div>
+      </div>
+      <div
+        className="absolute top-[24px] left-[355px] leading-[24px] text-black font-medium flex items-center w-40 h-7 cursor-pointer"
+        onClick={onEquipmentsTextClick}
+        style={productsStyle}
+      >
+        Equipment's
+      </div>
+      {/* <img
+        className="absolute top-[20px] left-[1274px] w-[50x] h-[37px] object-cover cursor-pointer"
+        alt=""
+        src="/carti.png"
+        onClick={onCa2ImageClick}
+        style={ca2IconStyle}
+      /> */}
+      {/* <img
+        className="absolute h-[78.75%] w-[4.93%] top-[11.25%] right-[1.74%] bottom-[10%] left-[93.33%] max-w-full overflow-hidden max-h-full cursor-pointer"
+        alt=""
+        src="/-icon-user.svg"
+        onClick={onIconUserClick}
+      /> */}
+               <Menu as="div" className="relative ml-3">
                   <div>
-                    <Menu.Button className="absolute h-[78.75%] w-[4.93%] top- right-[1.74%] bottom-[10%] left-[93.33%] max-w-full  flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                    <Menu.Button className="absolute h-[78.75%] w-[4.93%] top-6 right-[1.74%] bottom-[10%] left-[93.33%] max-w-full  flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="absolute -inset-1.5" />
                       <span className="sr-only">Open user menu</span>
-                      <CgProfile/>
+                      <img
+                        className="absolute -top-3 h-15 w-12 rounded-full"
+                        src="/profile.png"
+                      />
                     </Menu.Button>
                   </div>
                   <Transition
@@ -151,8 +161,7 @@ const Navbaradmin = ({
                     </Menu.Items>
                   </Transition>
                 </Menu>
-        </div>
-      </div>
+      
     </div>
   );
 };

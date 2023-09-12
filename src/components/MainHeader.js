@@ -59,7 +59,7 @@ const MainHeader = ({
   }, [propCursor5]);
 
   return (
-    <div className="absolute top-[0px] left-[0px] bg-gray-400 w-[1518px] h-20 text-left text-16xl text-dwhite font-inter">
+    <div className="absolute top-[0px] left-[0px] bg-gray-4200 w-[1518px] h-20 text-left text-16xl text-dwhite font-inter">
       <div
         className="absolute top-[calc(50%_-_41px)] left-[calc(50%_-_720px)] w-[248px] h-[73px] flex flex-row pt-[7px] px-0 pb-[3px] box-border items-center justify-between"
         style={logoFramStyle}
@@ -78,26 +78,26 @@ const MainHeader = ({
         style={contactStyle}
         onClick={onContactContainerClick}
       >
-        <div className="relative leading-[24px] font-medium">Payments</div>
+        <div className="relative leading-[24px] text-black font-medium">Payments</div>
       </div>
       <div
         className="absolute w-[calc(100%_-_1325px)] top-[26px] right-[444.5px] left-[880.5px] flex flex-row pt-0 px-0 pb-[0.5999999046325684px] box-border items-start justify-start cursor-pointer"
         onClick={onContactContainer1Click}
         style={contact1Style}
       >
-        <div className="relative leading-[24px] font-medium">Orders</div>
+        <div className="relative leading-[24px] text-black font-medium">Orders</div>
       </div>
       <div
-        className="absolute top-[24px] left-[355px] leading-[24px] font-medium flex items-center w-40 h-7 cursor-pointer"
+        className="absolute top-[24px] left-[355px] leading-[24px] text-black font-medium flex items-center w-40 h-7 cursor-pointer"
         onClick={onProductsTextClick}
         style={productsStyle}
       >
         Products
       </div>
       <img
-        className="absolute top-[7px] left-[1274px] w-[71px] h-[67px] object-cover cursor-pointer"
+        className="absolute top-[20px] left-[1274px] w-[50x] h-[37px] object-cover cursor-pointer"
         alt=""
-        src="/ca-2@2x.png"
+        src="/carti.png"
         onClick={onCa2ImageClick}
         style={ca2IconStyle}
       />
@@ -113,8 +113,8 @@ const MainHeader = ({
                       <span className="absolute -inset-1.5" />
                       <span className="sr-only">Open user menu</span>
                       <img
-                        className="h-8 w-8 rounded-full"
-                        src="/-icon-user.svg"
+                        className="absolute -top-3 h-15 w-12 rounded-full"
+                        src="/profile.png"
                       />
                     </Menu.Button>
                   </div>
