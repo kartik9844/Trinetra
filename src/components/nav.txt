@@ -1,0 +1,168 @@
+import { useMemo } from "react";
+import { CgProfile } from "react-icons/cg";
+import { Fragment } from 'react'
+import { Disclosure, Menu, Transition } from '@headlessui/react'
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
+
+const Navbaradmin = ({
+  dimensionCode,
+  carDimensions,
+  divframer11lg61rPosition,
+  divframer11lg61rTop,
+  divframer11lg61rLeft,
+  divframer11lg61rWidth,
+  divframer11lg61rMarginBottom,
+  maxresdefault3IconLeft,
+  maxresdefault3IconCursor,
+  frameCursor,
+  iconUserCursor,
+  onDivframer11lg61rContainerClick,
+  onMaxresdefault3ImageClick,
+  onEquipmentsTextClick,
+  onOrdersTextClick,
+  onAddTextClick,
+  onIconUserClick,
+  onUsersTextClick,
+  onSingoutClick,
+}) => {
+  const divframerWgdw54Style = useMemo(() => {
+    return {
+      position: divframer11lg61rPosition,
+      top: divframer11lg61rTop,
+      left: divframer11lg61rLeft,
+      width: divframer11lg61rWidth,
+      marginBottom: divframer11lg61rMarginBottom,
+    };
+  }, [
+    divframer11lg61rPosition,
+    divframer11lg61rTop,
+    divframer11lg61rLeft,
+    divframer11lg61rWidth,
+    divframer11lg61rMarginBottom,
+  ]);
+  
+  const divframer11lg61rStyle = useMemo(() => {
+    return {
+      left: maxresdefault3IconLeft,
+      cursor: maxresdefault3IconCursor,
+    };
+  }, [maxresdefault3IconLeft, maxresdefault3IconCursor]);
+
+  const maxresdefault3IconStyle = useMemo(() => {
+    return {
+      cursor: frameCursor,
+    };
+  }, [frameCursor]);
+
+  const addStyle = useMemo(() => {
+    return {
+      cursor: iconUserCursor,
+    };
+  }, [iconUserCursor]);
+
+  return (
+    <div
+      className="absolute top-[0px] left-[-10px] bg-white w-[1530px] h-20 text-left text-17xl text-black font-inter"
+      style={divframerWgdw54Style}
+    >
+      <div
+        className="absolute top-[calc(50%_-_50px)] left-[calc(50%_-_724.5px)] w-[252px] flex flex-row pt-[7px] px-0 pb-[3px] box-border items-center justify-between"
+        style={divframer11lg61rStyle}
+        onClick={onDivframer11lg61rContainerClick}
+      >
+        <img
+          className="relative w-[246.5px] h-[82px] object-cover"
+          alt=""
+          src={dimensionCode}
+          style={maxresdefault3IconStyle}
+          onClick={onMaxresdefault3ImageClick}
+        />
+      </div>
+      <div className="absolute top-[10px] left-[368px] w-[1031px] h-[57px] overflow-hidden flex flex-row items-start justify-start gap-[51px]">
+        <div
+          className="relative capitalize font-extrabold flex items-center w-[276px] h-[54px] shrink-0 cursor-pointer"
+          onClick={onEquipmentsTextClick}
+        >
+        
+          Equipment's
+        </div>
+        <div className="relative w-[704px] h-[57px] overflow-hidden shrink-0">
+          <div
+            className="absolute top-[3px] left-[0px] capitalize font-extrabold flex items-center w-[154px] h-[54px] cursor-pointer"
+            onClick={onOrdersTextClick}
+          >
+            Orders
+          </div>
+          <div
+            className="absolute top-[3px] left-[215px] capitalize font-extrabold flex items-center w-[155px] h-[54px] cursor-pointer"
+            onClick={onAddTextClick}
+            style={addStyle}
+          >
+            add
+          </div>
+          <img
+            className="absolute h-full w-[9.66%] top-[0%] right-[0%] bottom-[0%] left-[90.34%] max-w-full overflow-hidden max-h-full cursor-pointer"
+            alt=""
+            src={carDimensions}
+            onClick={onIconUserClick}
+          />
+          <div
+            className="absolute top-[3px] left-[380px] capitalize font-extrabold flex items-center w-[130px] h-[54px] cursor-pointer"
+            onClick={onUsersTextClick}
+          >
+            Users 
+          </div>
+          <Menu as="div" className="absoluteml-3">
+                  <div>
+                    <Menu.Button className="absolute h-[78.75%] w-[4.93%] top-4 right-[1.74%] bottom-[10%] left-[93.33%] max-w-full   bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                      <span className="absolute -inset-1.5" />
+                      <span className="sr-only">Open user menu</span>
+                      <img
+                        className="h-8 w-8 rounded-full"
+                        src="/i.png"
+                      />
+                    </Menu.Button>
+                  </div>
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-100"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-75"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-95"
+                  >
+                    <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            href="#"
+                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-black')} onClick={onIconUserClick}
+                          >
+                            Your Profile
+                          </a>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            href="#"
+                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-black')} onClick={onSingoutClick}
+                          >
+                            Sign out
+                          </a>
+                        )}
+                      </Menu.Item>
+                    </Menu.Items>
+                  </Transition>
+                </Menu>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Navbaradmin;

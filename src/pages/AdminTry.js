@@ -14,6 +14,10 @@ const AdminTry = () => {
     navigate("/orders");
   }, [navigate]);
 
+  const onSingoutClick = useCallback(() => {
+    navigate("/");
+  }, [navigate]);
+
   const onAddTextClick = useCallback(() => {
     navigate("/add-product");
   }, [navigate]);
@@ -32,7 +36,7 @@ const AdminTry = () => {
 
 
   return (
-    <div className="relative bg-dgray w-full h-[1050px] overflow-hidden">
+    <div className="relative bg-dwhite w-full h-[1050px] overflow-hidden font-poppins">
       <Navbaradmin
         dimensionCode="/maxresdefault-33@2x.png"
         carDimensions="/-icon-user.svg"
@@ -42,6 +46,7 @@ const AdminTry = () => {
         onIconUserClick={onIconUserClick}
         onUsersTextClick={onUsersTextClick}
         onMaxresdefault3ImageClick={onImageClick}
+        onSingoutClick={onSingoutClick}
       />
       <ContainerFrameRequests />
     </div>

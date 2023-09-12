@@ -15,6 +15,10 @@ const AddProduct = () => {
     navigate("/orders");
   }, [navigate]);
 
+  const onSingoutClick = useCallback(() => {
+    navigate("/");
+  }, [navigate]);
+
   const onAddTextClick = useCallback(() => {
     navigate("/add-product");
   }, [navigate]);
@@ -33,7 +37,17 @@ const AddProduct = () => {
 
   return (
     <div className="relative w-full flex flex-col items-center justify-start">
-      <Navbaradmin/>
+      <Navbaradmin
+        dimensionCode="/maxresdefault-33@2x.png"
+        carDimensions="/-icon-user.svg"
+        onEquipmentsTextClick={onEquipmentsTextClick}
+        onOrdersTextClick={onOrdersTextClick}
+        onAddTextClick={onAddTextClick}
+        onIconUserClick={onIconUserClick}
+        onUsersTextClick={onUsersTextClick}
+        onMaxresdefault3ImageClick={onImageClick}
+        onSingoutClick={onSingoutClick}
+      />
       <div className="bg-white-200 w-[1461px] h-[1340px] flex -col pt-[190px] px-5 pb-5 box-border items-center justify-start">
         <main className="w-[1250px] h-[1250px] overflow-hidden shrink-0 flex flex-row py-0.5 px-[170px] box-border items-center justify-between relative">
           <section
