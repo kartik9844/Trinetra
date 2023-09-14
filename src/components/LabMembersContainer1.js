@@ -8,42 +8,33 @@ const LabMembersContainer1 = () => {
         <div className="self-stretch flex flex-row py-5 px-0 items-start justify-center gap-[40px] text-43xl-5">
           <div className="rounded-58xl bg-dwhite w-[350px] h-[255px] flex flex-col py-3 px-0 box-border items-center justify-center gap-[20px]">
             <div className="rounded-31xl bg-gray-800 w-[100px] flex flex-col items-center justify-center">
-              <div className="self-stretch relative leading-[100px] flex items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap h-[100px] shrink-0">
-                👤
-              </div>
             </div>
-            <div className="self-stretch h-[60px] flex flex-col items-start justify-start gap-[8px] text-xl">
+            <div className="self-stretch h-[90px] flex flex-col items-start justify-start gap-[8px] text-xl">
               <div className="self-stretch relative leading-[28px]">
-                <p className="m-0">3D lab - Nandish Houti</p>
+                <p className="m-0">3D lab - Nandish Harti</p>
                 <p className="m-0">Product Design Engineer.</p>
               </div>
               <div className="self-stretch relative text-base leading-[24px] text-gray-600">
-                Email: john.doe@example.com
+                Email:Nandishharti@dfmail.org
               </div>
             </div>
           </div>
           <div className="rounded-58xl bg-dwhite w-[350px] h-[255px] flex flex-col py-3 px-0 box-border items-center justify-center gap-[20px]">
             <div className="rounded-31xl bg-gray-800 w-[100px] flex flex-col items-center justify-center">
-              <div className="self-stretch relative leading-[100px] flex items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap h-[100px] shrink-0">
-                👤
-              </div>
             </div>
             <div className="self-stretch flex flex-col items-start justify-start gap-[8px] text-xl">
               <div className="self-stretch relative leading-[28px] inline-block h-[59px] shrink-0">
-                <p className="m-0">Mech lab - Nandish Houti</p>
+                <p className="m-0">Mech lab - Nandish Harti</p>
                 <p className="m-0">Product Design Engineer.</p>
                 <p className="m-0">{` `}</p>
               </div>
               <div className="self-stretch relative text-base leading-[24px] text-gray-600">
-                Email: jane.smith@example.com
+                Email:Nandishharti@dfmail.org
               </div>
             </div>
           </div>
           <div className="rounded-58xl bg-dwhite w-[350px] h-[255px] flex flex-col py-3 px-0 box-border items-center justify-center gap-[20px]">
-            <div className="rounded-31xl bg-gray-800 w-[100px] flex flex-col items-center justify-center">
-              <div className="self-stretch relative leading-[100px] flex items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap h-[100px] shrink-0">
-                👤
-              </div>
+            <div className="rounded-31xl bg-gray-800 w-[100px] flex flex-col items-center justify-center">  
             </div>
             <div className="self-stretch flex flex-col items-start justify-start gap-[8px] text-xl">
               <div className="self-stretch relative leading-[28px]">
@@ -51,7 +42,7 @@ const LabMembersContainer1 = () => {
                 <p className="m-0">Product Engineer.</p>
               </div>
               <div className="self-stretch relative text-base leading-[24px] text-gray-600">
-                Email: omkarbhatia@dfmail.org
+                Email: Omkarbhatia@dfmail.org
               </div>
             </div>
           </div>

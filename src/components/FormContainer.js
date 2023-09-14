@@ -19,7 +19,7 @@ const FormContainer = () => {
       <div className="flex-1 overflow-hidden flex flex-row py-14 pr-[155.7999725341797px] pl-[155.8000030517578px] items-center justify-center">
         <div className="w-[400px] h-[488px] flex flex-col items-start justify-start gap-[19px] max-w-[2018px]">
           <div className="w-[400px] flex flex-row items-start justify-start">
-            <h1 className="m-0 relative text-inherit tracking-[-2px] leading-[60px] font-bold font-inherit inline-block max-w-[400px]">
+            <h1 className="m-0 relative top-[20px] tracking-[-2px] leading-[60px] font-bold font-popins inline-block max-w-[400px]">
               <p className="m-0">{`Shape your `}</p>
               <p className="m-0">{`imagination. `}</p>
             </h1>
