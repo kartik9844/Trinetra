@@ -41,11 +41,11 @@ const Desktop2 = () => {
       </header>
       <section className=" w-[1021px] h-[682px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[24px] text-left text-30xl text-gray font-poppins">
         
-        <div className="absolute left-60 rounded-23xl bg-dodgerblue w-[340px] h-[410px] flex flex-col pt-[38px] pb-[2.971099853515625px] pr-[48px] pl-12 box-border items-start justify-start gap-[23px] ml-[376px] text-xl text-white">
+        <div className="absolute left-60 rounded-23xl bg-dodgerblue w-[340px] h-[410px] flex flex-col pt-[35px] pb-[2.971099853515625px] pr-[48px] pl-12 box-border items-start justify-start gap-[23px] ml-[376px] text-xl text-white">
           <div className="relative -top-4 left-0 w-[250px] h-[91px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[6px]">
             <div className="relative -left-5 capitalize inline-block h-[30px] ml-5">
               <b>Email</b>
-              <b className="font-inter text-firebrick">*</b>
+              <b className="font-popins text-firebrick">*</b>
             </div>
             <Form.Group className="[border:none] bg-[transparent] self-stretch h-[55px] ml-0">
               <Form.Control type="text" placeholder="Enter your email" />
@@ -56,7 +56,7 @@ const Desktop2 = () => {
             <div className="relative -top-12 -left-[0px] w-[250px] h-[91px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[6px]">
             <div className="relative -left-5 capitalize inline-block h-[30px] ml-5">
               <b>Password</b>
-              <b className="font-inter text-firebrick">*</b>
+              <b className="font-popins text-firebrick">*</b>
             </div>
             <Form.Group className="[border:none] bg-[transparent] self-stretch h-[55px] ml-0">
               <Form.Control type="text" placeholder="Enter your password" />
@@ -64,11 +64,11 @@ const Desktop2 = () => {
           </div>
             {/* </div> */}
             <div className="relative -top-10
-             only:w-[600px] h-[212.03px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[19px] text-black font-fresca">
+             only:w-[600px] h-[212.03px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[19px] text-black font-fresca font-thin">
               <div className="w-[500px] h-[77px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[5px]">
-                <div className="w-[150px] h-[26.5px] overflow-hidden shrink-0 flex flex-row items-center justify-start gap-[9px] ml-3.5">
+                <div className="w-[200px] h-[26.5px] overflow-hidden shrink-0 flex flex-row items-center justify-start gap-[9px] ml-3.5">
                   <Form.Check className="relative" />
-                  <div className="relative capitalize inline-block  -top-1 w-[131.07px] h-[23.03px] shrink-0">
+                  <div className="relative capitalize inline-block -top-1 w-[200px] h-[23.03px] shrink-0">
                     {" "}
                     remember me
                   </div>
@@ -76,7 +76,7 @@ const Desktop2 = () => {
                 <div className="realtive left-20  
                 w-[480px] h-[45px] overflow-hidden shrink-0 flex flex-col items-end justify-center ml-[21px]">
                   <Form.Group className="text-blue-600 w-[468px] [border:none] bg-[transparent]">
-                  <Button variant="dark" className="relative -top-1 -left-[10px] w-[210px]" onClick={onSignUpContainerClick}>Login</Button>
+                  <Button variant="dark"className="relative -top-1 -left-[10px] w-[210px]" onClick={onSignUpContainerClick}>Login</Button>
                   
                   </Form.Group>
                   
@@ -85,15 +85,15 @@ const Desktop2 = () => {
               <div className="w-[550px] h-[123.03px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[18px] text-2xl">
                 <div className="relative w-[150px] h-[10px] -left-20">
                   <img
-                    className="absolute top-[10.5px] left-[7px] right-[6px] rounded-23xl w-[160px] h-px"
+                    className="absolute top-[13px] left-[11px] rounded-23xl w-[150px] h-px"
                     alt=""
                     src="/line-11.svg"
                   />
-                  <div className="absolute top-[0px] left-[170px] capitalize inline-block w-[117.22px] h-[23.03px]">
+                  <div className="absolute -top-[1px] left-[161px] capitalize inline-block w-[260px] h-[23.03px]">
                     Or,Login with
                   </div>
                   <img
-                    className="absolute top-[10.5px] left-[280px] w-[90px] h-1"
+                    className="absolute top-[11px] left-[272px] w-[70px] h-1"
                     alt=""
                     src="/line-21.svg"
                   />
@@ -104,15 +104,15 @@ const Desktop2 = () => {
                     onClick={onGoogleContainerClick}
                   >
                     <img
-                      className="relative rounded-23xl w-8 h-8 -left-[90px] object-cover"
+                      className="relative rounded-23xl w-7 h-7 -left-[90px] object-cover"
                       alt=""
                       src="/google-logo@2x.png"
                     />
-                    <h3 className="m-0 relative -left-[110px] text-inherit capitalize font-normal font-inherit inline-block w-[263.87px] h-[33.87px] shrink-0">
+                    <h3 className="m-0 relative -top-[5px] -left-[120px]  text-inherit capitalize font-extralight font-popins inline-block w-[270px] h-[20px] -left-[10px] shrink-0">
                       Login with Google
                     </h3>
                   </div>
-                  <div className=" relative -left-[140px]  text-[13px] inline-block w-[320.2px] h-[23.028894424438477px] shrink-0 ml-36 text-white font-poppins" onClick={onIfYouHaveClick}>
+                  <div className=" relative -left-[135px]  text-[13px] inline-block w-[320.2px] h-[23.028894424438477px] shrink-0 ml-36 text-white font-poppins" onClick={onIfYouHaveClick}>
                     <span>
                       <span>
                         <span className="capitalize">{`Don’t `}</span>
@@ -124,7 +124,7 @@ const Desktop2 = () => {
                         <span className="capitalize">ount?</span>
                       </span>
                       <span className="capitalize">
-                        <span className="font-fresca">{` `}</span>
+                        <span className="font-popins">{` `}</span>
                       </span>
                     </span>
                     <span className="[text-decoration:underline] text-black">
