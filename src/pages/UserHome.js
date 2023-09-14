@@ -34,7 +34,7 @@ const UserHome = () => {
   }, [navigate]);
 
   return (
-    <div className="relative bg-dwhite w-full h-[1024px] overflow-hidden text-left text-17xl text-black font-poppins">
+    <div className="relative bg-dwhite w-full h-[1024px] overflow-hidden text-left text-17xl text-black font-popins">
       <div className="absolute top-[230px] left-[99px] bg-gainsboro-200 w-[1260px] h-[310px] hidden" />
       <div className="absolute top-[154px] left-[0px] w-[376px] overflow-hidden flex flex-col items-end justify-center">
         <div className="relative font-extrabold">Rented Products</div>

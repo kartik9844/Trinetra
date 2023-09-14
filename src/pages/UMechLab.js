@@ -42,7 +42,7 @@ const UMechLab = () => {
   }, [navigate]);
 
   return (
-    <div className="relative w-full h-[1024px] text-center text-mini text-black font-roboto">
+    <div className="relative w-full h-[1024px] text-center text-mini text-black font-popins">
       <div className="absolute top-[-3px] left-[0px] w-[1441px] overflow-hidden flex flex-col items-end justify-center">
         <div className="bg-dwhite w-[1440px] h-[1027px] flex flex-col pt-[58px] pb-0 pr-0 pl-[220px] box-border items-center justify-start relative">
           <div className="self-stretch my-0 mx-[!important] absolute h-[calc(100%_-_79px)] top-[79px] bottom-[0px] left-[0px] bg-gray-800 overflow-hidden flex flex-col py-3 px-0 box-border items-center justify-start z-[0]">

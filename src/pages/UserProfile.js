@@ -36,7 +36,7 @@ const UserProfile = () => {
   }, [navigate]);
 
   return (
-    <div className="relative w-full h-[1003px] text-left text-17xl text-black font-poppins">
+    <div className="relative w-full h-[1003px] text-left text-17xl text-black font-popins">
       <div className="absolute top-[18px] left-[-2px] w-[1442px] h-[985px]">
         <div className="absolute top-[0px] left-[2px] bg-dwhite w-[1440px] h-[985px] flex flex-col pt-20 pb-0 pr-0 pl-[220px] box-border items-center justify-center">
           <div className="relative -top-[300px] w-[1121px] h-[192px] z-[0]">
@@ -74,7 +74,7 @@ const UserProfile = () => {
                   😃
                 </div>
               </div>
-              <div className="flex-1 relative text-6xl [text-decoration:underline] leading-[20px] font-medium font-poppins text-left">
+              <div className="flex-1 relative text-6xl [text-decoration:underline] leading-[20px] font-medium font-popins text-left">
                 Account
               </div>
             </div>
@@ -84,7 +84,7 @@ const UserProfile = () => {
                   😃
                 </div>
               </div>
-              <div className="flex-1 relative text-8xl leading-[20px] font-medium font-poppins text-left">
+              <div className="flex-1 relative text-8xl leading-[20px] font-medium font-popins text-left">
                 Profile
               </div>
             </div>

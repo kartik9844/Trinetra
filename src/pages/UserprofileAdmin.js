@@ -5,10 +5,7 @@ import { getFirestore,doc,getDocs,collection,query,where, } from "firebase/fires
 import Navbaradmin from "../components/Navbaradmin";
 import React, { useEffect, useState } from 'react';
 
-<<<<<<< HEAD
-=======
 
->>>>>>> e978f8d8fa511cf28e254fd208b3c0242bb16ca9
 const firebaseConfig = {
   apiKey: "AIzaSyDgsAqy58Q2pjFSMzmxie2EFAgcFDTj_E4",
   authDomain: "infinity-3f957.firebaseapp.com",

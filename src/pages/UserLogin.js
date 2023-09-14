@@ -82,7 +82,7 @@ const Desktop2 = () => {
       <header className="w-[1518px] overflow-hidden flex flex-col items-start justify-center text-left text-base text-black font-popins">
         <HeaderTop1/>
       </header>
-      <section className=" w-[1021px] h-[682px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[24px] text-left text-30xl text-gray font-poppins">
+      <section className=" w-[1021px] h-[682px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[24px] text-left text-30xl text-gray font-popins">
         
         <div className="absolute left-60 rounded-23xl bg-dodgerblue w-[340px] h-[410px] flex flex-col pt-[35px] pb-[2.971099853515625px] pr-[48px] pl-12 box-border items-start justify-start gap-[23px] ml-[376px] text-xl text-white">
           <div className="relative -top-4 left-0 w-[250px] h-[91px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[6px]">
