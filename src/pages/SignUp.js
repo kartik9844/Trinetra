@@ -1,14 +1,44 @@
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import HeaderTop1 from "../components/HeaderTop1";
-import { Auth,provider, signInWithPopup } from "firebase/auth";
+import { auth,provider} from "../components/firebase";
+import {signInWithPopup} from "firebase/auth";
+import Register from "./Register";
+
 
 
 const Desktop2 = () => {
   const navigate = useNavigate();
+  const [value,setvalue]= useState("")
+
+  const handleclick = () => {
+
+    signInWithPopup(auth, provider)
+      .then((data) => {
+        // Success
+        setvalue(data.user.email);
+        localStorage.setItem("email",data.user.email);
+        onGoogleContainerClick();
+  
+      }).catch((error) => {
+        // Error
+        alert("Google sign in failed. Please try again.");
+        
+      });
+  
+  }
+  
+
+  // const handleclick =()=>{
+  //   signInWithPopup(auth,provider).then((data)=>{
+  //     setvalue(data.user.email)
+  //     localStorage.setItem("email",data.user.email)
+  //     onGoogleContainerClick();
+  // })
+  // }
 
   const onSignUpContainerClick = useCallback(() => {
     navigate("/register");
@@ -34,7 +64,9 @@ const Desktop2 = () => {
     navigate("/");
   }, [navigate]);
 
-  
+  useEffect(()=>{
+    setvalue(localStorage.getItem("email"))
+  })
 
   return (
     <div className="relative w-full h-[1024px] overflow-hidden flex flex-col py-0 px-px box-border items-start justify-start gap-[54px] bg-[url('/public/admin-login@3x.png')] bg-cover bg-no-repeat bg-[top]">
@@ -43,7 +75,7 @@ const Desktop2 = () => {
       </header>
       <section className=" w-[1021px] h-[682px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[24px] text-left text-30xl text-gray font-poppins">
         
-        <div className="absolute rounded-23xl bg-dodgerblue w-[640px] h-[510px] flex flex-col pt-[38px] pb-[2.971099853515625px] pr-[47px] pl-12 box-border items-start justify-start gap-[23px] ml-[376px] text-xl text-white">
+        <div className="absolute square bg-dodgerblue w-[640px] h-[510px] flex flex-col pt-[38px] pb-[2.971099853515625px] pr-[47px] pl-12 box-border items-start justify-start gap-[23px] ml-[376px] text-xl text-white">
           <div className="relative -top-4 left-6 w-[485px] h-[91px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[6px]">
             <div className="relative -left-5 capitalize inline-block h-[30px] ml-5">
               <b>Email</b>
@@ -116,9 +148,11 @@ const Desktop2 = () => {
                   />
                 </div>
                 <div className="w-[500px] h-[82.03px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[11px] text-8xl">
+                {/* {value?<Register/>: */}
+                  
                   <div
                     className="rounded-23xl bg-slateblue w-[461px] h-12 flex flex-row pt-[8.009942054748535px] pb-[8.010161399841309px] pr-[71.39656829833984px] pl-[54px] box-border items-center justify-start gap-[29px] cursor-pointer ml-[39px]"
-                    onClick={onGoogleContainerClick}
+                    onClick={handleclick}
                   >
                     <img
                       className="relative rounded-23xl w-10 h-10 object-cover"
@@ -129,6 +163,7 @@ const Desktop2 = () => {
                       Sign up with google
                     </h3>
                   </div>
+                  
                   <div className="text-[15px] inline-block w-[344.2px] h-[23.028894424438477px] shrink-0 ml-36 text-white font-poppins">
                     <span>
                       <span>
