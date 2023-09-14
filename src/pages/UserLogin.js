@@ -1,12 +1,55 @@
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import HeaderTop1 from "../components/HeaderTop1";
+import { auth,provider} from "../components/firebase";
+import {signInWithPopup} from "firebase/auth";
 
 const Desktop2 = () => {
   const navigate = useNavigate();
+  const [value,setvalue]= useState("")
+  const handleclick = () => {
+
+    // signInWithPopup(auth, provider)
+    //   .then((data) => {
+    //     // Success
+    //     setvalue(data.user.email);
+    //     localStorage.setItem("email",data.user.email);
+    //     onGoogleContainerClick();
+  
+    //   }).catch((error) => {
+    //     // Error
+    //     alert("Google sign in failed. Please try again.");
+        
+    //   });
+    signInWithPopup(auth, provider)
+  .then((result) => {
+    // Google sign in succeeded.
+    
+    // Check if user already exists.
+    const user = result.user;
+    if (user.metadata.creationTime === user.metadata.lastSignInTime) {
+      // This is a new user.
+      newuserClick();
+    } else {
+      // This is an existing user.
+      setvalue(data.user.email);
+      localStorage.setItem("email",data.user.email);
+      onGoogleContainerClick();
+    }
+
+  })
+  .catch((error) => {
+    // Handle error.
+  });
+  
+  }
+ 
+  const newuserClick = useCallback(() => {
+    navigate("/register");
+  }, [navigate]);
 
   const onSignUpContainerClick = useCallback(() => {
     navigate("/user-home");
@@ -101,7 +144,7 @@ const Desktop2 = () => {
                 <div className="w-[500px] h-[82.03px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[11px] text-8xl">
                   <div
                     className="rounded-23xl bg-slateblue w-[450px] h-12  flex flex-row pt-[8.009942054748535px] pb-[8.010161399841309px] pr-[71.39656829833984px] pl-[54px] box-border items-center justify-start gap-[29px] cursor-pointer ml-[39px]"
-                    onClick={onGoogleContainerClick}
+                    onClick={handleclick}
                   >
                     <img
                       className="relative rounded-23xl w-7 h-7 -left-[90px] object-cover"
