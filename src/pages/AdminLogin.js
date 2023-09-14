@@ -35,12 +35,7 @@ const Desktop2 = () => {
   
 
   return (
-<<<<<<< HEAD
     <div className="relative w-full h-[1024px] overflow-hidden flex flex-col py-0 px-px box-border items-start justify-start gap-[54px] bg-[url('/public/admin-login@3x.png')] bg-cover bg-no-repeat bg-[top]font-popins">
-=======
-    <div className="relative w-full h-[1024px] overflow-hidden flex flex-col py-0 px-px box-border items-start justify-start gap-[54px] bg-[url('/public/admin-login@3x.png')]  bg-cover bg-no-repeat bg-[top]font-popins">
-     
->>>>>>> 0d55bb79a7a63fd9a4905f821aa92583d13c5e7e
       <header className="w-[1518px] overflow-hidden flex flex-col items-start justify-center text-left text-base text-black font-popins">
         <HeaderTop1/>
       </header>
