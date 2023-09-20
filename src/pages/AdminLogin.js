@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-
+import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
@@ -7,6 +7,11 @@ import HeaderTop1 from "../components/HeaderTop1";
 
 const Desktop2 = () => {
   const navigate = useNavigate();
+  const [isValid, setIsValid] = useState(false);
+  const [email, setEmail] = useState(""); 
+  const [password, setPassword] = useState(""); 
+  const adminEmail = "admin@example.com";
+const adminPassword = "password123";
 
   const onSignUpContainerClick = useCallback(() => {
     navigate("/admin-try");
@@ -32,6 +37,19 @@ const Desktop2 = () => {
     navigate("/");
   }, [navigate]);
 
+  const handleSubmit = () => {
+
+    // Validate form
+    if(email === adminEmail && password === adminPassword) {
+      setIsValid(true);
+      onSignUpContainerClick();
+      // Navigate on success 
+    } else {
+      setIsValid(false);
+      alert("Incorrect email or password");
+    }
+  
+  }
   
 
   return (
@@ -48,7 +66,8 @@ const Desktop2 = () => {
               <b className="font-popins text-firebrick">*</b>
             </div>
             <Form.Group className="[border:none] bg-[transparent] self-stretch h-[55px] ml-0">
-              <Form.Control type="text" placeholder="Enter your email" />
+              <Form.Control type="text" placeholder="Enter your email" value={email}
+  onChange={e => setEmail(e.target.value)} />
             </Form.Group>
           </div>
           <div >
@@ -59,7 +78,8 @@ const Desktop2 = () => {
               <b className="font-popins text-firebrick">*</b>
             </div>
             <Form.Group className="[border:none] bg-[transparent] self-stretch h-[55px] ml-0">
-              <Form.Control type="password" placeholder="Enter your password" />
+              <Form.Control type="password" placeholder="Enter your password" value={password}
+  onChange={e => setPassword(e.target.value)} />
             </Form.Group>
           </div>
             {/* </div> */}
@@ -76,11 +96,12 @@ const Desktop2 = () => {
                 <div className="realtive left-20  
                 w-[480px] h-[45px] overflow-hidden shrink-0 flex flex-col items-end justify-center ml-[21px]">
                   <Form.Group className="text-blue-600 w-[468px] [border:none] bg-[transparent]">
-                  <Button variant="dark"className="relative -top-1 -left-[10px] w-[210px]" onClick={onSignUpContainerClick}>Login</Button>
+                  <Button variant="dark"className="relative -top-1 -left-[10px] w-[210px]" onClick={handleSubmit}>Login</Button>
                   
                   </Form.Group>
                   
                 </div>
+                
               </div>
               <div className="w-[550px] h-[123.03px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[18px] text-2xl">
                 <div className="relative w-[150px] h-[10px] -left-20">
