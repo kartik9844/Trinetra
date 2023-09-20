@@ -49,59 +49,174 @@ const AddProduct = () => {
         onSingoutClick={onSingoutClick}
       />
       <div className="bg-white-200 w-[1461px] h-[1340px] flex -col pt-[190px] px-5 pb-5 box-border items-center justify-start">
-        <main className="w-[1250px] h-[1250px] overflow-hidden shrink-0 flex flex-row py-0.5 px-[170px] box-border items-center justify-between relative">
-          <section
-            className="bg-dgray w-[1275px] h-[1240px] flex flex-col items-center justify-start gap-[45px] z-[0] text-center text-21xl text-black font-popins"
-            id="main"
-          >
-            <b className="relative leading-[48px] inline-block w-[520px]">
-              Add Equipment
-            </b>
-            <NameInputContainer fullname="Name" inputLabel="Enter name" />
-            <StatusSelectionContainer componentStatus="Status" />
-            <StatusSelectionContainer
-              componentStatus="Lab"
-              propBackgroundColor="#272c30"
-            />
-            <NameInputContainer fullname="Make" inputLabel="Enter make" />
-            <NameInputContainer
-              fullname="Model No."
-              inputLabel="Enter model number"
-            />
-            <NameInputContainer
-              fullname="Quantity"
-              inputLabel="Enter quantity"
-            />
-            <NameInputContainer
-              fullname="Asset No."
-              inputLabel="Enter asset number"
-            />
-            <NameInputContainer
-              fullname="Per Hour Cost"
-              inputLabel="Enter cost per hour"
-            />
-            <NameInputContainer
-              fullname="Per Day Cost"
-              inputLabel="Enter cost per day"
-            />
-            <NameInputContainer
-              fullname="Per Month Cost"
-              inputLabel="Enter cost per month"
-            />
-            <div className="w-[270px] overflow-hidden flex flex-col items-start justify-start text-17xl text-dwhite">
-              <div className="self-stretch rounded-lg bg-dgreen flex flex-col p-3 items-center justify-center">
-                <div className="self-stretch relative leading-[30px] font-medium">
-                  Add Equipment
+      <form>
+      <div className="space-y-12">
+        <div className="border-b border-gray-900/10 pb-12">
+          <h2 className="text-base font-semibold leading-7 text-gray-900">Profile</h2>
+          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+            <div className="sm:col-span-4">
+              <label htmlFor="username" className="block text-sm font-medium leading-6 text-black">
+                Username
+              </label>
+              <div className="mt-2">
+                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                  <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    autoComplete="username"
+                    className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                    placeholder="name"
+                  />
                 </div>
               </div>
             </div>
-          </section>
-          <img
-            className="absolute my-0 mx-[!important] w-full right-[0px] bottom-[0px] left-[0px] max-w-full overflow-hidden h-[0.5px] z-[1]"
-            alt=""
-            src="/vector-200.svg"
-          />
-        </main>
+          </div>
+        </div>
+
+        <div className="border-b border-gray-900/10 pb-12">
+          <h2 className="text-base font-semibold leading-7 text-black">Personal Information</h2>
+          <p className="mt-1 text-sm leading-6 text-black">Use a permanent address where you can receive mail.</p>
+
+          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+            <div className="sm:col-span-3">
+              <label htmlFor="first-name" className="block text-sm font-medium leading-6 text-black">
+                First name
+              </label>
+              <div className="mt-2">
+                <input
+                  type="text"
+                  name="first-name"
+                  id="first-name"
+                  autoComplete="given-name"
+                  className="block w-full rounded-md border-0 py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+
+            <div className="sm:col-span-3">
+              <label htmlFor="last-name" className="block text-sm font-medium leading-6 text-black">
+                Last name
+              </label>
+              <div className="mt-2">
+                <input
+                  type="text"
+                  name="last-name"
+                  id="last-name"
+                  autoComplete="family-name"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+
+            <div className="sm:col-span-4">
+              <label htmlFor="email" className="block text-sm font-medium leading-6 text-black">
+                Email address
+              </label>
+              <div className="mt-2">
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+
+            <div className="sm:col-span-3">
+              <label htmlFor="country" className="block text-sm font-medium leading-6 text-black">
+                Country
+              </label>
+              <div className="mt-2">
+                <select
+                  id="country"
+                  name="country"
+                  autoComplete="country-name"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                >
+                  <option>United States</option>
+                  <option>Canada</option>
+                  <option>Mexico</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="col-span-full">
+              <label htmlFor="street-address" className="block text-sm font-medium leading-6 text-gray-900">
+                Street address
+              </label>
+              <div className="mt-2">
+                <input
+                  type="text"
+                  name="street-address"
+                  id="street-address"
+                  autoComplete="street-address"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+
+            <div className="sm:col-span-2 sm:col-start-1">
+              <label htmlFor="city" className="block text-sm font-medium leading-6 text-gray-900">
+                City
+              </label>
+              <div className="mt-2">
+                <input
+                  type="text"
+                  name="city"
+                  id="city"
+                  autoComplete="address-level2"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+
+            <div className="sm:col-span-2">
+              <label htmlFor="region" className="block text-sm font-medium leading-6 text-gray-900">
+                State / Province
+              </label>
+              <div className="mt-2">
+                <input
+                  type="text"
+                  name="region"
+                  id="region"
+                  autoComplete="address-level1"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+
+            <div className="sm:col-span-2">
+              <label htmlFor="postal-code" className="block text-sm font-medium leading-6 text-gray-900">
+                ZIP / Postal code
+              </label>
+              <div className="mt-2">
+                <input
+                  type="text"
+                  name="postal-code"
+                  id="postal-code"
+                  autoComplete="postal-code"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-6 flex items-center justify-end gap-x-6">
+        <button type="button" className="text-sm font-semibold leading-6 text-gray-900">
+          Cancel
+        </button>
+        <button
+          type="submit"
+          className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        >
+          Save
+        </button>
+      </div>
+    </form>
       </div>
     </div>
   );
