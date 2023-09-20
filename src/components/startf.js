@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
-import { doc, setDoc, Timestamp } from "firebase/firestore";
+
+import { doc, setDoc, Timestamp, addDoc, collection} from "firebase/firestore";
 import {db} from '../components/firebase';
 
 const StartupForm = () => {
@@ -35,9 +35,33 @@ const StartupForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Handle form submission logic here
+    const docData = {
+      Email: formData.email,
+      WhoAreYou: formData.whoAreYou,
+      FounderName: formData.founderName,
+      StartupName: formData.startupName,
+      FounderEmail: formData.founderEmail,
+      PhoneNumber: formData.phoneNumber,
+      HasFemaleCoFounder: formData.hasFemaleCoFounder,
+      StartupSector: formData.startupSector,
+      StartupStage: formData.startupStage,
+      FounderLinkedInId: formData.founderLinkedInId,
+      StartupWebsite: formData.startupWebsite,
+      IsRegistered: formData.isRegistered,
+      RegistrationYear: formData.registrationYear,
+      ProblemStatement: formData.problemStatement,
+      PrototypingSupport: formData.prototypingSupport,
+      ProjectCompletionTime: formData.projectCompletionTime,
+      ProjectBudget: formData.projectBudget,
+      LabSupport: formData.labSupport,
+      HowDidYouKnow: formData.howDidYouKnow,
+      AwareOfCharges: formData.awareOfCharges, 
+    };
+    const docRef = await addDoc(collection(db, "User profile"), docData);
+    console.log("Document written with ID: ", docRef.id);
     console.log(formData);
   };
 
