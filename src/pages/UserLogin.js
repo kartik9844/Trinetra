@@ -1,55 +1,12 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import HeaderTop1 from "../components/HeaderTop1";
-import { auth,provider} from "../components/firebase";
-import {signInWithPopup} from "firebase/auth";
 
 const Desktop2 = () => {
   const navigate = useNavigate();
-  const [value,setvalue]= useState("")
-  const handleclick = () => {
-
-    // signInWithPopup(auth, provider)
-    //   .then((data) => {
-    //     // Success
-    //     setvalue(data.user.email);
-    //     localStorage.setItem("email",data.user.email);
-    //     onGoogleContainerClick();
-  
-    //   }).catch((error) => {
-    //     // Error
-    //     alert("Google sign in failed. Please try again.");
-        
-    //   });
-    signInWithPopup(auth, provider)
-  .then((result) => {
-    // Google sign in succeeded.
-    
-    // Check if user already exists.
-    const user = result.user;
-    if (user.metadata.creationTime === user.metadata.lastSignInTime) {
-      // This is a new user.
-      newuserClick();
-    } else {
-      // This is an existing user.
-      setvalue(data.user.email);
-      localStorage.setItem("email",data.user.email);
-      onGoogleContainerClick();
-    }
-
-  })
-  .catch((error) => {
-    // Handle error.
-  });
-  
-  }
- 
-  const newuserClick = useCallback(() => {
-    navigate("/register");
-  }, [navigate]);
 
   const onSignUpContainerClick = useCallback(() => {
     navigate("/user-home");
@@ -82,7 +39,7 @@ const Desktop2 = () => {
       <header className="w-[1518px] overflow-hidden flex flex-col items-start justify-center text-left text-base text-black font-popins">
         <HeaderTop1/>
       </header>
-      <section className=" w-[1021px] h-[682px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[24px] text-left text-30xl text-gray font-popins">
+      <section className=" w-[1021px] h-[682px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[24px] text-left text-30xl text-gray font-poppins">
         
         <div className="absolute left-60 rounded-23xl bg-dodgerblue w-[340px] h-[410px] flex flex-col pt-[35px] pb-[2.971099853515625px] pr-[48px] pl-12 box-border items-start justify-start gap-[23px] ml-[376px] text-xl text-white">
           <div className="relative -top-4 left-0 w-[250px] h-[91px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[6px]">
@@ -102,7 +59,7 @@ const Desktop2 = () => {
               <b className="font-popins text-firebrick">*</b>
             </div>
             <Form.Group className="[border:none] bg-[transparent] self-stretch h-[55px] ml-0">
-              <Form.Control type="text" placeholder="Enter your password" />
+              <Form.Control type="password" placeholder="Enter your password" />
             </Form.Group>
           </div>
             {/* </div> */}
@@ -144,7 +101,7 @@ const Desktop2 = () => {
                 <div className="w-[500px] h-[82.03px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[11px] text-8xl">
                   <div
                     className="rounded-23xl bg-slateblue w-[450px] h-12  flex flex-row pt-[8.009942054748535px] pb-[8.010161399841309px] pr-[71.39656829833984px] pl-[54px] box-border items-center justify-start gap-[29px] cursor-pointer ml-[39px]"
-                    onClick={handleclick}
+                    onClick={onGoogleContainerClick}
                   >
                     <img
                       className="relative rounded-23xl w-7 h-7 -left-[90px] object-cover"

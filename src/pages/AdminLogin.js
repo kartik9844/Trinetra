@@ -59,7 +59,7 @@ const Desktop2 = () => {
               <b className="font-popins text-firebrick">*</b>
             </div>
             <Form.Group className="[border:none] bg-[transparent] self-stretch h-[55px] ml-0">
-              <Form.Control type="text" placeholder="Enter your password" />
+              <Form.Control type="password" placeholder="Enter your password" />
             </Form.Group>
           </div>
             {/* </div> */}
@@ -112,7 +112,7 @@ const Desktop2 = () => {
                       Login with Google
                     </h3>
                   </div>
-                  <div className=" relative -left-[135px]  text-[13px] inline-block w-[320.2px] h-[23.028894424438477px] shrink-0 ml-36 text-white font-poppins" onClick={onIfYouHaveClick}>
+                  <div className=" relative -left-[135px]  text-[13px] inline-block w-[320.2px] h-[23.028894424438477px] shrink-0 ml-36 text-white font-popins" onClick={onIfYouHaveClick}>
                     <span>
                       <span>
                         <span className="capitalize">{`Don’t `}</span>

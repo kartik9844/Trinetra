@@ -35,7 +35,7 @@ const Cart = () => {
   }, [navigate]);
 
   return (
-    <div className="relative bg-dwhite w-full h-[1024px] overflow-hidden text-left text-17xl text-black font-poppins">
+    <div className="relative bg-dwhite w-full h-[1024px] overflow-hidden text-left text-17xl text-black font-popins">
     <MainHeader
         propCursor="pointer"
         propCursor1="unset"
