@@ -112,7 +112,7 @@ const Desktop2 = () => {
                       Login with Google
                     </h3>
                   </div>
-                  <div className=" relative -left-[135px]  text-[13px] inline-block w-[320.2px] h-[23.028894424438477px] shrink-0 ml-36 text-white font-poppins" onClick={onIfYouHaveClick}>
+                  <div className=" relative -left-[135px]  text-[13px] inline-block w-[320.2px] h-[23.028894424438477px] shrink-0 ml-36 text-white font-popins" onClick={onIfYouHaveClick}>
                     <span>
                       <span>
                         <span className="capitalize">{`Don’t `}</span>

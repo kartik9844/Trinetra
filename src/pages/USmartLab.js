@@ -83,7 +83,7 @@ const USmartLab = () => {
                 </div>
               </div>
               <div
-                className="relative text-6xl leading-[20px] font-medium font-poppins text-left inline-block w-36 shrink-0 cursor-pointer"
+                className="relative text-6xl leading-[20px] font-medium font-popins text-left inline-block w-36 shrink-0 cursor-pointer"
                 onClick={onTitleText2Click}
               >
                 3D Lab

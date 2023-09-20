@@ -73,7 +73,7 @@ const Desktop2 = () => {
       <header className="w-[1518px] overflow-hidden flex flex-col items-start justify-center text-left text-base text-black font-inter">
         <HeaderTop1/>
       </header>
-      <section className=" w-[1021px] h-[682px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[24px] text-left text-30xl text-gray font-poppins">
+      <section className=" w-[1021px] h-[682px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[24px] text-left text-30xl text-gray font-popins">
         
         <div className="absolute square bg-dodgerblue w-[640px] h-[510px] flex flex-col pt-[38px] pb-[2.971099853515625px] pr-[47px] pl-12 box-border items-start justify-start gap-[23px] ml-[376px] text-xl text-white">
           <div className="relative -top-4 left-6 w-[485px] h-[91px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[6px]">
@@ -164,7 +164,7 @@ const Desktop2 = () => {
                     </h3>
                   </div>
                   
-                  <div className="text-[15px] inline-block w-[344.2px] h-[23.028894424438477px] shrink-0 ml-36 text-white font-poppins">
+                  <div className="text-[15px] inline-block w-[344.2px] h-[23.028894424438477px] shrink-0 ml-36 text-white font-popins">
                     <span>
                       <span>
                         <span className="capitalize">{`Don’t `}</span>

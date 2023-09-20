@@ -18,10 +18,10 @@ const RegisterFrom = () => {
   }, [navigate]);
 
   return (
-    <div className="relative bg-lavender w-full h-[6137px] overflow-hidden text-left text-5xl text-gray-300 font-roboto">
+    <div className="relative bg-lavender w-full h-[6137px] overflow-hidden text-left text-5xl text-gray-300 font-popins">
       <HeaderTop1/>
       <div className="absolute top-[150
-        px] left-[402px] w-[636px] overflow-hidden flex flex-col items-end justify-center text-30xl text-black font-inter">
+        px] left-[402px] w-[636px] overflow-hidden flex flex-col items-end justify-center text-30xl text-black font-popins">
         <b className="relative uppercase inline-block w-[601px] h-[68px] shrink-0">
           {" "}
           Registration form

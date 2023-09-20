@@ -35,7 +35,7 @@ const AdminProfile = () => {
   }, [navigate]);
 
   return (
-    <div className="relative w-full flex flex-col items-center justify-center text-left text-17xl text-black font-poppins">
+    <div className="relative w-full flex flex-col items-center justify-center text-left text-17xl text-black font-popins">
       <Navbaradmin
         dimensionCode="/maxresdefault-33@2x.png"
         carDimensions="/-icon-user.svg"
