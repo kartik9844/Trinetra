@@ -9,11 +9,11 @@ const Desktop2 = () => {
   const navigate = useNavigate();
 
   const onSignUpContainerClick = useCallback(() => {
-    navigate("/user-home");
+    navigate("/admin-try");
   }, [navigate]);
 
   const onGoogleContainerClick = useCallback(() => {
-    navigate("/user-home");
+    navigate("/admin-try");
   }, [navigate]);
 
   const onIfYouHaveClick = useCallback(() => {
