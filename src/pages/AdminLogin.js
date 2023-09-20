@@ -59,7 +59,7 @@ const Desktop2 = () => {
               <b className="font-popins text-firebrick">*</b>
             </div>
             <Form.Group className="[border:none] bg-[transparent] self-stretch h-[55px] ml-0">
-              <Form.Control type="text" placeholder="Enter your password" />
+              <Form.Control type="password" placeholder="Enter your password" />
             </Form.Group>
           </div>
             {/* </div> */}
