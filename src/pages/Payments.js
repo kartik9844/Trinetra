@@ -34,7 +34,7 @@ const Payments = () => {
   }, [navigate]);
 
   return (
-    <div className="relative bg-dwhite w-full h-[1024px] overflow-hidden flex flex-col items-start justify-start gap-[32px] text-left text-16xl text-dwhite font-inter">
+    <div className="relative bg-dwhite w-full h-[1024px] overflow-hidden flex flex-col items-start justify-start gap-[32px] text-left text-16xl text-dwhite font-popins">
       <MainHeader
         propCursor="pointer"
         propCursor1="unset"

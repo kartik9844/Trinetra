@@ -5,9 +5,9 @@ const AboutPage = () => {
   return (
     <div className="relative bg-dwhite w-full h-[2138px] flex flex-col pt-0.5 px-0 pb-0 box-border items-center justify-start gap-[5px]">
       <HeaderTop1 />
-      <section className="self-stretch bg-dgreen overflow-hidden flex flex-row py-[60px] px-[170px] items-center justify-center relative gap-[60px] text-left text-21xl text-black font-roboto">
+      <section className="self-stretch bg-dgreen overflow-hidden flex flex-row py-[60px] px-[170px] items-center justify-center relative gap-[60px] text-left text-21xl text-black font-popins">
         <div className="flex-1 flex flex-col items-start justify-start gap-[24px] z-[0]">
-          <h1 className="m-0 self-stretch relative text-inherit leading-[48px] font-bold font-inherit">
+          <h1 className="m-0 self-stretch relative text-inherit leading-[48px] font-bold font-popins">
             Infinity Studio
           </h1>
           <div className="self-stretch relative text-base leading-[24px]">{`An idea-to-prototype lab that serves as a one-stop solution for innovators, startups and industries seeking opportunities specifically in the mechatronics sector. Set up in association with India Electronics and Semiconductor Association (IESA), Government of Karnataka, Department of Science & Technology (DST) and Nidhi PRAYAS, it offers state-of-the-art infrastructure and extensive in-house facilities to students, startups, MSMEs, and innovators seeking opportunities mainly in the mechatronics sector. To guide them through every stage of product development from ideation and prototyping to testing and validation, we offer a host of services that include skill development, prototyping support and technical consultation.`}</div>
@@ -34,7 +34,7 @@ const AboutPage = () => {
           />
         </div>
         <div className="flex-1 flex flex-col items-start justify-start gap-[24px] z-[1]">
-          <h1 className="m-0 self-stretch relative text-inherit leading-[48px] font-bold font-inherit">
+          <h1 className="m-0 self-stretch relative text-inherit leading-[48px] font-bold font-popins">
             Smart Lab
           </h1>
           <div className="self-stretch relative text-base leading-[24px]">

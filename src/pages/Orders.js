@@ -30,7 +30,7 @@ const Orders = () => {
   }, [navigate]);
 
   return (
-    <div className="relative bg-dwhite w-full h-[1024px] overflow-hidden text-left text-21xl text-black font-poppins">
+    <div className="relative bg-dwhite w-full h-[1024px] overflow-hidden text-left text-21xl text-black font-popins">
       <Navbaradmin
         dimensionCode="/maxresdefault-3@2x.png"
         carDimensions="/-icon-user.svg"

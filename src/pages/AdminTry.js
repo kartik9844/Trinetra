@@ -36,7 +36,7 @@ const AdminTry = () => {
 
 
   return (
-    <div className="relative bg-dwhite w-full h-[1050px] overflow-hidden font-poppins">
+    <div className="relative bg-dwhite w-full h-[1050px] overflow-hidden font-popins">
       <Navbaradmin
         dimensionCode="/maxresdefault-33@2x.png"
         carDimensions="/-icon-user.svg"

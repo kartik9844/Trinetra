@@ -30,7 +30,7 @@ const RentedUser = () => {
   }, [navigate]);
 
   return (
-    <div className="relative w-full h-[1016px] flex flex-col items-center justify-start text-center text-mini text-black font-roboto">
+    <div className="relative w-full h-[1016px] flex flex-col items-center justify-start text-center text-mini text-black font-popins">
       <div className="relative w-[1440px] h-[1016px]">
         <div className="absolute top-[0px] left-[0px] bg-dwhite w-[1440px] h-[1016px] flex flex-col pt-20 pb-0 pr-0 pl-[220px] box-border items-center justify-center">
           <div className="self-stretch my-0 mx-[!important] absolute h-[calc(100%_-_68px)] top-[68px] bottom-[0px] left-[0px] bg-gray-800 overflow-hidden flex flex-col py-3 px-0 box-border items-center justify-start z-[0]">
@@ -41,7 +41,7 @@ const RentedUser = () => {
                 </div>
               </div>
               <div
-                className="flex-1 relative text-6xl leading-[20px] font-medium font-poppins text-left cursor-pointer"
+                className="flex-1 relative text-6xl leading-[20px] font-medium font-popins text-left cursor-pointer"
                 onClick={onTitleTextClick}
               >
                 On Rent
@@ -53,13 +53,13 @@ const RentedUser = () => {
                   😃
                 </div>
               </div>
-              <div className="flex-1 relative text-6xl [text-decoration:underline] leading-[20px] font-medium font-poppins text-left">
+              <div className="flex-1 relative text-6xl [text-decoration:underline] leading-[20px] font-medium font-popins text-left">
                 Rented
               </div>
             </div>
           </div>
         </div>
-        <div className="absolute top-[100px] left-[247px] text-17xl leading-[24px] uppercase font-extrabold font-poppins text-left inline-block w-[310px] h-[39px]">
+        <div className="absolute top-[100px] left-[247px] text-17xl leading-[24px] uppercase font-extrabold font-popins text-left inline-block w-[310px] h-[39px]">
           rented
         </div>
         <MainHeader
