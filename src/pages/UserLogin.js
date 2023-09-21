@@ -107,14 +107,20 @@ const Desktop2 = () => {
                 </div>
                 <div className="w-[480px] h-[82.03px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[11px] text-8xl">
                   <div
-                    className="relative -left-10 rounded-23xl w-[440px] h-9  flex flex-row pt-[8.009942054748535px] pb-[8.010161399841309px] pr-[71.39656829833984px] pl-[54px] box-border items-center justify-start gap-[40px] cursor-pointer ml-[39px]"
+                    className="relative -left-[90px] rounded-23xl w-[450px] h-9  flex flex-row pt-[8.009942054748535px] pb-[8.010161399841309px] pr-[71.39656829833984px] pl-[54px] box-border items-center justify-start gap-[40px] cursor-pointer ml-[39px]"
                     onClick={onGoogleContainerClick}
                   >
-                    <Form.Group className="text-blue-600 w-[469px] [border:none] bg-[transparent]">
-                  <Button variant="gray-500"  className="relative  -top-0 -left-[50px]  w-[250px]" onClick={onSignUpContainerClick}>Login with google</Button>
-                  </Form.Group>
+                    <Form.Group className="text-blue-600 w-[468px] [border:none] bg-[transparent]">
+                      <Button 
+                        variant="secondary"
+                        className="w-[250px] left-[10px] bg-gray-600 text-black" 
+                        onClick={onSignUpContainerClick}
+                      >
+                        Login with google
+                      </Button>
+                    </Form.Group>
                   <img
-                      className="relative -left-[320px] rounded-23xl w-7 h-7  object-cover"
+                      className="relative -left-[280px] rounded-23xl w-7 h-7  object-cover"
                       alt=""
                       src="/google-logo@2x.png"
                     />  
