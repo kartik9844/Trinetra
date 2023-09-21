@@ -183,7 +183,7 @@ function App() {
       <Route path="/orders" element={<Orders />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/user-home" element={<UserHome />} />
-      <Route path="/when-clicked" element={<WhenClicked />} />
+      <Route path="/user-details/:id" element={<WhenClicked />} />
       <Route path="/admin-try" element={<AdminTry />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/about-page" element={<AboutPage />} />

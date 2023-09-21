@@ -2,9 +2,18 @@ import { useCallback } from "react";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import Navbaradmin from "../components/Navbaradmin";
+import { useParams } from 'react-router-dom';
+import { doc, getDoc } from 'firebase/firestore';
+import { db} from "../components/firebase";
+import { useEffect, useState } from 'react';
 
 const WhenClicked = () => {
   const navigate = useNavigate();
+  // Get id from params
+  const { id } = useParams();
+
+  // State to store document data
+  const [docData, setDocData] = useState(null);
 
   const onMaxresdefault3ImageClick = useCallback(() => {
     navigate("/admin-try");
@@ -30,9 +39,19 @@ const WhenClicked = () => {
     navigate("/userprofile-admin");
   }, [navigate]);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const docRef = doc(db, 'User profile', id);
+      const docSnap = await getDoc(docRef);
+      console.log(docSnap);
+      setDocData(docSnap.data());
+    }
+
+    fetchData();
+  }, [id])
+
   return (
-    <div className="relative bg-dwhite w-full h-[1024px] overflow-hidden flex flex-col items-center justify-center gap-[814px]">
-      <div className="w-[1440px] h-[90px] overflow-hidden shrink-0 flex flex-row items-center justify-end">
+    <div>
         <Navbaradmin
           dimensionCode="/maxresdefault-32@2x.png"
           carDimensions="/-icon-user3.svg"
@@ -52,26 +71,18 @@ const WhenClicked = () => {
           onIconUserClick={onIconUserClick}
           onUsersTextClick={onUsersTextClick}
         />
+      
+      <div>
+      {/* Check if data exists before rendering */}
+      
+        <div className="relative top-[150px]">
+          <p>Name:{docData['FounderName']} </p>
+          <p>Age:</p> 
       </div>
-      <div className="w-[1103px] h-[119px] overflow-hidden shrink-0 flex flex-row items-start justify-end">
-        <div className="w-[119px] h-[49px] overflow-hidden shrink-0 mt-[70px]" />
-        <div className="w-[821px] h-[95px] overflow-hidden shrink-0 flex flex-row py-0 px-[21px] box-border items-start justify-start gap-[122px] ml-[-904px]">
-          <Button
-            sx={{ width: 153 }}
-            variant="contained"
-            name="Back"
-            color="primary"
-          >
-            Back
-          </Button>
-          <Button sx={{ width: 149 }} variant="contained" color="primary">
-            Button
-          </Button>
-          <Button sx={{ width: 149 }} variant="contained" color="primary">
-            Button
-          </Button>
-        </div>
-      </div>
+      
+    </div>
+        
+      
     </div>
   );
 };
