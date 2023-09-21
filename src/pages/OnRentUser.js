@@ -43,7 +43,7 @@ const OnRentUser = () => {
                   😃
                 </div>
               </div>
-              <div className="flex-1 relative text-[22px] [text-decoration:underline] leading-[20px] font-medium font-poppins text-left">
+              <div className="flex-1 relative text-[22px] [text-decoration:underline] leading-[20px] font-medium font-popins text-left">
                 On Rent
               </div>
             </div>
@@ -54,7 +54,7 @@ const OnRentUser = () => {
                 </div>
               </div>
               <div
-                className="flex-1 relative text-[26px] leading-[20px] font-medium font-poppins text-left cursor-pointer"
+                className="flex-1 relative text-[26px] leading-[20px] font-medium font-popins text-left cursor-pointer"
                 onClick={onTitleText1Click}
               >
                 Rented

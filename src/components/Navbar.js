@@ -19,7 +19,7 @@ const Navbar = () => {
   }, [navigate]);
 
   return (
-    <header className="relative bg-gray-400 w-[1440px] h-20 text-left text-base text-dwhite font-inter">
+    <header className="relative bg-gray-400 w-[1440px] h-20 text-left text-base text-dwhite font-popins">
       <div className="absolute top-[calc(50%_-_40px)] left-[calc(50%_-_720px)] w-[1161px] h-[73px] flex flex-row pt-[7px] pb-[3px] pr-[912px] pl-0 box-border items-center justify-between">
         <img
           className="relative w-[246.5px] h-[82px] object-cover cursor-pointer"

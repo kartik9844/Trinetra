@@ -15,7 +15,7 @@ const FormContainer = () => {
   }, [navigate]);
 
   return (
-    <div className="self-stretch bg-dwhite overflow-hidden flex flex-row items-center justify-center text-left text-31xl text-darkslategray-100 font-inter">
+    <div className="self-stretch bg-dwhite overflow-hidden flex flex-row items-center justify-center text-left text-31xl text-darkslategray-100 font-popins">
       <div className="flex-1 overflow-hidden flex flex-row py-14 pr-[155.7999725341797px] pl-[155.8000030517578px] items-center justify-center">
         <div className="w-[400px] h-[488px] flex flex-col items-start justify-start gap-[19px] max-w-[2018px]">
           <div className="w-[400px] flex flex-row items-start justify-start">

@@ -39,7 +39,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <footer className="self-stretch bg-dgray overflow-hidden flex flex-col py-0 pr-[211.59994506835938px] pl-[211.60000610351562px] items-center justify-center text-center text-sm text-black font-inter">
+      <footer className="self-stretch bg-dgray overflow-hidden flex flex-col py-0 pr-[211.59994506835938px] pl-[211.60000610351562px] items-center justify-center text-center text-sm text-black font-popins">
         <div className="w-full flex flex-col pt-[62px] px-0 pb-[0.5999984741210938px] box-border items-center justify-center max-w-[1000px]">
           <div className="w-[1000px] overflow-hidden flex flex-row items-start justify-center">
             <div className="relative leading-[24px] inline-block max-w-[1000px]">

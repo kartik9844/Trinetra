@@ -3,7 +3,7 @@ import HeaderTop1 from "../components/HeaderTop1";
 const Contact = () => {
   
   return (
-    <div className="relative bg-dwhite w-full h-[1010px] flex flex-col items-center justify-start text-center text-21xl text-black font-roboto">
+    <div className="relative bg-dwhite w-full h-[1010px] flex flex-col items-center justify-start text-center text-21xl text-black font-popins">
       
       <div className="self-stretch bg-dgray overflow-hidden flex flex-row px-[170px] items-center justify-center relative gap-[60px]">
       

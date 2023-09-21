@@ -31,7 +31,7 @@ const PaymentFormContainer = () => {
 
   return (
     <div
-      className="absolute top-[0px] left-[-1px] w-[1442px] h-[151px] overflow-hidden flex flex-col items-center justify-start gap-[17px] cursor-pointer text-left text-17xl text-black font-poppins"
+      className="absolute top-[0px] left-[-1px] w-[1442px] h-[151px] overflow-hidden flex flex-col items-center justify-start gap-[17px] cursor-pointer text-left text-17xl text-black font-popins"
       onClick={onFrameContainer2Click}
     >
       <div className="w-[1440px] h-20 overflow-hidden shrink-0 mr-0.5">

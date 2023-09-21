@@ -60,7 +60,7 @@ const Navbaradmin = ({
   }, [propCursor5]);
 
   return (
-    <div className="absolute top-[0px] left-[0px] bg-gray-4200 w-[1518px] h-20 text-left text-16xl text-dwhite font-inter">
+    <div className="absolute top-[0px] left-[0px] bg-gray-4200 w-[1518px] h-20 text-left text-16xl text-dwhite font-popins">
       <div
         className="absolute top-[calc(50%_-_41px)] left-[calc(50%_-_720px)] w-[248px] h-[73px] flex flex-row pt-[7px] px-0 pb-[3px] box-border items-center justify-between"
         style={logoFramStyle}

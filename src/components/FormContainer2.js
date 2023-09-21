@@ -1,6 +1,6 @@
 const FormContainer2 = () => {
   return (
-    <div className="w-[590.22px] flex flex-col items-start justify-start text-left text-lgi text-gray-300 font-roboto">
+    <div className="w-[590.22px] flex flex-col items-start justify-start text-left text-lgi text-gray-300 font-popins">
       <div className="w-[590.22px] flex flex-row py-2 pr-[398.219970703125px] pl-0 box-border items-start justify-start min-h-[24px]">
         <div className="flex flex-row pt-[1.8899999856948853px] px-0 pb-[1.9999994039535522px] items-center justify-start gap-[12px]">
           <div className="relative rounded-3xs box-border w-5 h-5 z-[1] border-[1px] border-solid border-dimgray-200" />

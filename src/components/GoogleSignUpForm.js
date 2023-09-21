@@ -13,7 +13,7 @@ const GoogleSignUpForm = ({
   }, [propCursor]);
 
   return (
-    <div className="w-[554.12px] h-[108.14px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[19px] text-left text-8xl text-black font-fresca">
+    <div className="w-[554.12px] h-[108.14px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[19px] text-left text-8xl text-black font-popins">
       <div
         className="rounded-23xl bg-slateblue-100 w-[534.94px] h-[66.08291625976562px] flex flex-row pt-[8.009942054748535px] px-[71.39656829833984px] pb-[8.010161399841309px] box-border items-center justify-start gap-[51px] cursor-pointer ml-[19px]"
         onClick={onGoogleContainerClick}
