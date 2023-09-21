@@ -10,7 +10,15 @@ const StatusSelectionContainer = ({ componentStatus, propBackgroundColor }) => {
   }, [propBackgroundColor]);
 
   return (
-    <div className="w-[595px] overflow-hidden flex flex-col items-start justify-start gap-[4px] text-left text-5xl text-black font-popins">
+    <div className="w-[595px] overflow-hidden flex flex-col items-start justify-start gap-[4px] text-left text-5xl text-black font-popins
+    
+    
+    
+    
+    
+    
+    
+    ">
       <div className="self-stretch relative leading-[20px] font-medium">
         {componentStatus}
       </div>
