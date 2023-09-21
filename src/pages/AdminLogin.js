@@ -107,58 +107,6 @@ const adminPassword = "password123";
                   
                 </div>
               </div>
-              <div className="w-[550px] h-[123.03px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[18px] text-2xl">
-                <div className="relative w-[150px] h-[10px] -left-20">
-                  <img
-                    className="absolute top-[12px] left-[11px] rounded-23xl w-[150px] h-px"
-                    alt=""
-                    src="/line-11.svg"
-                  />
-                  <div className="absolute -top-[1px] left-[161px]  inline-block w-[260px] h-[23.03px]">
-                    Or,login with
-                  </div>
-                  <img
-                    className="absolute top-[10px] left-[289px] w-[70px] h-1"
-                    alt=""
-                    src="/line-21.svg"
-                  />
-                </div>
-                <div className="w-[480px] h-[82.03px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[11px] text-8xl">
-                  <div
-                    className="relative -left-10 rounded-23xl w-[440px] h-9  flex flex-row pt-[8.009942054748535px] pb-[8.010161399841309px] pr-[71.39656829833984px] pl-[54px] box-border items-center justify-start gap-[40px] cursor-pointer ml-[39px]"
-                    onClick={onGoogleContainerClick}
-                  >
-                    <Form.Group className="text-blue-600 w-[469px] [border:none] bg-[transparent]">
-                  <Button variant="gray-500"  className="relative  -top-0 -left-[50px]  w-[250px]" onClick={onSignUpContainerClick}>Login with google</Button>
-                  </Form.Group>
-                  <img
-                      className="relative -left-[320px] rounded-23xl w-7 h-7  object-cover"
-                      alt=""
-                      src="/google-logo@2x.png"
-                    />  
-                  </div>
-                  <div className=" relative -left-[135px]  text-[13px] inline-block w-[320.2px] h-[23.028894424438477px] shrink-0 ml-36 text-black font-poppins" onClick={onIfYouHaveClick}>
-                    <span>
-                      <span>
-                        <span className="capitalize">{`Don’t `}</span>
-                        <span className="lowercase">H</span>
-                        <span className="capitalize">{`ave `}</span>
-                        <span className="lowercase">A</span>
-                        <span className="capitalize">n a</span>
-                        <span className="lowercase">CC</span>
-                        <span className="capitalize">ount?</span>
-                      </span>
-                      <span className="capitalize">
-                        <span className="font-popins">{` `}</span>
-                      </span>
-                    </span>
-                    <span className="[text-decoration:underline] text-black">
-                      <span className="capitalize"> R</span>
-                      <span className="lowercase">egister here</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
