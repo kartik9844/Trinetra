@@ -164,9 +164,14 @@ const Desktop2 = () => {
                       src="/google-logo@2x.png"
                     />
                      <Form.Group className="text-blue-600 w-[468px] [border:none] bg-[transparent]">
-                  <Button variant="dark" className="w-[450px] " onClick={onSignUpContainerClick}>Sign up with google</Button>
-                  
-                  </Form.Group>
+                      <Button 
+                        variant="secondary" 
+                        className="w-[450px] bg-gray-600 text-black" 
+                        onClick={onSignUpContainerClick}
+                      >
+                        Sign up with google
+                      </Button>
+                    </Form.Group>
                   </div>
                   
                   <div className="text-[15px] inline-block w-[344.2px] h-[23.028894424438477px] shrink-0 ml-36 text-black font-popins">
