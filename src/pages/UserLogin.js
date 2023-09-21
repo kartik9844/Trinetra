@@ -1,13 +1,42 @@
 import { useCallback } from "react";
-
+import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import HeaderTop1 from "../components/HeaderTop1";
+import { auth,provider} from "../components/firebase";
+import {signInWithPopup} from "firebase/auth";
 
 const Desktop2 = () => {
   const navigate = useNavigate();
+  const [value,setvalue]= useState("")
 
+  const handleclick = () => {
+
+    signInWithPopup(auth, provider)
+  .then((result) => {
+    // Google sign in succeeded.
+    
+    // Check if user already exists.
+    const user = result.user;
+    if (user.metadata.creationTime === user.metadata.lastSignInTime) {
+      // This is a new user.
+      newuserClick();
+    } else {
+      // This is an existing user.
+      setvalue(data.user.email);
+      localStorage.setItem("email",data.user.email);
+      onGoogleContainerClick();
+    }
+
+  })
+  .catch((error) => {
+    // Handle error.
+  });
+  
+  
+  
+  }
   const onSignUpContainerClick = useCallback(() => {
     navigate("/user-home");
   }, [navigate]);
@@ -20,9 +49,9 @@ const Desktop2 = () => {
     navigate("/sign-up");
   }, [navigate]);
   
-  const onLogoImageClick = useCallback(() => {
-    // Please sync "try home page" to the project
-  }, []);
+  const newuserClick = useCallback(() => {
+    navigate("/register");
+  }, [navigate]);
 
   const onAboutContainerClick = useCallback(() => {
     // Please sync "about page" to the project
@@ -107,8 +136,13 @@ const Desktop2 = () => {
                 </div>
                 <div className="w-[480px] h-[82.03px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[11px] text-8xl">
                   <div
+<<<<<<< HEAD
                     className="relative -left-10 rounded-23xl w-[440px] h-9  flex flex-row pt-[8.009942054748535px] pb-[8.010161399841309px] pr-[71.39656829833984px] pl-[54px] box-border items-center justify-start gap-[40px] cursor-pointer ml-[39px]"
                     onClick={onGoogleContainerClick}
+=======
+                    className="rounded-23xl bg-slateblue w-[450px] h-12  flex flex-row pt-[8.009942054748535px] pb-[8.010161399841309px] pr-[71.39656829833984px] pl-[54px] box-border items-center justify-start gap-[29px] cursor-pointer ml-[39px]"
+                    onClick={handleclick}
+>>>>>>> 56de05b6a5dd40805c01bcbf3c776465d45a87e6
                   >
                     <Form.Group className="text-blue-600 w-[469px] [border:none] bg-[transparent]">
                   <Button variant="gray-500"  className="relative  -top-0 -left-[50px]  w-[250px]" onClick={onSignUpContainerClick}>Login with google</Button>
