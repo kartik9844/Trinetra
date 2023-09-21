@@ -76,7 +76,7 @@ const WhenClicked = () => {
       {/* Check if data exists before rendering */}
       
         <div className="relative top-[150px]">
-          <p>Name:{docData['FounderName']} </p>
+          <p>Name: </p>
           <p>Age:</p> 
       </div>
       
