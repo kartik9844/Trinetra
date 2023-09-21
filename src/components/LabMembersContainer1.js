@@ -1,6 +1,6 @@
 const LabMembersContainer1 = () => {
   return (
-    <div className="self-stretch bg-dgray overflow-hidden flex flex-row py-[60px] px-[170px] items-center justify-center relative gap-[60px] text-center text-21xl text-black font-roboto">
+    <div className="self-stretch bg-dgray overflow-hidden flex flex-row py-[60px] px-[170px] items-center justify-center relative gap-[60px] text-center text-21xl text-black font-popins">
       <div className="flex-1 flex flex-col items-center justify-start gap-[24px] z-[0]">
         <b className="relative leading-[48px] inline-block w-[520px]">
           Lab Members

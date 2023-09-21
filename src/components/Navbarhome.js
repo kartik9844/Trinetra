@@ -25,7 +25,7 @@ const Navbarhome = () => {
   }, [navigate]);
 
   return (
-    <div className="relative bg-gray-400 w-[1461px] h-20 text-left text-17xl text-dwhite font-inter">
+    <div className="relative bg-gray-400 w-[1461px] h-20 text-left text-17xl text-dwhite font-popins">
       <div
         className="absolute top-[calc(50%_-_50px)] left-[calc(50%_-_708.5px)] w-[236px] flex flex-row pt-[7px] px-0 pb-[3px] box-border items-center justify-between cursor-pointer"
         onClick={onDivframer11lg61rContainerClick}

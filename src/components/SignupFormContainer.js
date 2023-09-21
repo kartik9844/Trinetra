@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const SignupFormContainer = () => {
   const navigate = useNavigate();
   return (
-    <div className="rounded-51xl bg-dgray w-[640px] h-[875px] flex flex-col items-center justify-center gap-[23px] text-left text-17xl text-black font-fresca">
+    <div className="rounded-51xl bg-dgray w-[640px] h-[875px] flex flex-col items-center justify-center gap-[23px] text-left text-17xl text-black font-popins">
       <div className="relative text-29xl capitalize text-gray-300 text-right">{`Sign Up `}</div>
       <div className="w-[539px] flex flex-col items-start justify-start font-inter">
         <b className="inline-block h-11 ml-1.5">
@@ -23,7 +23,7 @@ const SignupFormContainer = () => {
                 />      
         
       </div>
-      <div className="w-[539px] flex flex-col items-start justify-start font-inter">
+      <div className="w-[539px] flex flex-col items-start justify-start font-popins">
         <b className="inline-block h-11 ml-1.5">
           <span>
             <span className="uppercase">E</span>
@@ -37,7 +37,7 @@ const SignupFormContainer = () => {
                   id="first-name"
                   autoComplete="given-name"
                   placeholder={"enter your email"}
-                  className="rounded-6xl box-border w-[550px] h-[65px] flex flex-row p-1.5 items-center justify-center text-xl font-fresca border-[2px] border-solid border-black"
+                  className="rounded-6xl box-border w-[550px] h-[65px] flex flex-row p-1.5 items-center justify-center text-xl font-popins border-[2px] border-solid border-black"
                 />      
       </div>
       <div className="w-[528px] flex flex-col items-start justify-start font-inter">
@@ -56,7 +56,7 @@ const SignupFormContainer = () => {
                   id="first-name"
                   autoComplete="given-name"
                   placeholder={"enter your password"}
-                  className="rounded-6xl box-border w-[550px] h-[65px] flex flex-row p-1.5 items-center justify-center text-xl font-fresca border-[2px] border-solid border-black"
+                  className="rounded-6xl box-border w-[550px] h-[65px] flex flex-row p-1.5 items-center justify-center text-xl font-popins border-[2px] border-solid border-black"
                 />      
       </div>
       <div className="w-[531px] flex flex-col items-start justify-start font-inter">

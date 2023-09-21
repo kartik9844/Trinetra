@@ -2,7 +2,7 @@ import { TextField, Button } from "@mui/material";
 
 const FormFrame = () => {
   return (
-    <div className="w-[1362px] h-[434px] overflow-hidden shrink-0 flex flex-col items-center justify-start gap-[39px] text-left text-5xl text-black font-roboto">
+    <div className="w-[1362px] h-[434px] overflow-hidden shrink-0 flex flex-col items-center justify-start gap-[39px] text-left text-5xl text-black font-popins">
       <img
         className="relative w-[1362px] h-60"
         alt=""
@@ -14,7 +14,7 @@ const FormFrame = () => {
             <div className="relative tracking-[0.15px] leading-[12px] font-extrabold flex items-center w-[220px] h-7 shrink-0">
               Person name:
             </div>
-            <div className="self-stretch flex-1 relative left-2 text-xs font-inter text-dimgray-200 mt-[-4.5px]">
+            <div className="self-stretch flex-1 relative left-2 text-xs font-popins text-dimgray-200 mt-[-4.5px]">
               Who is ordering ?
             </div>
             <div className="self-stretch relative h-0.5 mt-[-4.5px]" />

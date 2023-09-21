@@ -1,6 +1,6 @@
 const NameInputContainer = ({ fullname, inputLabel }) => {
   return (
-    <div className="w-[600px] overflow-hidden flex flex-col items-start justify-center gap-[4px] text-left text-5xl text-black font-roboto">
+    <div className="w-[600px] overflow-hidden flex flex-col items-start justify-center gap-[4px] text-left text-5xl text-black font-popins">
       <div className="self-stretch relative leading-[20px] font-medium">
         {fullname}
       </div>

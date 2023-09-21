@@ -1,8 +1,8 @@
 const CardContainer = () => {
   return (
-    <section className="self-stretch bg-dwhite h-[570px] overflow-hidden shrink-0 flex flex-row py-[60px] px-[170px] box-border items-center justify-center relative gap-[60px] text-left text-21xl text-black font-roboto">
+    <section className="self-stretch bg-dwhite h-[570px] overflow-hidden shrink-0 flex flex-row py-[60px] px-[170px] box-border items-center justify-center relative gap-[60px] text-left text-21xl text-black font-popins">
       <div className="flex-1 flex flex-col items-start justify-start gap-[24px] z-[0]">
-        <h1 className="m-0 self-stretch relative text-inherit leading-[48px] font-bold font-inherit">
+        <h1 className="m-0 self-stretch relative text-inherit leading-[48px] font-bold font-popins">
           3D Lab
         </h1>
         <div className="self-stretch relative text-base leading-[24px]">

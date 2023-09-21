@@ -32,7 +32,7 @@ const HeaderTop1 = () => {
   }, [navigate]);
 
   return (
-    <div className="self-stretch overflow-y-auto flex flex-row items-start justify-start text-left text-base text-dwhite font-inter">
+    <div className="self-stretch overflow-y-auto flex flex-row items-start justify-start text-left text-base text-dwhite font-popins">
       <div className="relative bg-white w-[1550px] h-[80px]">
       <BsButton
           className="absolute top-[calc(50%_-_20px)] left-[calc(50%_+_515.54px)] cursor-pointer"

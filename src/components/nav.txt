@@ -65,7 +65,7 @@ const Navbaradmin = ({
 
   return (
     <div
-      className="absolute top-[0px] left-[-10px] bg-white w-[1530px] h-20 text-left text-17xl text-black font-inter"
+      className="absolute top-[0px] left-[-10px] bg-white w-[1530px] h-20 text-left text-17xl text-black font-popins"
       style={divframerWgdw54Style}
     >
       <div

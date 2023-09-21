@@ -25,7 +25,7 @@ const AboutPage = () => {
           src="/vector-2001.svg"
         />
       </section>
-      <section className="self-stretch bg-dblack h-[409px] overflow-hidden shrink-0 flex flex-row pt-[15px] pb-0 pr-[170px] pl-[121px] box-border items-center justify-center relative gap-[72px] text-left text-21xl text-whitesmoke font-roboto">
+      <section className="self-stretch bg-dblack h-[409px] overflow-hidden shrink-0 flex flex-row pt-[15px] pb-0 pr-[170px] pl-[121px] box-border items-center justify-center relative gap-[72px] text-left text-21xl text-whitesmoke font-popins">
         <div className="h-[285px] overflow-hidden flex flex-row items-start justify-center z-[0]">
           <img
             className="relative w-[499px] h-[330.5px] object-cover"
@@ -54,9 +54,9 @@ const AboutPage = () => {
           src="/vector-2001.svg"
         />
       </section>
-      <section className="self-stretch bg-darkslategray-200 h-[498px] overflow-hidden shrink-0 flex flex-row pt-0 px-[170px] pb-[60px] box-border items-center justify-center relative gap-[60px] text-left text-21xl text-snow font-roboto">
+      <section className="self-stretch bg-darkslategray-200 h-[498px] overflow-hidden shrink-0 flex flex-row pt-0 px-[170px] pb-[60px] box-border items-center justify-center relative gap-[60px] text-left text-21xl text-snow font-popins">
         <div className="flex-1 flex flex-col items-start justify-start gap-[24px] z-[0]">
-          <h1 className="m-0 self-stretch relative text-inherit leading-[48px] font-bold font-inherit">
+          <h1 className="m-0 self-stretch relative text-inherit leading-[48px] font-bold font-popins">
             Mechanical Lab
           </h1>
           <div className="self-stretch relative text-base leading-[24px]">

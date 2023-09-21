@@ -67,7 +67,7 @@ const UserProfile = () => {
               Button
             </Button>
           </div>
-          <div className="my-0 mx-[!important] absolute h-[calc(100%_-_87px)] top-[87px] bottom-[0px] left-[0px] bg-gray-800 w-[220px] overflow-hidden flex flex-col py-3 px-0 box-border items-center justify-start z-[1] text-center text-mini font-roboto">
+          <div className="my-0 mx-[!important] absolute h-[calc(100%_-_87px)] top-[87px] bottom-[0px] left-[0px] bg-gray-800 w-[220px] overflow-hidden flex flex-col py-3 px-0 box-border items-center justify-start z-[1] text-center text-mini font-popins">
             <div className="self-stretch flex flex-row py-4 px-5 items-center justify-center gap-[12px]">
               <div className="rounded-xl bg-gray-800 w-6 flex flex-col items-center justify-center">
                 <div className="self-stretch relative leading-[24px] flex items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap h-6 shrink-0">
