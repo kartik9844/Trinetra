@@ -51,7 +51,7 @@ const Payments = () => {
         onSingoutClick={onSingoutClick}
       />
      <div className="absolute top-[104px] -left-[33px] w-[376px] overflow-hidden flex flex-col items-end justify-center">
-        <div className="relative -left-20 font-extrabold text-black">payments</div>
+        <div className="relative -left-20 font-extrabold text-black">Payments</div>
       </div>
 
     </div>
