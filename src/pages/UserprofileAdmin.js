@@ -1,26 +1,16 @@
 import { useCallback } from "react";
 import { Await, useNavigate } from "react-router-dom";
-import { initializeApp } from "firebase/app";
 import { getFirestore,doc,getDocs,collection,query,where, } from "firebase/firestore";
 import Navbaradmin from "../components/Navbaradmin";
 import React, { useEffect, useState } from 'react';
+import { db} from "../components/firebase";
+import FirestoreDataList from '../components/adminuser';
+import UsersList from '../components/UsersList';
 
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDgsAqy58Q2pjFSMzmxie2EFAgcFDTj_E4",
-  authDomain: "infinity-3f957.firebaseapp.com",
-  projectId: "infinity-3f957",
-  storageBucket: "infinity-3f957.appspot.com",
-  messagingSenderId: "946283908649",
-  appId: "1:946283908649:web:0ecd03ced12ca859591638",
-  measurementId: "G-4WSY0K0YQG"
-}; 
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
 
 const UserprofileAdmin = () => {
-  const [startupData, setStartupData] = useState(null);
+  // const [startupData, setStartupData] = useState([]);
   
   const navigate = useNavigate();
 
@@ -56,31 +46,24 @@ const UserprofileAdmin = () => {
     navigate("/when-clicked");
   }, [navigate]);
 
-  useEffect(() => {
-    const fetchStartupData = async () => {
-      const querySnapshot = await getDocs(collection(db, "User profile"));
-       querySnapshot.forEach((doc) => {
-        try {
-          // const docRef = doc(db,"User profile","example");
-          // const docSnap = await getDoc(docRef);
-          if (doc.exists) {
-            setStartupData(doc.data());
-          } else {
-            console.log('No startup data found.');
-          }
-        } catch (error) {
-          console.error('Error fetching startup data:', error);
-        }
-         });
-      
-      
-    };
-    fetchStartupData();
-  }, []);
+  // useEffect(() => {
+  //   const fetchStartupData = async () => {
+  //     const querySnapshot = await getDocs(collection(db, "User profile"));
+  //     const startupDocs = [];
+  //     querySnapshot.forEach((doc) => {
+  //       startupDocs.push({...doc.data(), id: doc.id});
+  //     });
+  //     const dataArray = querySnapshot.docs.map(doc => doc.data());
+  //     // console.log(dataArray); // Access the data array here
+  //     setStartupData(dataArray);
+  //     console.log(startupData);
+  //   };
+  //   fetchStartupData();
+  // }, []);
 
   return (
     <div className="relative w-full flex flex-col items-center justify-center text-left text-21xl text-black font-poppins">
-      <div className="bg-dwhite w-[1440px] h-[1024px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[42px]">
+      <div className="bg-dwhite w-[1440px] h-[150px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[42px]">
       <Navbaradmin
         dimensionCode="/maxresdefault-33@2x.png"
         carDimensions="/-icon-user.svg"
@@ -93,21 +76,36 @@ const UserprofileAdmin = () => {
         onSingoutClick={onSingoutClick}
       />
         
-          <div className="relative top-20 capitalize font-extrabold">User profile</div>
-        
-          <div>
-      {startupData ? (
-        <div className="relative top-5">
-          <h1>Startup Details</h1>
-          <p>Startup Name: {startupData['Startupname']}</p>
-          <p>Founder Name: {startupData['Founder name']}</p>
-          <p>Email: {startupData['email']}</p>
-        </div>
-      ) : (
-        <p>Loading startup data...</p>
-      )}
-    </div>
+          <div className="relative top-20 capitalize font-extrabold">User profile</div>   
       </div>
+      <UsersList/>
+      {/* <ul role="list" className="divide-y divide-gray-100">
+      {startupData.map((person) => (
+        <li key={person.email} className="flex justify-between gap-x-6 py-5">
+          <div className="flex min-w-0 gap-x-4">
+            <div className="min-w-0 flex-auto">
+              <p className="text-sm font-semibold leading-6 text-gray-900">{person.StartupName}</p>
+              <p className="mt-1 truncate text-xs leading-5 text-gray-500">{person.Email}</p>
+            </div>
+          </div>
+          <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+            <p className="text-sm leading-6 text-gray-900">{person.FounderName}</p>
+            {person.lastSeen ? (
+              <p className="mt-1 text-xs leading-5 text-gray-500">
+                Last seen <time dateTime={person.lastSeenDateTime}>{person.lastSeen}</time>
+              </p>
+            ) : (
+              <div className="mt-1 flex items-center gap-x-1.5">
+                <div className="flex-none rounded-full bg-emerald-500/20 p-1">
+                  <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                </div>
+                <p className="text-xs leading-5 text-gray-500">Online</p>
+              </div>
+            )} 
+          </div>
+        </li>
+      ))}
+    </ul> */}
     </div>
   );
 };
