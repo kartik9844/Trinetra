@@ -1,12 +1,18 @@
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import HeaderTop1 from "../components/HeaderTop1";
+import { auth,provider} from "../components/firebase";
+import {signInWithPopup, signInWithEmailAndPassword} from "firebase/auth";
 
 const Desktop2 = () => {
   const navigate = useNavigate();
+   
+  const [value,setvalue]= useState("")
+  const [email, setEmail] = useState('');
+ const [password, setPassword] = useState('');
 
   const onSignUpContainerClick = useCallback(() => {
     navigate("/user-home");
@@ -20,9 +26,9 @@ const Desktop2 = () => {
     navigate("/sign-up");
   }, [navigate]);
   
-  const onLogoImageClick = useCallback(() => {
-    // Please sync "try home page" to the project
-  }, []);
+  const newuserClick = useCallback(() => {
+    navigate("/register");
+  }, [navigate]);
 
   const onAboutContainerClick = useCallback(() => {
     // Please sync "about page" to the project
@@ -31,6 +37,47 @@ const Desktop2 = () => {
   const onAdminButtonClick = useCallback(() => {
     navigate("/");
   }, [navigate]);
+
+  const handleclick = () => {
+
+    signInWithPopup(auth, provider)
+  .then((result) => {
+    // Google sign in succeeded.
+    // Check if user already exists.
+    const user = result.user;
+    if (user.metadata.creationTime === user.metadata.lastSignInTime) {
+      // This is a new user.
+      newuserClick();
+    } else {
+      // This is an existing user.
+      setvalue(data.user.email);
+      localStorage.setItem("email",data.user.email);
+      localStorage.setItem("uuid",user.uid);
+      onGoogleContainerClick();
+    }
+
+  })
+  .catch((error) => {
+    // Handle error.
+  });}
+
+
+  const handleSignIn = () => {
+    signInWithEmailAndPassword(auth,email, password)
+      .then((userCredential) => {
+        // Handle successful sign-in
+        const user = userCredential.user;
+        console.log('Signed in:', user);
+        localStorage.setItem("uuid",user.uid);
+        onSignUpContainerClick();
+
+      })
+      .catch((error) => {
+        // Handle sign-in errors
+        const errorMessage = error.message;
+        console.error(errorMessage);
+      });
+  };
 
   
 
@@ -55,7 +102,7 @@ const Desktop2 = () => {
               <b className="font-popins text-firebrick">*</b>
             </div>
             <Form.Group className="  [border-solid] border-t-2  bg-[transparent] self-stretch h-[55px] ml-0">
-              <Form.Control type="text" placeholder="Enter your email" />
+              <Form.Control type="text" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} />
             </Form.Group>
           </div>
           <div >
@@ -66,7 +113,7 @@ const Desktop2 = () => {
               <b className="font-popins  text-firebrick">*</b>
             </div>
             <Form.Group className="[border:none] bg-[transparent] self-stretch h-[55px] ml-0">
-              <Form.Control type="password" placeholder="Enter your password" />
+              <Form.Control type="password" placeholder="Enter your password" value={password} onChange={(e) => setPassword(e.target.value)} />
             </Form.Group>
           </div>
             {/* </div> */}
@@ -83,7 +130,7 @@ const Desktop2 = () => {
                 <div className="realtive 
                 w-[485px] h-[50px] overflow-hidden shrink-0 flex flex-col items-end justify-center -ml-[7px]">
                   <Form.Group className="text-blue-600 w-[469px] [border:none] bg-[transparent]">
-                  <Button variant="dark"className="relative -top-1 -left-2  w-[250px]" onClick={onSignUpContainerClick}>Login</Button>
+                  <Button variant="dark"className="relative -top-1 -left-2  w-[250px]" onClick={handleSignIn}>Login</Button>
                   
                   </Form.Group>
                   
@@ -108,13 +155,12 @@ const Desktop2 = () => {
                 <div className="w-[480px] h-[82.03px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[11px] text-8xl">
                   <div
                     className="relative -left-[90px] rounded-23xl w-[450px] h-9  flex flex-row pt-[8.009942054748535px] pb-[8.010161399841309px] pr-[71.39656829833984px] pl-[54px] box-border items-center justify-start gap-[40px] cursor-pointer ml-[39px]"
-                    onClick={onGoogleContainerClick}
+                    onClick={handleclick}
                   >
                     <Form.Group className="text-blue-600 w-[468px] [border:none] bg-[transparent]">
                       <Button 
                         variant="secondary"
                         className="w-[250px] left-[10px] bg-gray-600 text-black" 
-                        onClick={onSignUpContainerClick}
                       >
                         Login with google
                       </Button>

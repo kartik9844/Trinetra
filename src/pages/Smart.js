@@ -9,6 +9,10 @@ const Smart = () => {
     navigate("/admin-try");
   }, [navigate]);
 
+  const onSingoutClick = useCallback(() => {
+    navigate("/");
+  }, [navigate]);
+
   const onEquipmentsTextClick = useCallback(() => {
     navigate("/smart");
   }, [navigate]);
@@ -49,6 +53,7 @@ const Smart = () => {
         onIconUserClick={onIconUserClick}
         onUsersTextClick={onUsersTextClick}
         onMaxresdefault3ImageClick={onImageClick}
+        onSingoutClick={onSingoutClick}
       />
       <div >
         <div className="self-stretch my-0 mx-[!important] absolute h-90 top-[80px] bottom-[0px] left-[0px] bg-gray-800 overflow-hidden flex flex-col py-3 px-0 box-border items-center justify-start z-[0]">

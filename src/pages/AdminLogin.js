@@ -25,13 +25,9 @@ const adminPassword = "password123";
     navigate("/sign-up");
   }, [navigate]);
   
-  const onLogoImageClick = useCallback(() => {
-    // Please sync "try home page" to the project
-  }, []);
+  
 
-  const onAboutContainerClick = useCallback(() => {
-    // Please sync "about page" to the project
-  }, []);
+  
 
   const onAdminButtonClick = useCallback(() => {
     navigate("/");
@@ -73,7 +69,7 @@ const adminPassword = "password123";
               <b className="font-popins text-firebrick">*</b>
             </div>
             <Form.Group className="  [border-solid] border-t-2  bg-[transparent] self-stretch h-[55px] ml-0">
-              <Form.Control type="text" placeholder="Enter your email" />
+              <Form.Control type="text" placeholder="Enter your email" value={email} onChange={e => setEmail(e.target.value)} />
             </Form.Group>
           </div>
           <div >
@@ -84,7 +80,7 @@ const adminPassword = "password123";
               <b className="font-popins  text-firebrick">*</b>
             </div>
             <Form.Group className="[border:none] bg-[transparent] self-stretch h-[55px] ml-0">
-              <Form.Control type="password" placeholder="Enter your password" />
+              <Form.Control type="password" placeholder="Enter your password" value={password} onChange={e => setPassword(e.target.value)} />
             </Form.Group>
           </div>
             {/* </div> */}
@@ -101,8 +97,7 @@ const adminPassword = "password123";
                 <div className="realtive 
                 w-[485px] h-[50px] overflow-hidden shrink-0 flex flex-col items-end justify-center -ml-[7px]">
                   <Form.Group className="text-blue-600 w-[469px] [border:none] bg-[transparent]">
-                  <Button variant="dark"className="relative -top-1 -left-2  w-[250px]" onClick={onSignUpContainerClick}>Login</Button>
-                  
+                  <Button variant="dark"className="relative -top-1 -left-2  w-[250px]" onClick={handleSubmit}>Login</Button>
                   </Form.Group>
                   
                 </div>

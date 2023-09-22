@@ -1,11 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import HeaderTop1 from "../components/HeaderTop1";
 import { auth,provider} from "../components/firebase";
-import {signInWithPopup} from "firebase/auth";
+import {signInWithPopup,  createUserWithEmailAndPassword} from "firebase/auth";
 import Register from "./Register";
 
 
@@ -13,14 +12,20 @@ import Register from "./Register";
 const Desktop2 = () => {
   const navigate = useNavigate();
   const [value,setvalue]= useState("")
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [reEnteredPassword, setReEnteredPassword] = useState('');
+
 
   const handleclick = () => {
 
     signInWithPopup(auth, provider)
       .then((data) => {
         // Success
+        const user = data.user;
         setvalue(data.user.email);
-        localStorage.setItem("email",data.user.email);
+        localStorage.setItem("email",user.email);
+        localStorage.setItem("uuid",user.uid)
         onGoogleContainerClick();
   
       }).catch((error) => {
@@ -30,15 +35,30 @@ const Desktop2 = () => {
       });
   
   }
+
+  const handleRegistration = () => {
+    if (password !== reEnteredPassword) {
+      console.log('Passwords do not match');
+      return;
+    }
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Handle successful registration
+        const user = userCredential.user;
+        console.log('Registered:', user);
+        localStorage.setItem("uuid",user.uid)
+        onGoogleContainerClick();
+      })
+      .catch((error) => {
+        // Handle registration errors
+        const errorMessage = error.message;
+        console.error(errorMessage);
+        alert("sign in failed. Please try again.");
+      });
+  };
   
 
-  // const handleclick =()=>{
-  //   signInWithPopup(auth,provider).then((data)=>{
-  //     setvalue(data.user.email)
-  //     localStorage.setItem("email",data.user.email)
-  //     onGoogleContainerClick();
-  // })
-  // }
+
 
   const onSignUpContainerClick = useCallback(() => {
     navigate("/register");
@@ -89,7 +109,7 @@ const Desktop2 = () => {
               <b className="font-popins text-firebrick">*</b>
             </div>
             <Form.Group className="[border:none] bg-[transparent] self-stretch h-[55px] ml-0">
-              <Form.Control type="text" placeholder="Enter your email" />
+              <Form.Control type="text" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} />
             </Form.Group>
           </div>
           <div className=" relative -top-9 w-[550px] h-[435.03px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[19px]">
@@ -102,7 +122,7 @@ const Desktop2 = () => {
                   </b>
                 </div>
                 <Form.Group className="[border:none] bg-[transparent] self-stretch mt-[-14px]">
-                  <Form.Control type="text" placeholder="Enter your Password" />
+                  <Form.Control type="text" placeholder="Enter your Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </Form.Group>
               </div>
               <div className="  relative -top-4 w-[600px] h-[100px]  overflow-hidden shrink-0 flex flex-col py-0 pr-0 pl-1 box-border items-start justify-start ml-4">
@@ -113,7 +133,8 @@ const Desktop2 = () => {
                   </b>
                 </div>
                 <Form.Group className="[border:none] bg-[transparent] self-stretch mt-[-14px] rounded-sm">
-                  <Form.Control type="text" placeholder="Renter password" className="rounded-lg" />
+                  <Form.Control type="text" placeholder="Renter password" className="rounded-lg" value={reEnteredPassword}
+  onChange={(e) => setReEnteredPassword(e.target.value)} />
                 </Form.Group>
               </div>
             </div>
@@ -128,7 +149,7 @@ const Desktop2 = () => {
                 </div>
                 <div className="w-[550px] h-[45px] overflow-hidden shrink-0 flex flex-col items-end justify-center -ml-[50px]">
                   <Form.Group className="text-blue-600 w-[468px] [border:none] bg-[transparent]">
-                  <Button variant="dark" className="w-[450px]" onClick={onSignUpContainerClick}>Sign up</Button>
+                  <Button variant="dark" className="w-[450px]" onClick={handleRegistration}>Sign up</Button>
                   
                   </Form.Group>
                   
@@ -167,7 +188,6 @@ const Desktop2 = () => {
                       <Button 
                         variant="secondary" 
                         className="w-[450px] bg-gray-600 text-black" 
-                        onClick={onSignUpContainerClick}
                       >
                         Sign up with google
                       </Button>

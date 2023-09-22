@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
-
+import { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import { doc, setDoc, Timestamp, addDoc, collection} from "firebase/firestore";
 import {db} from '../components/firebase';
 
 const StartupForm = () => {
+  
+  const navigate = useNavigate();
+  const newuserClick = useCallback(() => {
+    navigate("/user-login");
+  }, [navigate]);
+
   const [formData, setFormData] = useState({
     email: '',
     whoAreYou: '',
@@ -39,6 +46,7 @@ const StartupForm = () => {
     e.preventDefault();
     // Handle form submission logic here
     const docData = {
+      Uuid: localStorage.getItem("uuid"),
       Email: formData.email,
       WhoAreYou: formData.whoAreYou,
       FounderName: formData.founderName,
@@ -63,6 +71,8 @@ const StartupForm = () => {
     const docRef = await addDoc(collection(db, "User profile"), docData);
     console.log("Document written with ID: ", docRef.id);
     console.log(formData);
+    newuserClick();
+    localStorage.clear();
   };
 
   return (

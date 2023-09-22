@@ -23,6 +23,10 @@ const WhenClicked = () => {
     navigate("/smart");
   }, [navigate]);
 
+  const onSingoutClick = useCallback(() => {
+    navigate("/");
+  }, [navigate]);
+
   const onOrdersTextClick = useCallback(() => {
     navigate("/orders");
   }, [navigate]);
@@ -70,6 +74,7 @@ const WhenClicked = () => {
           onAddTextClick={onAddTextClick}
           onIconUserClick={onIconUserClick}
           onUsersTextClick={onUsersTextClick}
+          onSingoutClick={onSingoutClick}
         />
       
       <div>
