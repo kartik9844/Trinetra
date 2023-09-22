@@ -147,6 +147,7 @@ permonthcost:'',
                   <option>Not working</option>
                   <option>Dead</option>
                   <option>Not working</option>
+                  <option>Missing</option>
                 </select>
               </div>
             </div>

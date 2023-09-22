@@ -1,6 +1,9 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbaradmin from "../components/Navbaradmin";
+import Smartlist from "../components/Smartlist";
+import { Grid } from "@mui/material";
+import Item from "antd/lib/list/Item";
 
 const Smart = () => {
   const navigate = useNavigate();
@@ -55,7 +58,11 @@ const Smart = () => {
         onMaxresdefault3ImageClick={onImageClick}
         onSingoutClick={onSingoutClick}
       />
-      <div >
+     <Grid container spacing={2}>
+<Grid item xs={6}md={6}>
+  <Item>
+
+  <div > 
         <div className="self-stretch my-0 mx-[!important] absolute h-90 top-[80px] bottom-[0px] left-[0px] bg-gray-800 overflow-hidden flex flex-col py-3 px-0 box-border items-center justify-start z-[0]">
           <div className="self-stretch flex flex-row py-4 px-5 items-center justify-center gap-[12px]">
             <div className="rounded-xl bg-gray-800 w-6 flex flex-col items-center justify-center">
@@ -63,6 +70,7 @@ const Smart = () => {
                 😃
               </div>
             </div>
+            
             <div className="flex-1 relative text-base [text-decoration:underline] leading-[20px] font-medium text-left">
               Smart Lab
             </div>
@@ -95,6 +103,16 @@ const Smart = () => {
           </div>
         </div>
       </div>
+  </Item>
+</Grid>
+
+     <Grid item xs={12}md={14}>
+      <Item><Smartlist/></Item>
+     </Grid>
+        
+
+     </Grid>
+     
     </div>
   );
 };
