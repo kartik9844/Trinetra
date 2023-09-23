@@ -1,6 +1,9 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import MainHeader from "../components/MainHeader";
+import { Grid } from "@mui/material";
+import Item from "antd/lib/list/Item";
+import USmartlist from "../components/USmartlist";
 
 const USmartLab = () => {
   const navigate = useNavigate();
@@ -14,7 +17,7 @@ const USmartLab = () => {
   }, [navigate]);
 
   const onProductsTextClick = useCallback(() => {
-    navigate("/u-3dlab");
+    navigate("/u-smart-lab");
   }, [navigate]);
 
   const onContactContainerClick = useCallback(() => {
@@ -47,15 +50,13 @@ const USmartLab = () => {
 
   return (
     <div className="relative w-full h-[1024px] text-center text-mini text-black font-popins">
+       <Grid container spacing={2}>
+<Grid item xs={6}md={6}>
+  <Item>
       <div className="absolute top-[-3px] left-[0px] w-[1441px] overflow-hidden flex flex-col items-end justify-center">
         <div className="bg-dwhite w-[1440px] h-[1027px] flex flex-col pt-[58px] pb-0 pr-0 pl-[220px] box-border items-center justify-start relative">
-          <div className="self-stretch my-0 mx-[!important] absolute h-[calc(100%_-_79px)] top-[79px] bottom-[0px] left-[0px] bg-gray-800 overflow-hidden flex flex-col py-3 px-0 box-border items-center justify-start z-[0]">
+          <div className="self-stretch my-0 mx-[!important] absolute h-[calc(100%_-_79px)] top-[79px] bottom-[0px] left-[0px] bg-gray-800 overflow-hidden flex flex-col py-1 px-0 box-border items-center justify-start z-[0]">
             <div className="h-14 flex flex-row py-4 px-5 box-border items-center justify-center gap-[12px]">
-              <div className="rounded-xl bg-gray-800 w-6 flex flex-col items-center justify-center">
-                <div className="self-stretch relative leading-[24px] flex items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap h-6 shrink-0">
-                  😃
-                </div>
-              </div>
               <div className="relative text-6xl [text-decoration:underline] leading-[20px] font-medium font-popins text-left inline-block w-36 shrink-0">
                 Smart Lab
               </div>
@@ -64,11 +65,6 @@ const USmartLab = () => {
               className="h-[55px] flex flex-row py-4 px-5 box-border items-center justify-center gap-[12px] cursor-pointer"
               onClick={onItemContainer1Click}
             >
-              <div className="rounded-xl bg-gray-800 w-6 flex flex-col items-center justify-center">
-                <div className="self-stretch relative leading-[24px] flex items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap h-6 shrink-0">
-                  😃
-                </div>
-              </div>
               <div
                 className="relative text-6xl leading-[20px] font-medium font-poppins text-left inline-block w-36 shrink-0 cursor-pointer"
                 onClick={onTitleText1Click}
@@ -77,11 +73,6 @@ const USmartLab = () => {
               </div>
             </div>
             <div className="h-14 flex flex-row py-4 px-5 box-border items-center justify-center gap-[12px]">
-              <div className="rounded-xl bg-gray-800 w-6 flex flex-col items-center justify-center">
-                <div className="self-stretch relative leading-[24px] flex items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap h-6 shrink-0">
-                  😃
-                </div>
-              </div>
               <div
                 className="relative text-6xl leading-[20px] font-medium font-popins text-left inline-block w-36 shrink-0 cursor-pointer"
                 onClick={onTitleText2Click}
@@ -92,6 +83,15 @@ const USmartLab = () => {
           </div>
         </div>
       </div>
+      </Item>
+</Grid>
+
+     <Grid item xs={12}md={14}>
+      <Item><USmartlist/></Item>
+     </Grid>
+        
+
+     </Grid>
       <MainHeader
         propCursor="pointer"
         propCursor1="unset"

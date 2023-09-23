@@ -32,7 +32,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 
 
 
-export default function Smartlist() {
+export default function USmartlist() {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [rows, setRows] = useState([]);
@@ -87,16 +87,18 @@ export default function Smartlist() {
     }
   };
 
+  
+
   return (
     <>
       {rows.length > 0 && (
         <Paper sx={{ width: "85%", overflow: "hidden", padding: "12px" 
-        }} className="absolute top-[80px] left-[209px]">
+        }} className="absolute top-[79px] left-[240px]">
           
           <Divider />
-          <Box height={0} />
-          <Stack direction="row" spacing={2} className="my-0.0 mb-0.0">
-            {/* { <Autocomplete
+          {/* <Box height={0} />
+           <Stack direction="row" spacing={2} className="my-0.0 mb-0.0">
+            { <Autocomplete
               disablePortal
               id="combo-box-demo"
               options={rows}
@@ -106,7 +108,7 @@ export default function Smartlist() {
               renderInput={(params) => (
                 <TextField {...params} size="small" label="Search Products" />
               )}
-            /> } */}
+            /> }
             <Typography
               variant="h6"
               component="div"
@@ -117,7 +119,7 @@ export default function Smartlist() {
             </Button>}
           </Stack>
           
-          <Box height={50} />
+          <Box height={50} /> */}
           
           <TableContainer>
             <Table stickyHeader aria-label="sticky table">
@@ -147,6 +149,9 @@ export default function Smartlist() {
                   <TableCell align="left" style={{ minWidth: "100px" }}>
                   Per Month Cost
                   </TableCell>
+                  <TableCell align="left" style={{ minWidth: "100px" }}>
+                  Quantity
+                  </TableCell>
                   {<TableCell align="left" style={{ minWidth: "100px" }}>
                     Action
                   </TableCell>}
@@ -163,7 +168,6 @@ export default function Smartlist() {
                         tabIndex={-1}
                         key={row.id}
                         style={{cursor: 'pointer'}}
-                        component={NavLink} to={`/user-details/${row.id}`}
                       >
                         <TableCell align="left">{row.Name}</TableCell>
                         <TableCell align="left">{row.Status}</TableCell>
@@ -173,27 +177,21 @@ export default function Smartlist() {
                         <TableCell align="left">{row.Assetno}</TableCell>
                         <TableCell align="left">{row.Perdaycost}</TableCell>
                         <TableCell align="left">{row.Permonthcost}</TableCell>
+                        <TableCell align="left">
+                          <Stack  direction="row">
+                          <TextField
+                           id="outlined-number"
+                           type="number"
+                           InputLabelProps={{
+                           shrink: true,
+                               }}
+                               className="w-[50px] "
+                           />
+                          </Stack>
+                        </TableCell>
                         {<TableCell align="left">
-                          <Stack spacing={2} direction="row">
-                            <EditIcon
-                              style={{
-                                fontSize: "20px",
-                                color: "blue",
-                                cursor: "pointer",
-                              }}
-                              className="cursor-pointer"
-                              // onClick={() => editUser(row.id)}
-                            />
-                            <DeleteIcon
-                              style={{
-                                fontSize: "20px",
-                                color: "darkred",
-                                cursor: "pointer",
-                              }}
-                              onClick={() => {
-                                deleteUser(row.id);
-                              }}
-                            />
+                          <Stack  direction="row">
+                          <Button variant="contained">ADD</Button>
                           </Stack>
                         </TableCell> }
                       </TableRow>

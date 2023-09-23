@@ -149,7 +149,7 @@ export default function UsersList() {
                         tabIndex={-1}
                         key={row.id}
                         style={{cursor: 'pointer'}}
-                        component={NavLink} to={`/user-details/${row.id}`}
+                        component={NavLink} to={`/user-details/${row.Uuid}`}
                       >
                         <TableCell align="left">{row.StartupName}</TableCell>
                         <TableCell align="left">{row.Email}</TableCell>

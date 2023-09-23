@@ -14,7 +14,7 @@ const UMechLab = () => {
   }, [navigate]);
 
   const onProductsTextClick = useCallback(() => {
-    navigate("/u-3dlab");
+    navigate("/u-smart-lab");
   }, [navigate]);
 
   const onContactContainer1Click = useCallback(() => {
