@@ -75,29 +75,29 @@ const Navbaradmin = ({
         />
       </div>
       <div
-        className="absolute w-[calc(100%_-_1274px)] top-[24px] right-[666px] left-[660px] flex flex-row pt-0 px-0 pb-[0.5999999046325684px] box-border items-start justify-start"
+        className="absolute top-[calc(60%_-_22px)]  right-[666px] left-[1200px] flex flex-row pt-0 px-0 pb-[0.5999999046325684px] box-border items-start justify-start"
         style={contactStyle}
         onClick={onAddTextClick}
       >
-        <div className="relative leading-[24px] text-black font-medium">Add</div>
+        <div className="relative leading-[24px] text-black font-bold text-base">Add</div>
       </div>
       <div
-        className="absolute w-[calc(100%_-_1325px)] top-[26px] right-[444.5px] left-[880.5px] flex flex-row pt-0 px-0 pb-[0.5999999046325684px] box-border items-start justify-start cursor-pointer"
+        className="absolute w-[calc(100%_-_1325px)] top-[26px] right-[444.5px] left-[1260px] flex flex-row pt-0 px-0 pb-[0.5999999046325684px] box-border items-start justify-start cursor-pointer"
         onClick={onOrdersTextClick}
         style={contact1Style}
       >
-        <div className="relative leading-[24px] text-black font-medium">Orders</div>
+        <div className="relative leading-[24px] text-black font-bold text-base">Orders</div>
       </div>
       <div
-        className="absolute w-[calc(100%_-_1325px)] top-[26px] right-[444.5px] left-[1080.5px] flex flex-row pt-0 px-0 pb-[0.5999999046325684px] box-border items-start justify-start cursor-pointer"
+        className="absolute w-[calc(100%_-_1325px)] top-[26px] right-[449px] left-[1350px] flex flex-row pt-0 px-0 pb-[0.5999999046325684px] box-border items-start justify-start cursor-pointer"
         onClick={onUsersTextClick}
         style={contact1Style}
       >
 
-        <div className="relative leading-[24px] text-black font-medium">User</div>
+        <div className="relative leading-[24px] text-black font-bold text-base">User</div>
       </div>
       <div
-        className="absolute top-[24px] left-[355px] leading-[24px] text-black font-medium flex items-center w-40 h-7 cursor-pointer"
+        className="absolute top-[24px] left-[1070px] leading-[24px] text-black font-bold text-base flex items-center w-40 h-7 cursor-pointer"
         onClick={onEquipmentsTextClick}
         style={productsStyle}
       >
@@ -122,7 +122,7 @@ const Navbaradmin = ({
                       <span className="absolute -inset-1.5" />
                       <span className="sr-only">Open user menu</span>
                       <img
-                        className="absolute -top-3 h-15 w-12 rounded-full"
+                        className="absolute  -top-1 h-8 w-15 rounded-full"
                         src="/profile.png"
                       />
                     </Menu.Button>
