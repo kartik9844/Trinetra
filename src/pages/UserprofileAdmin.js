@@ -62,7 +62,7 @@ const UserprofileAdmin = () => {
   // }, []);
 
   return (
-    <div className="relative w-full flex flex-col items-center justify-center text-left text-21xl text-black font-poppins">
+    <div className="relative w-full flex flex-col items-center justify-center text-left text-21xl  ">
       <div className="bg-dwhite w-[1440px] h-[150px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[42px]">
       <Navbaradmin
         dimensionCode="/maxresdefault-33@2x.png"
@@ -76,7 +76,7 @@ const UserprofileAdmin = () => {
         onSingoutClick={onSingoutClick}
       />
         
-          <div className="relative top-20 capitalize font-extrabold">User profile</div>   
+          <div className="relative top-20 capitalize font-bold">User profile</div>   
       </div>
       <UsersList/>
       {/* <ul role="list" className="divide-y divide-gray-100">

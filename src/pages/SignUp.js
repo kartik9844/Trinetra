@@ -122,7 +122,7 @@ const Desktop2 = () => {
                   </b>
                 </div>
                 <Form.Group className="[border:none] bg-[transparent] self-stretch mt-[-14px]">
-                  <Form.Control type="text" placeholder="Enter your Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                  <Form.Control type="password" placeholder="Enter your Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </Form.Group>
               </div>
               <div className="  relative -top-4 w-[600px] h-[100px]  overflow-hidden shrink-0 flex flex-col py-0 pr-0 pl-1 box-border items-start justify-start ml-4">
