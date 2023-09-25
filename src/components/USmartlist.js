@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState,useContext } from "react";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -29,11 +29,13 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import Swal from "sweetalert2";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
-
+import { CartContext } from '../context/cartcontext';
 
 
 export default function USmartlist() {
   const [page, setPage] = useState(0);
+  const[qty,setqty]=useState();
+  const { addToCart } = useContext(CartContext);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [rows, setRows] = useState([]);
   const empCollectionRef = collection(db, "Equipments");
@@ -149,9 +151,6 @@ export default function USmartlist() {
                   <TableCell align="left" style={{ minWidth: "100px" }}>
                   Per Month Cost
                   </TableCell>
-                  <TableCell align="left" style={{ minWidth: "100px" }}>
-                  Quantity
-                  </TableCell>
                   {<TableCell align="left" style={{ minWidth: "100px" }}>
                     Action
                   </TableCell>}
@@ -177,21 +176,10 @@ export default function USmartlist() {
                         <TableCell align="left">{row.Assetno}</TableCell>
                         <TableCell align="left">{row.Perdaycost}</TableCell>
                         <TableCell align="left">{row.Permonthcost}</TableCell>
-                        <TableCell align="left">
-                          <Stack  direction="row">
-                          <TextField
-                           id="outlined-number"
-                           type="number"
-                           InputLabelProps={{
-                           shrink: true,
-                               }}
-                               className="w-[50px] "
-                           />
-                          </Stack>
-                        </TableCell>
+                        
                         {<TableCell align="left">
                           <Stack  direction="row">
-                          <Button variant="contained">ADD</Button>
+                          <Button variant="contained" onClick={() => addToCart(row.id, row.Name, row.Perdaycost, row.Permonthcost,row.Quantity) }>ADD</Button>
                           </Stack>
                         </TableCell> }
                       </TableRow>
