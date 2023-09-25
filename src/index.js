@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 
 import "./global.css";
+import { CartProvider } from "./context/cartcontext";
 
 const muiTheme = createTheme();
 
@@ -21,8 +22,10 @@ root.render(
   <BrowserRouter>
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={muiTheme}>
+      <CartProvider>
         <CssBaseline />
         <App />
+        </CartProvider>
       </ThemeProvider>
     </StyledEngineProvider>
   </BrowserRouter>

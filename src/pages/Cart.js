@@ -1,11 +1,12 @@
-import { useCallback } from "react";
+import { useCallback ,useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import MainHeader from "../components/MainHeader";
 import FormFrame from "../components/FormFrame";
+import { CartContext } from '../context/cartcontext';
 
 const Cart = () => {
   const navigate = useNavigate();
-
+  const {cart} = useContext(CartContext);
   const onSingoutClick = useCallback(() => {
     navigate("/");
   }, [navigate]);
@@ -51,18 +52,7 @@ const Cart = () => {
         onCa2ImageClick={onCa2ImageClick}
         onSingoutClick={onSingoutClick}
       />
-      <div className="absolute top-[104px] -left-[33px] w-[376px] overflow-hidden flex flex-col items-end justify-center">
-        <div className="relative font-extrabold">Rented Products</div>
-      </div>
-      <div className="absolute top-[168px] left-[29px] w-[1382px] h-[776px] overflow-hidden flex flex-col items-center justify-center gap-[14px]">
-        <div className="w-[1382px] h-[328px] overflow-hidden shrink-0 flex flex-col items-center justify-start gap-[36px]">
-          <div className="relative bg-gainsboro-200 w-[1364px] h-[238px] overflow-hidden shrink-0" />
-          <div className="font-extrabold inline-block h-[54px] mr-[1092px]">
-            Price Summary
-          </div>
-        </div>
-        <FormFrame />
-      </div>
+      
     </div>
   );
 };
