@@ -19,7 +19,7 @@ const Footer = () => {
       <div className="self-stretch bg-dgray flex flex-col py-1 pr-[211.59994506835938px] pl-[211.60000610351562px] items-center justify-center">
         <div className="w-[1000px] overflow-hidden flex flex-col py-0 pr-[200px] pl-0 box-border items-start justify-start gap-[13.6px] max-w-[1423.199951171875px]">
           <div className="w-[800px] flex flex-row items-start justify-start">
-            <h1 className="m-0 relative text-inherit leading-[57.6px] font-normal font-inherit inline-block max-w-[800px]">
+            <h1 className="m-0 relative text-inherit leading-[57.6px] font-medium font-popins inline-block max-w-[800px]">
               Get on board with Infinity Studios today!
             </h1>
           </div>
@@ -35,7 +35,10 @@ const Footer = () => {
             >
               User Login
             </Button>
-            <Button variant="primary">Admin Login</Button>
+            <Button  className="cursor-pointer" variant="outline-primary"
+            name="admin login"
+             >
+              Admin Login</Button>
           </div>
         </div>
       </div>

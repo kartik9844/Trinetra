@@ -74,28 +74,29 @@ const MainHeader = ({
         />
       </div>
       <div
-        className="absolute w-[calc(100%_-_1274px)] top-[24px] right-[666px] left-[608px] flex flex-row pt-0 px-0 pb-[0.5999999046325684px] box-border items-start justify-start"
+        className="absolute top-[calc(50%_-_15px)]  right-[60px] left-[1170px] flex flex-row pt-0 px-0 pb-[0.5999999046325684px] box-border items-start justify-start"
         style={contactStyle}
         onClick={onContactContainerClick}
       >
-        <div className="relative leading-[24px] text-black font-medium">Payments</div>
+        <div className="relative  leading-[25px] text-black font-bold text-base">Payments</div>
       </div>
       <div
-        className="absolute w-[calc(100%_-_1325px)] top-[26px] right-[444.5px] left-[880.5px] flex flex-row pt-0 px-0 pb-[0.5999999046325684px] box-border items-start justify-start cursor-pointer"
+        className="absolute top-[calc(50%_-_15px)] right-[190px] left-[885px]flex-row box-border items-start justify-start cursor-pointer"
         onClick={onContactContainer1Click}
         style={contact1Style}
       >
-        <div className="relative leading-[24px] text-black font-medium">Orders</div>
+        <div className="relative leading-[24px] text-black font-bold text-base">
+          Orders</div>
       </div>
       <div
-        className="absolute top-[24px] left-[355px] leading-[24px] text-black font-medium flex items-center w-40 h-7 cursor-pointer"
+        className="absolute top-[calc(50%_-_16px)] top-[20] left-[1060px] leading-[25px] text-black font-bold text-base flex items-center w-40 h-7 cursor-pointer"
         onClick={onProductsTextClick}
         style={productsStyle}
       >
         Products
       </div>
       <img
-        className="absolute top-[20px] left-[1274px] w-[50x] h-[37px] object-cover cursor-pointer"
+        className="absolute top-[20px] left-[1370px] w-[50x] h-[28px] object-cover cursor-pointer"
         alt=""
         src="/carti.png"
         onClick={onCa2ImageClick}
@@ -113,7 +114,7 @@ const MainHeader = ({
                       <span className="absolute -inset-1.5" />
                       <span className="sr-only">Open user menu</span>
                       <img
-                        className="absolute -top-3 h-15 w-12 rounded-full"
+                        className="absolute -top-1 h-7 w-15 rounded-full"
                         src="/profile.png"
                       />
                     </Menu.Button>
