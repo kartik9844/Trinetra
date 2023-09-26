@@ -4,10 +4,11 @@ import MainHeader from "../components/MainHeader";
 import FormFrame from "../components/FormFrame";
 import { CartContext } from '../context/cartcontext';
 import CartItem from '../components/CartItem';
+import FormatPrice from "../context/formateprice";
 
 const Cart = () => {
   const navigate = useNavigate();
-  const {cart} = useContext(CartContext);
+  const {cart, totalp} = useContext(CartContext);
   // console.log(cart);
   const onSingoutClick = useCallback(() => {
     navigate("/");
@@ -55,7 +56,7 @@ const Cart = () => {
         onSingoutClick={onSingoutClick}
       />
       <div className="fixed top-[90px] left-[100px] h-screen w-full overflow-y-scroll flex-1">
-        <div className="relative top-5 w-[1000px] grid grid-cols-8 gap-4 text-center">
+        <div className="relative top-5 w-[1400px] grid grid-cols-8 gap-4 text-center">
           <p>Item</p>
           <p className="hidden md:block">Per Day Cost</p>
           <p className="hidden md:block">Per Month Cost</p>
@@ -65,28 +66,45 @@ const Cart = () => {
           <p >total</p>
           <p>Remove</p>
         </div>
-        <hr className="my-4 w-[1000px]" />
+        <hr className="my-4 w-[1400px]" />
         <div className="space-y-4">
           {cart.map((curElem) => {
             return <CartItem key={curElem.id} {...curElem} />;
           })}
         </div> 
-        <hr className="my-4 w-[1000px]" />
+        <hr className="my-4 w-[1400px]" />
         <div className="flex justify-between items-center space-x-4">
-          {/* <NavLink to="/products">
-            <button className="btn btn-primary">continue Shopping</button>
-          </NavLink> */}
-          {/* <button className="btn btn-clear" onClick={clearCart}>
-            clear cart
-          </button> */}
+        <div className="border border-gray-200 p-4">
+            <div className="flex justify-between items-center mb-6">
+              <div>
+                <p>order total:</p>
+                <p>
+                  <FormatPrice price={totalp} />
+                </p>
+              </div>
+            </div>
+            <button className="btn btn-primary">Proceed to checkout</button>
+          </div>
         </div>
 
         {/* order total_amount */}
         
       </div>
-      <div className="relative top-11 right-10 mt-16 flex justify-end">
+       {/* order total_amount */}
+       {/* <div className="lg:hidden mt-4">
+          <div className="border border-gray-200 p-4">
+            <div className="flex justify-between items-center mb-6">
+              <div>
+                <p>order total:</p>
+                <p>
+                  <FormatPrice price={10} />
+                </p>
+              </div>
+            </div>
             <button className="btn btn-primary">Proceed to checkout</button>
-        </div>
+          </div>
+        </div> */}
+        
     </div>
   );
 };

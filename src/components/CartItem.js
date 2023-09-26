@@ -7,12 +7,24 @@ import { useCartContext } from '../context/cartcontext'
 
 
 
-const CartItem = ({ id, name, day, month, max, nodays, nomonth }) => {
-  const { removeItem, setDecrease, setIncrement } = useCartContext();
+const CartItem = ({ id, name, day, month, max, nodays, nomonth,total }) => {
+  const { removeItem, setDecrease, setIncrement, DDecrease, DetIncrement, MetDecrease, MetIncrement} = useCartContext();
   const [noDays, setNoDays] = useState(nodays);
   const [noMonths, setNoMonths] = useState(nomonth);
   const dayNum = Number(day); 
   const monthNum = Number(month);
+
+  const handleDaysChange = (value) => {
+    setNoDays(value);
+    // call function with value
+    updateDays(id,noDays); 
+  }
+
+  const handleMonthsChange = (value) => {
+    setNoMonths(value);
+    // call function with value
+    updateMonths(id,noMonths);
+  }
 
   // const setDecrease = () => {
   //   amount > 1 ? setAmounts(amount - 1) : setAmounts(1);
@@ -23,19 +35,19 @@ const CartItem = ({ id, name, day, month, max, nodays, nomonth }) => {
   // };
 
   return (
-    <div className="relative top-5 w-[1000px] grid grid-cols-8 gap-4 text-center">
+    <div className="relative top-5 w-[1400px] grid grid-cols-8 gap-4 text-center">
         <div>
           <p>{name}</p>
         </div>
       {/* price   */}
-      <div className="cart-hide">
+      <div className="hidden md:block">
         <p>
         <FormatPrice price={dayNum} />
         </p>
       </div>
-      <div className="cart-hide">
+      <div className="hidden md:block">
         <p>
-          {monthNum}
+        <FormatPrice price={monthNum} />
         </p>
       </div>
       {/* Quantity  */}
@@ -45,27 +57,25 @@ const CartItem = ({ id, name, day, month, max, nodays, nomonth }) => {
         setIncrease={() => setIncrement(id)}
       />
   <div>
-    <input
-  type="number"
-  value={noDays}
-  onChange={(e) => setNoDays(e.target.value)}
-  style={{width: '50px', height: '20px',border: '1px solid gray' }}
-/>
+  <CartAmountToggle
+        amount={nodays}
+        setDecrease={() => DDecrease(id)}
+        setIncrease={() => DetIncrement(id)}
+      />
 </div>
 
 <div>
-<input
-  type="number"
-  value={noMonths}
-  onChange={(e) => setNoMonths(e.target.value)} 
-  style={{width: '50px', height: '20px',border: '1px solid gray' }}
-/>
+<CartAmountToggle
+        amount={nomonth}
+        setDecrease={() => MetDecrease(id)}
+        setIncrease={() => MetIncrement(id)}
+      />
 </div>
 
       {/* //Subtotal */}
       <div className="cart-hide">
         <p>
-          {nodays * day + nomonth * month}
+         <FormatPrice price={total}/>
         </p>
       </div>
 

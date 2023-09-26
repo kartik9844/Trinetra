@@ -1,93 +1,55 @@
 const cartReducer = (state, action) => {
-    if (action.type === "ADD_TO_CART") {
-      let { id, color, amount, product } = action.payload;
-  
-      // tackle the existing product
-  
-      let existingProduct = state.cart.find(
-        (curItem) => curItem.id === id + color
-      );
-  
-      if (existingProduct) {
-        let updatedProduct = state.cart.map((curElem) => {
-          if (curElem.id === id + color) {
-            let newAmount = curElem.amount + amount;
-  
-            if (newAmount >= curElem.max) {
-              newAmount = curElem.max;
-            }
-            return {
-              ...curElem,
-              amount: newAmount,
-            };
-          } else {
-            return curElem;
+  switch(action.type) {
+    case 'ADD_TO_CART':
+      // Return updated cart
+      let {id,name,Perdaycost,Permonthcost,qmax} = action.payload;
+      //console.log(id,name,Perdaycost,Permonthcost,qmax);
+
+      let existingProduct = state.cart.find((curItem) => curItem.id == id );
+ 
+      
+      if(existingProduct){
+         let updatedProduct = state.cart.map((curItem) => {
+         if(curItem.id == id)
+         {
+          let qty = curItem.max + 1;
+          if( qty >= qmax){
+            qty = qmax;
           }
+          return {
+            ...curItem,
+            max: qty,
+          }
+         }
+         else{
+          return curItem;
+         }
         });
         return {
           ...state,
           cart: updatedProduct,
-        };
-      } else {
-        let cartProduct = {
-          id: id + color,
-          name: product.name,
-          color,
-          amount,
-          image: product.image[0].url,
-          price: product.price,
-          max: product.stock,
-        };
-  
-        return {
-          ...state,
-          cart: [...state.cart, cartProduct],
-        };
+        }
       }
+
+      else{
+      let cp ={
+          id: id,
+          name: name,
+          day: Perdaycost,
+          month: Permonthcost,
+          max: 1,
+          qmax: qmax,
+          nodays: 1,
+          nomonth : 0,
+          total : 1 * Perdaycost + 0 * Permonthcost,
+      };
+      //console.log(cp);
+      return {
+        ...state,
+        cart: [...state.cart, cp],  
+      };
     }
-  
-    // to set the increment and decrement
-    if (action.type === "SET_DECREMENT") {
-      let updatedProduct = state.cart.map((curElem) => {
-        if (curElem.id === action.payload) {
-          let decAmount = curElem.amount - 1;
-  
-          if (decAmount <= 1) {
-            decAmount = 1;
-          }
-  
-          return {
-            ...curElem,
-            amount: decAmount,
-          };
-        } else {
-          return curElem;
-        }
-      });
-      return { ...state, cart: updatedProduct };
-    }
-  
-    if (action.type === "SET_INCREMENT") {
-      let updatedProduct = state.cart.map((curElem) => {
-        if (curElem.id === action.payload) {
-          let incAmount = curElem.amount + 1;
-  
-          if (incAmount >= curElem.max) {
-            incAmount = curElem.max;
-          }
-  
-          return {
-            ...curElem,
-            amount: incAmount,
-          };
-        } else {
-          return curElem;
-        }
-      });
-      return { ...state, cart: updatedProduct };
-    }
-  
-    if (action.type === "REMOVE_ITEM") {
+    case 'REMOVE_ITEM':
       let updatedCart = state.cart.filter(
         (curItem) => curItem.id !== action.payload
       );
@@ -95,68 +57,137 @@ const cartReducer = (state, action) => {
         ...state,
         cart: updatedCart,
       };
-    }
-  
-    // to empty or to clear to cart
-    if (action.type === "CLEAR_CART") {
+    case 'SET_DECREMENT':
+      let updatedProduct = state.cart.map((curItem) => {
+          if(curItem.id === action.payload){
+            let decqty = curItem.max - 1;
+            let T = decqty * (curItem.nodays * curItem.day + curItem.nomonth * curItem.month);
+            if(decqty <= 1){
+              decqty = 1;
+              T = decqty * (curItem.nodays * curItem.day + curItem.nomonth * curItem.month);
+            }
+            return{
+              ...curItem,
+              max : decqty, 
+              total : T,
+            }
+          }else{
+            return curItem;
+          }
+      });
+      return { ...state, cart:updatedProduct  };
+      case 'SET_INCREMENT':
+        let pdatedProduct = state.cart.map((curItem) => {
+            if(curItem.id === action.payload){
+              let decqty = curItem.max + 1;
+              let T = decqty * (curItem.nodays * curItem.day + curItem.nomonth * curItem.month);
+              if(decqty >= curItem.qmax){
+                decqty = curItem.qmax;
+                T = decqty * (curItem.nodays * curItem.day + curItem.nomonth * curItem.month);
+              }
+              return{
+                ...curItem,
+                max : decqty, 
+                total : T,
+              }
+            }else{
+              return curItem;
+            }
+        });
+        return { ...state, cart:pdatedProduct  };
+        case 'DDecrease':
+          let dd = state.cart.map((curItem) => {
+              if(curItem.id === action.payload){
+                let decqty = curItem.nodays - 1;
+                let T = curItem.max * (decqty * curItem.day + curItem.nomonth * curItem.month);
+                if(decqty >= 30){decqty = 30;}
+                else if(decqty <= 1){decqty =1;}
+                return{
+                  ...curItem,
+                  nodays : decqty,
+                  total : T, 
+                }
+              }else{
+                return curItem;
+              }
+          });
+          return { ...state, cart:dd  };
+        case 'DetIncrement':
+            let di = state.cart.map((curItem) => {
+                if(curItem.id === action.payload){
+                  let decqty = curItem.nodays + 1;
+                  let T = curItem.max * (decqty * curItem.day + curItem.nomonth * curItem.month);
+                  if(decqty >= 30){decqty = 30;}
+                  else if(decqty <= 1){decqty = 1;}
+                  return{
+                    ...curItem,
+                    nodays : decqty, 
+                    total : T,
+                  }
+                }else{
+                  return curItem;
+                }
+            });
+            return { ...state, cart:di  };
+            case 'MetDecrease':
+              let md = state.cart.map((curItem) => {
+                  if(curItem.id === action.payload){
+                    let decqty = curItem.nomonth - 1;
+                    let T = curItem.max * (curItem.nodays * curItem.day + decqty * curItem.month);
+                    if(decqty >= 12){
+                      decqty = 12;
+                      T = curItem.max * (curItem.nodays * curItem.day + decqty * curItem.month);
+                    }
+                    else if(decqty <= 0){
+                      decqty = 0;
+                      T = curItem.max * (curItem.nodays * curItem.day + decqty * curItem.month);
+                    }
+                    return{
+                      ...curItem,
+                      nomonth : decqty, 
+                      total : T,
+                    }
+                  }else{
+                    return curItem;
+                  }
+              });
+              return { ...state, cart:md  };
+              case 'MetIncrement':
+                let mi = state.cart.map((curItem) => {
+                    if(curItem.id === action.payload){
+                      let decqty = curItem.nomonth + 1;
+                      let T = curItem.max * (curItem.nodays * curItem.day + decqty * curItem.month);
+                      if(decqty >= 12){
+                        decqty = 12;
+                        T = curItem.max * (curItem.nodays * curItem.day + decqty * curItem.month);
+                      }
+                      else if(decqty <= 0){
+                        decqty = 0;
+                        T = curItem.max * (curItem.nodays * curItem.day + decqty * curItem.month);
+                      }
+                      return{
+                        ...curItem,
+                        nomonth : decqty,
+                        total : T, 
+                      }
+                    }else{
+                      return curItem;
+                    }
+                });
+                return { ...state, cart:mi  };
+    case 'totalprice':
+      let totalp = state.cart.reduce((Initial, curElem ) => {
+        let {total} = curElem;
+        Initial = Initial + total;
+        return Initial;
+      }, 0);
       return {
         ...state,
-        cart: [],
-      };
-    }
-  
-    // if (action.type === "CART_TOTAL_ITEM") {
-    //   let updatedItemVal = state.cart.reduce((initialVal, curElem) => {
-    //     let { amount } = curElem;
-  
-    //     initialVal = initialVal + amount;
-    //     return initialVal;
-    //   }, 0);
-  
-    //   return {
-    //     ...state,
-    //     total_item: updatedItemVal,
-    //   };
-    // }
-  
-    // if (action.type === "CART_TOTAL_PRICE") {
-    //   let total_price = state.cart.reduce((initialVal, curElem) => {
-    //     let { price, amount } = curElem;
-  
-    //     initialVal = initialVal + price * amount;
-  
-    //     return initialVal;
-    //   }, 0);
-  
-    //   return {
-    //     ...state,
-    //     total_price,
-    //   };
-    // }
-  
-    if (action.type === "CART_ITEM_PRICE_TOTAL") {
-      let { total_item, total_price } = state.cart.reduce(
-        (accum, curElem) => {
-          let { price, amount } = curElem;
-  
-          accum.total_item += amount;
-          accum.total_price += price * amount;
-  
-          return accum;
-        },
-        {
-          total_item: 0,
-          total_price: 0,
-        }
-      );
-      return {
-        ...state,
-        total_item,
-        total_price,
-      };
-    }
-  
-    return state;
-  };
-  
-  export default cartReducer;
+        totalp,
+      }
+    default:
+      return state;
+  }
+}
+
+export default cartReducer;
