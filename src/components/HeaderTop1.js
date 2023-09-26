@@ -32,10 +32,14 @@ const HeaderTop1 = () => {
   }, [navigate]);
 
   return (
-    <div className="self-stretch overflow-y-auto flex flex-row items-start justify-start text-left text-base text-dwhite font-popins">
+    <div className="7self-stretch overflow-y-auto flex flex-col md:flex-row md:items-center items-start justify-start text-left text-base text-dwhite font-popins">
       <div className="relative bg-white w-[1550px] h-[80px]">
+      <div className="flex justify-between items-center px-4 py-2">
+        <img src="/logo.png" className="w-32 h-10" alt="Logo"/>
+      </div>
+      
       <BsButton
-          className="absolute top-[calc(50%_-_20px)] left-[calc(50%_+_515.54px)] cursor-pointer"
+         className="absolute top-[calc(50%_-_20px)] left-[calc(50%_+_515.54px)] cursor-pointer"
           variant="outline-primary"
           onClick={onUserButtonClick}
         >
@@ -56,9 +60,9 @@ const HeaderTop1 = () => {
               src="/logo@2x.png"
               onClick={onimgButtonClick}
             />
-            
 
           </div>
+          
           <div
             className="absolute w-[calc(100%_-_1199px)] top-[27.4px] right-[96.84px] left-[1102.16px] flex flex-row pt-0 px-0 pb-[0.5999999046325684px] box-border items-start justify-start cursor-pointer"
           >
@@ -75,7 +79,9 @@ const HeaderTop1 = () => {
           >
             <div className="relative leading-[24px] font-medium">Contact</div>
           </div>
+          
         </div>
+        
       </div>
     </div>
   );

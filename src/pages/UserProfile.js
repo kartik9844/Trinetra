@@ -3,9 +3,41 @@ import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import MainHeader from "../components/MainHeader";
 
+import {
+  collection,
+  getDocs,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  doc,query,where,
+} from "firebase/firestore";import { db} from "../components/firebase";
+import { useEffect, useState } from 'react';
+
 const UserProfile = () => {
   const navigate = useNavigate();
+  
+   const id = localStorage.getItem("uuid");
+   const [docData, setDocData] = useState([]);
+   
+  // Add state for loading 
+  const [loading, setLoading] = useState(true);
+  const userprofile = collection(db, "User profile");
+  const q = query(userprofile, where("Uuid", "==", id));
+  useEffect(() => {
+    getUsers();
+    console.log(docData);
+  }, []);
 
+  const getUsers = async () => {
+    setLoading(true);
+    const querySnapshot = await getDocs(q);
+    const docs = [];
+    querySnapshot.forEach((doc) => {
+      docs.push({...doc.data(), id: doc.id})  
+    });
+    setDocData(docs);
+    setLoading(false);
+  }
   const onLogoFramContainerClick = useCallback(() => {
     navigate("/user-home");
   }, [navigate]);
@@ -36,60 +68,8 @@ const UserProfile = () => {
   }, [navigate]);
 
   return (
-    <div className="relative w-full h-[1003px] text-left text-17xl text-black font-popins">
+    <div className=" font-popins">
       <div className="absolute top-[18px] left-[-2px] w-[1442px] h-[985px]">
-        <div className="absolute top-[0px] left-[2px] bg-dwhite w-[1440px] h-[985px] flex flex-col pt-20 pb-0 pr-0 pl-[220px] box-border items-center justify-center">
-          <div className="relative -top-[300px] w-[1121px] h-[192px] z-[0]">
-            <div className="absolute top-[0px] left-[0px] bg-silver w-[1121px] h-[343px]" />
-            <div className="absolute top-[22px] left-[44px] capitalize font-extrabold">
-              Name:
-            </div>
-            <div className="absolute top-[128px] left-[44px] capitalize font-extrabold">
-              Email:
-            </div>
-            <div className="absolute top-[241px] left-[44px] capitalize font-extrabold">
-              Password:
-            </div>
-            <Button
-              className="absolute top-[418px] left-[336px]"
-              sx={{ width: 225 }}
-              variant="contained"
-              color="primary"
-            >
-              Button
-            </Button>
-            <Button
-              className="absolute top-[418px] left-[703px]"
-              sx={{ width: 225 }}
-              variant="contained"
-              color="primary"
-            >
-              Button
-            </Button>
-          </div>
-          <div className="my-0 mx-[!important] absolute h-[calc(100%_-_87px)] top-[87px] bottom-[0px] left-[0px] bg-gray-800 w-[220px] overflow-hidden flex flex-col py-3 px-0 box-border items-center justify-start z-[1] text-center text-mini font-popins">
-            <div className="self-stretch flex flex-row py-4 px-5 items-center justify-center gap-[12px]">
-              <div className="rounded-xl bg-gray-800 w-6 flex flex-col items-center justify-center">
-                <div className="self-stretch relative leading-[24px] flex items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap h-6 shrink-0">
-                  😃
-                </div>
-              </div>
-              <div className="flex-1 relative text-6xl [text-decoration:underline] leading-[20px] font-medium font-popins text-left">
-                Account
-              </div>
-            </div>
-            <div className="self-stretch flex flex-row py-4 px-5 items-center justify-center gap-[12px]">
-              <div className="rounded-xl bg-gray-800 w-6 flex flex-col items-center justify-center">
-                <div className="self-stretch relative leading-[24px] flex items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap h-6 shrink-0">
-                  😃
-                </div>
-              </div>
-              <div className="flex-1 relative text-8xl leading-[20px] font-medium font-popins text-left">
-                Profile
-              </div>
-            </div>
-          </div>
-        </div>
         <MainHeader
         propCursor="pointer"
         propCursor1="unset"
@@ -105,6 +85,123 @@ const UserProfile = () => {
         onSingoutClick={onSingoutClick}
       />
       </div>
+      <div>
+      {/* Check if data exists before rendering */}
+      {docData.map(doc => (
+        <div className="relative top-[150px] left-9 "  key={doc.id} >
+          
+          
+              <div className="absolute left-1 w-[1000px]">
+      <div className="relative -right-10 px-4 sm:px-0">
+        <h3 className="text-8xl font-semibold leading-7 text-black">User Information</h3>
+      
+      </div>
+      <hr/>
+      <div className="mt-6 border-t border-gray-100">
+        <dl className="divide-y divide-gray-100">
+          
+          <div className="px-4 py-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className=" relative left-10 text-xl font-medium leading-6 text-black">Founder Name</dt>
+            <dd className="relative -right-10 mt-1 text-4xl leading-6 text-black sm:col-span-2 sm:mt-0">{doc.FounderName}</dd>
+          </div>
+          <hr/>
+          <div className="px-4 py-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className="relative left-10 text-xl font-medium leading-6 text-black">Founder Email</dt>
+            <dd className="relative -right-10 mt-1 text-4xl leading-6 text-black sm:col-span-2 sm:mt-0">{doc.FounderEmail}</dd>
+          </div>
+          <hr/>
+          <div className="px-4 py-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className="relative left-10 text-xl font-medium leading-6 text-black">Email</dt>
+            <dd className="relative -right-10 mt-1 text-4xl leading-6 text-black sm:col-span-2 sm:mt-0">{doc.Email}</dd>
+          </div>
+          <hr/>
+          <div className="px-4 py-0  sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className="relative left-10 text-xl font-medium leading-6 text-black">Has Female CoFounder</dt>
+            <dd className="relative -right-10 mt-1 text-4xl leading-6 text-black sm:col-span-2 sm:mt-0">{doc.HasFemaleCoFounder}</dd>
+          </div>
+          <hr/>
+          <div className="px-4 py-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className="relative left-10 text-xl font-medium leading-6 text-black">How Did You Know</dt>
+            <dd className="relative -right-10 mt-1 text-4xl leading-6 text-black sm:col-span-2 sm:mt-0">{doc.HowDidYouKnow}</dd>
+          </div>
+          <hr/>
+          <div className="px-4 py-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className="relative left-10 text-xl font-medium leading-6 text-black">Is Registered</dt>
+            <dd className="relative -right-10 mt-1 text-4xl leading-6 text-black sm:col-span-2 sm:mt-0">{doc.IsRegistered}</dd>
+          </div>
+          <hr/>
+          <div className="px-4 py-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className="relative left-10 text-xl font-medium leading-6 text-black">Lab Support</dt>
+            <dd className="relative -right-10 mt-1 text-4xl leading-6 text-black sm:col-span-2 sm:mt-0">{doc.LabSupport}</dd>
+          </div>
+          <hr/>
+          <div className="px-4 py-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className="relative left-10 text-xl font-medium leading-6 text-black">Phone Number</dt>
+            <dd className="relative -right-10 mt-1 text-4xl leading-6 text-black sm:col-span-2 sm:mt-0">{doc.PhoneNumber}</dd>
+          </div>
+          <hr/>
+          <div className="px-4 py-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className="relative left-10 text-xl font-medium leading-6 text-black">Problem Statement</dt>
+            <dd className="relative -right-10 mt-1 text-4xl leading-6 text-black sm:col-span-2 sm:mt-0">{doc.ProblemStatement}</dd>
+          </div>
+          <hr/>
+          <div className="px-4 py-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className="relative left-10 text-xl font-medium leading-6 text-black">Project Budget</dt>
+            <dd className="relative -right-10 mt-1 text-4xl leading-6 text-black sm:col-span-2 sm:mt-0">{doc.ProjectBudget}</dd>
+          </div>
+          <hr/>
+          <div className="px-4 py-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className="relative left-10 text-xl font-medium leading-6 text-black">Project Completion Time</dt>
+            <dd className="relative -right-10 mt-1 text-4xl leading-6 text-black sm:col-span-2 sm:mt-0">{doc.ProjectCompletionTime}</dd>
+          </div>
+          <hr/>
+          <div className="px-4 py-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className="relative left-10 text-xl font-medium leading-6 text-black">Prototyping Support</dt>
+            <dd className="relative -right-10 mt-1 text-4xl leading-6 text-black sm:col-span-2 sm:mt-0">{doc.PrototypingSupport}</dd>
+          </div>
+          <hr/>
+          <div className="px-4 py-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className="relative left-10 text-xl font-medium leading-6 text-black">Registration Year</dt>
+            <dd className="relative -right-10 mt-1 text-4xl leading-6 text-black sm:col-span-2 sm:mt-0">{doc.RegistrationYear}</dd>
+          </div>
+          <hr/>
+          <div className="px-4 py-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className="relative left-10 text-xl font-medium leading-6 text-black">Startup Name</dt>
+            <dd className="relative -right-10 mt-1 text-4xl leading-6 text-black sm:col-span-2 sm:mt-0">{doc.StartupName}</dd>
+          </div>
+          <hr/>
+          <div className="px-4 py-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className="relative left-10 text-xl font-medium leading-6 text-black">Startup Sector</dt>
+            <dd className="relative -right-10 mt-1 text-4xl leading-6 text-black sm:col-span-2 sm:mt-0">{doc.StartupSector}</dd>
+          </div>
+          <hr/>
+          <div className="px-4 py-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className="relative left-10 text-xl font-medium leading-6 text-black">Startup Stage</dt>
+            <dd className="relative -right-10 mt-1 text-4xl leading-6 text-black sm:col-span-2 sm:mt-0">{doc.StartupStage}</dd>
+          </div>
+          <hr/>
+          <div className="px-4 py-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className="relative left-10 text-xl font-medium leading-6 text-black">Startup Website</dt>
+            <dd className="relative -right-10 mt-1 text-4xl leading-6 text-black sm:col-span-2 sm:mt-0">{doc.StartupWebsite}</dd>
+          </div>
+          <hr/>
+          <div className="px-4 py-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className="relative left-10 text-xl font-medium leading-6 text-black">Who Are You</dt>
+            <dd className="relative -right-10 mt-1 text-4xl leading-6 text-black sm:col-span-2 sm:mt-0">{doc.WhoAreYou}</dd>
+          </div>
+          <hr/>
+          <div className="px-4 py-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className="relative left-10 text-xl font-medium leading-6 text-black">Aware Of Charges</dt>
+            <dd className="relative -right-10 mt-1 text-4xl leading-6 text-black sm:col-span-2 sm:mt-0">{doc.AwareOfCharges}</dd>
+          </div>
+          <hr/>
+        </dl>
+      </div>
+    </div>
+
+      </div>
+        ))}
+    </div>
     </div>
   );
 };
