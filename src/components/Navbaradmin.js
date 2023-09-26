@@ -97,7 +97,7 @@ const Navbaradmin = ({
         <div className="relative leading-[24px] text-black font-bold text-base">User</div>
       </div>
       <div
-        className="absolute top-[24px] left-[1070px] leading-[24px] text-black font-bold text-base flex items-center w-40 h-7 cursor-pointer"
+        className="absolute top-[24px] left-[1070px] leading-[24px] text-black font-bold text-base flex items-center w-0 h-7 cursor-pointer"
         onClick={onEquipmentsTextClick}
         style={productsStyle}
       >
