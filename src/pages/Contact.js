@@ -26,7 +26,7 @@ const Contact = () => {
       <LabMembersContainer1 />
       <div className="self-stretch bg-dgray h-[220px] overflow-hidden shrink-0 flex flex-row p-[70px] box-border items-center justify-center text-xl text-darkslategray-200">
         <div className="h-[100px] flex flex-row items-center justify-center gap-[50px]">
-          <div className="self-stretch relative text-inherit leading-[28px] font-inherit flex items-center w-[465px] shrink-0">
+          <div className="self-stretch relative text-inherit leading-[28px] font-popins flex items-center w-[465px] shrink-0">
             <ul className="m-0 pl-[27px]">
               Lab Address: Deshpande Foundation,, Skill Development Center,,
               Airport Road, Hubballi, Karnataka 580030, India.
