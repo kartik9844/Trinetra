@@ -91,13 +91,16 @@ function useCart() {
         let Td;
         let updatedProduct = state.cart.map((curItem) => {
             if(curItem.id === action.payload){
+              let T;
               let decqty = curItem.max - 1;
-              Td = state.totalp - (curItem.nodays * curItem.day + curItem.nomonth * curItem.month);
-              let T = decqty * (curItem.nodays * curItem.day + curItem.nomonth * curItem.month);
               if(decqty <= 1){
                 decqty = 1;
                 T = decqty * (curItem.nodays * curItem.day + curItem.nomonth * curItem.month);
                 Td = state.totalp;
+              }
+              else{
+                Td = state.totalp - (curItem.nodays * curItem.day + curItem.nomonth * curItem.month);
+                T = decqty * (curItem.nodays * curItem.day + curItem.nomonth * curItem.month);
               }
               return{
                 ...curItem,
@@ -113,24 +116,29 @@ function useCart() {
           let Ti;
           let pdatedProduct = state.cart.map((curItem) => {
               if(curItem.id === action.payload){
+                let T;
                 let decqty = curItem.max + 1;
-                Ti = state.totalp + (curItem.nodays * curItem.day + curItem.nomonth * curItem.month);
-                let T = decqty * (curItem.nodays * curItem.day + curItem.nomonth * curItem.month);
+
                 if(decqty >= curItem.qmax){
                   decqty = curItem.qmax;
                   T = decqty * (curItem.nodays * curItem.day + curItem.nomonth * curItem.month);
                   Ti = state.totalp;
                 }
+                else{
+                  Ti = state.totalp + (curItem.nodays * curItem.day + curItem.nomonth * curItem.month);
+                  T = decqty * (curItem.nodays * curItem.day + curItem.nomonth * curItem.month);
+                }
                 return{
                   ...curItem,
                   max : decqty,
                   total : T,
+                  totalp : Ti,
                 }
               }else{
                 return curItem;
               }
           });
-          return { ...state, cart:pdatedProduct ,totalp: Ti };
+          return { ...state, cart:pdatedProduct , totalp: Ti };
           case 'DDecrease':
             let tdd;
             let dd = state.cart.map((curItem) => {
