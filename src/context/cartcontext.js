@@ -97,10 +97,11 @@ function useCart() {
               if(decqty <= 1){
                 decqty = 1;
                 T = decqty * (curItem.nodays * curItem.day + curItem.nomonth * curItem.month);
+                Td = state.totalp;
               }
               return{
                 ...curItem,
-                max : decqty, 
+                max : decqty,
                 total : T,
               }
             }else{
@@ -118,10 +119,11 @@ function useCart() {
                 if(decqty >= curItem.qmax){
                   decqty = curItem.qmax;
                   T = decqty * (curItem.nodays * curItem.day + curItem.nomonth * curItem.month);
+                  Ti = state.totalp;
                 }
                 return{
                   ...curItem,
-                  max : decqty, 
+                  max : decqty,
                   total : T,
                 }
               }else{
@@ -134,14 +136,27 @@ function useCart() {
             let dd = state.cart.map((curItem) => {
                 if(curItem.id === action.payload){
                   let decqty = curItem.nodays - 1;
-                  tdd = di = state.totalp - Number(curItem.day);
-                  let T = curItem.max * (decqty * curItem.day + curItem.nomonth * curItem.month);
-                  if(decqty >= 30){decqty = 30;}
-                  else if(decqty <= 1){decqty =1;}
+                  let T;
+                  // tdd = state.totalp - Number(curItem.day);
+                  // let T = curItem.max * (decqty * curItem.day + curItem.nomonth * curItem.month);
+                  if(decqty >= 30){
+                    decqty = 30;
+                    T = curItem.max * (decqty * curItem.day + curItem.nomonth * curItem.month);
+                    tdd = state.totalp
+                  }
+                  else if(decqty <= 1){
+                    decqty =1;
+                    T = curItem.max * (decqty * curItem.day + curItem.nomonth * curItem.month);
+                    tdd = state.totalp;
+                  }
+                  else{
+                    tdd = state.totalp - Number(curItem.day);
+                    let T = curItem.max * (decqty * curItem.day + curItem.nomonth * curItem.month);
+                  }
                   return{
                     ...curItem,
                     nodays : decqty,
-                    total : T, 
+                    total : T,
                   }
                 }else{
                   return curItem;
@@ -149,42 +164,60 @@ function useCart() {
             });
             return { ...state, cart:dd, totalp:tdd  };
           case 'DetIncrement':
-              let tdi;
-              let di = state.cart.map((curItem) => {
-                  if(curItem.id === action.payload){
-                    let decqty = curItem.nodays + 1;
-                    tdi = state.totalp + Number(curItem.day);
-                    let T = curItem.max * (decqty * curItem.day + curItem.nomonth * curItem.month);
-                    if(decqty >= 30){decqty = 30;}
-                    else if(decqty <= 1){decqty = 1;}
-                    return{
-                      ...curItem,
-                      nodays : decqty, 
-                      total : T,
-                    }
-                  }else{
-                    return curItem;
+            let tdi;
+            let di = state.cart.map((curItem) => {
+                if(curItem.id === action.payload){
+                  let decqty = curItem.nodays + 1;
+                  let T;
+                 
+                  if(decqty >= 30){
+                    decqty = 30;
+                    tdi = state.totalp;
+                    T = curItem.max * (decqty * curItem.day + curItem.nomonth * curItem.month);
                   }
-              });
-              return { ...state, cart:di, totalp:tdi  };
+                  else if(decqty <= 1){
+                    decqty = 1;
+                    tdi = state.totalp;
+                    T = curItem.max * (decqty * curItem.day + curItem.nomonth * curItem.month);
+                  }
+                  else{
+                    tdi = state.totalp + Number(curItem.day);
+                    T = curItem.max * (decqty * curItem.day + curItem.nomonth * curItem.month);
+                  }
+                  return{
+                    ...curItem,
+                    nodays : decqty,
+                    total : T,
+                  }
+                }else{
+                  return curItem;
+                }
+            });
+            return { ...state, cart:di, totalp:tdi  };
               case 'MetDecrease':
                 let tmd;
                 let md = state.cart.map((curItem) => {
                     if(curItem.id === action.payload){
                       let decqty = curItem.nomonth - 1;
-                      tmd = state.totalp - Number(curItem.month);
-                      let T = curItem.max * (curItem.nodays * curItem.day + decqty * curItem.month);
+                      let T;
+                   
                       if(decqty >= 12){
                         decqty = 12;
                         T = curItem.max * (curItem.nodays * curItem.day + decqty * curItem.month);
+                        tmd = state.totalp;
                       }
                       else if(decqty <= 0){
                         decqty = 0;
                         T = curItem.max * (curItem.nodays * curItem.day + decqty * curItem.month);
+                        tmd = state.totalp;
+                      }
+                      else{
+                        tmd = state.totalp - Number(curItem.month);
+                        T = curItem.max * (curItem.nodays * curItem.day + decqty * curItem.month);
                       }
                       return{
                         ...curItem,
-                        nomonth : decqty, 
+                        nomonth : decqty,
                         total : T,
                       }
                     }else{
@@ -197,20 +230,26 @@ function useCart() {
                   let mi = state.cart.map((curItem) => {
                       if(curItem.id === action.payload){
                         let decqty = curItem.nomonth + 1;
-                        tmi = state.totalp + Number(curItem.month);
-                        let T = curItem.max * (curItem.nodays * curItem.day + decqty * curItem.month);
+                        let T;
+                       
                         if(decqty >= 12){
                           decqty = 12;
                           T = curItem.max * (curItem.nodays * curItem.day + decqty * curItem.month);
+                          tmi = state.totalp;
                         }
                         else if(decqty <= 0){
                           decqty = 0;
+                          T = curItem.max * (curItem.nodays * curItem.day + decqty * curItem.month);
+                          tmi = state.totalp;
+                        }
+                        else{
+                          tmi = state.totalp + Number(curItem.month);
                           T = curItem.max * (curItem.nodays * curItem.day + decqty * curItem.month);
                         }
                         return{
                           ...curItem,
                           nomonth : decqty,
-                          total : T, 
+                          total : T,
                         }
                       }else{
                         return curItem;
