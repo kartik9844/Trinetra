@@ -1,14 +1,28 @@
-import { useCallback ,useContext } from "react";
+import { useCallback ,useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import MainHeader from "../components/MainHeader";
 import FormFrame from "../components/FormFrame";
 import { CartContext } from '../context/cartcontext';
 import CartItem from '../components/CartItem';
 import FormatPrice from "../context/formateprice";
+import { TextField, Button } from "@mui/material";
+import {
+  collection,
+  getDocs,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  doc,query,where,
+} from "firebase/firestore";import { db} from "../components/firebase";
 
 const Cart = () => {
   const navigate = useNavigate();
-  const {cart, totalp} = useContext(CartContext);
+  const {cart, totalp, person, updatePerson} = useContext(CartContext);
+  const handleInputChange = (e) => {
+    const person = e.target.value;
+    updatePerson(person);
+  }
+  
   // console.log(cart);
   const onSingoutClick = useCallback(() => {
     navigate("/");
@@ -82,12 +96,22 @@ const Cart = () => {
                   <FormatPrice price={totalp} />
                 </p>
               </div>
+              <div className="relative top-[50px] -left-[78px]">
+             <label>Name:</label> 
+              <input 
+              type="text" 
+              value={person}
+              onChange={handleInputChange}
+              className="border border-black relative left-2"
+              />
             </div>
-            <button className="btn btn-primary">Proceed to checkout</button>
+            </div>
+            <button className="btn btn-primary relative top-2" >Rent Now</button>
           </div>
         </div>
 
         {/* order total_amount */}
+
         
       </div>
        {/* order total_amount */}
