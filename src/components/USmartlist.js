@@ -88,10 +88,7 @@ export default function USmartlist() {
       getUsers();
     }
   };
-
-  
-
-  return (
+return (
     <>
       {rows.length > 0 && (
         <Paper sx={{ width: "85%", overflow: "hidden", padding: "12px" 
@@ -176,7 +173,6 @@ export default function USmartlist() {
                         <TableCell align="left">{row.Assetno}</TableCell>
                         <TableCell align="left">{row.Perdaycost}</TableCell>
                         <TableCell align="left">{row.Permonthcost}</TableCell>
-                        
                         {<TableCell align="left">
                           <Stack  direction="row">
                           <Button variant="contained" onClick={() => addToCart(row.id, row.Name, row.Perdaycost, row.Permonthcost,row.Quantity) }>ADD</Button>

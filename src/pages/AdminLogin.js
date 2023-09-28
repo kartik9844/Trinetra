@@ -24,11 +24,6 @@ const adminPassword = "password123";
   const onIfYouHaveClick = useCallback(() => {
     navigate("/sign-up");
   }, [navigate]);
-  
-  
-
-  
-
   const onAdminButtonClick = useCallback(() => {
     navigate("/");
   }, [navigate]);
@@ -46,8 +41,6 @@ const adminPassword = "password123";
     }
   
   }
-  
-
   return (
     <div className="relative  w-full h-[1024px] overflow-hidden flex flex-col py-0 px-px box-border items-start justify-start gap-[54px]  bg-cover bg-no-repeat bg-[top]font-popins">
       <img
@@ -77,7 +70,7 @@ const adminPassword = "password123";
             <div className="relative -top-12 -left-[0px] w-[250px] h-[91px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[6px]">
             <div className="relative -left-5 capitalize non-italic inline-block h-[30px] ml-5">
               <b>Password</b>
-              <b className="font-popins  text-firebrick">*</b>
+              <b className="font-popins  text-firebrick">*</b>'\'
             </div>
             <Form.Group className="[border:none] bg-[transparent] self-stretch h-[55px] ml-0">
               <Form.Control type="password" placeholder="Enter your password" value={password} onChange={e => setPassword(e.target.value)} />

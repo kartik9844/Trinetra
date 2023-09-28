@@ -153,7 +153,7 @@ const MainHeader = ({
                   </Transition>
                 </Menu>
       
-    </div>
+      </div>
   );
 };
 

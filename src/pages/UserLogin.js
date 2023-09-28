@@ -177,8 +177,8 @@ const Desktop2 = () => {
                         <span className="capitalize">{`Don’t `}</span>
                         <span className="lowercase">H</span>
                         <span className="capitalize">{`ave `}</span>
-                        <span className="lowercase">A</span>
-                        <span className="capitalize">n a</span>
+                        <span className="lowercase">a</span>
+                        <span className="capitalize">n A</span>
                         <span className="lowercase">CC</span>
                         <span className="capitalize">ount?</span>
                       </span>
