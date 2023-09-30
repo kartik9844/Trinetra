@@ -17,11 +17,15 @@ import {
 
 const Cart = () => {
   const navigate = useNavigate();
-  const {cart, totalp, person, updatePerson} = useContext(CartContext);
+  const {cart, totalp, person, updatePerson,dispatchTotal} = useContext(CartContext);
   const handleInputChange = (e) => {
     const person = e.target.value;
     updatePerson(person);
   }
+
+  useEffect(() => {
+    dispatchTotal();
+    });
   
   // console.log(cart);
   const onSingoutClick = useCallback(() => {

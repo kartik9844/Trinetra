@@ -331,9 +331,9 @@ function useCart() {
     dispatch({ type: "CLEAR_CART" });
   };
    
-  // const dispatchTotal = () => {
-  //   dispatch({type: 'totalprice'}) 
-  // }
+  const dispatchTotal = () => {
+    dispatch({type: 'totalprice'}) 
+  }
 
   
 
@@ -352,6 +352,7 @@ function useCart() {
         MetIncrement,
         setIncrement,
         dispatch,
+        dispatchTotal,
       };
     }
 
@@ -363,12 +364,12 @@ const CartProvider = ({ children }) => {
     // const addToCart = (id,Name,Perdaycost,Permonthcost) => {
     //     setCart([...cart, {id:id,Name:Name,Perdaycost:Perdaycost,Permonthcost:Permonthcost}])
     // };
-    useEffect(() => {
-      dispatch({type :"totalprice"})
-    });
+    // useEffect(() => {
+    //   dispatch({type :"totalprice"})
+    // });
     
    
-    return (<CartContext.Provider value={{cart, totalp, addToCart, removeItem, clearCart, setDecrease, setIncrement,DDecrease, DetIncrement, MetDecrease, MetIncrement}}>{ children }</CartContext.Provider>);
+    return (<CartContext.Provider value={{cart, totalp, addToCart, removeItem, clearCart, setDecrease, setIncrement,DDecrease, DetIncrement, MetDecrease, MetIncrement, dispatchTotal}}>{ children }</CartContext.Provider>);
 };
 
 const useCartContext = () => {
