@@ -11,8 +11,9 @@ function useCart() {
     const initialState = {
     cart: [] ,
     totalp: 0,
- 
     }
+
+    
     
     // Reducer 
      const cartReducer = (state, action) => {
@@ -26,12 +27,12 @@ function useCart() {
    
         
         if(existingProduct){
-          let TT;
+          // let TT;
            let updatedProduct = state.cart.map((curItem) => {
            if(curItem.id == id)
            {
             let qty = curItem.max + 1;
-            TT = state.totalp + (1 * Perdaycost + 0 * Permonthcost);
+            // TT = state.totalp + (1 * Perdaycost + 0 * Permonthcost);
             if( qty >= qmax){
               qty = qmax;
             }
@@ -47,7 +48,7 @@ function useCart() {
           return {
             ...state,
             cart: updatedProduct,
-            totalp: TT,
+            // totalp: TT,
           }
         }
 
@@ -64,12 +65,12 @@ function useCart() {
             total : 1 * Perdaycost + 0 * Permonthcost,
         };
         //console.log(cp);
-        let TT = state.totalp + (1 * Perdaycost + 0 * Permonthcost);
+        // let TT = state.totalp + (1 * Perdaycost + 0 * Permonthcost);
 
         return {
           ...state,
           cart: [...state.cart, cp],  
-          totalp: TT,
+          // totalp: TT,
         };
       }
       case 'REMOVE_ITEM':
@@ -78,17 +79,17 @@ function useCart() {
         const itemToRemove = state.cart.find(item => item.id === action.payload);
 
         // Calculate new total price by subtracting removed item price
-        let newTotal = state.totalp - itemToRemove.total;
+        // let newTotal = state.totalp - itemToRemove.total;
         let updatedCart = state.cart.filter(
           (curItem) => curItem.id !== action.payload
         );
         return {
           ...state,
           cart: updatedCart,
-          totalp: newTotal,
+          // totalp: newTotal,
         };
       case 'SET_DECREMENT':
-        let Td;
+        // let Td;
         let updatedProduct = state.cart.map((curItem) => {
             if(curItem.id === action.payload){
               let T;
@@ -96,24 +97,25 @@ function useCart() {
               if(decqty <= 1){
                 decqty = 1;
                 T = decqty * (curItem.nodays * curItem.day + curItem.nomonth * curItem.month);
-                Td = state.totalp;
+                // Td = state.totalp;
               }
               else{
-                Td = state.totalp - (curItem.nodays * curItem.day + curItem.nomonth * curItem.month);
+                // state.totalp = state.totalp - (curItem.nodays * curItem.day + curItem.nomonth * curItem.month);
                 T = decqty * (curItem.nodays * curItem.day + curItem.nomonth * curItem.month);
               }
               return{
                 ...curItem,
                 max : decqty,
                 total : T,
+                // totalp : Td,
               }
             }else{
               return curItem;
             }
         });
-        return { ...state, cart:updatedProduct,totalp: Td };
+        return { ...state, cart:updatedProduct };
         case 'SET_INCREMENT':
-          let Ti;
+          // let Ti;
           let pdatedProduct = state.cart.map((curItem) => {
               if(curItem.id === action.payload){
                 let T;
@@ -122,25 +124,25 @@ function useCart() {
                 if(decqty >= curItem.qmax){
                   decqty = curItem.qmax;
                   T = decqty * (curItem.nodays * curItem.day + curItem.nomonth * curItem.month);
-                  Ti = state.totalp;
+                  // Ti = state.totalp;
                 }
                 else{
-                  Ti = state.totalp + (curItem.nodays * curItem.day + curItem.nomonth * curItem.month);
+                  // Ti = state.totalp + (curItem.nodays * curItem.day + curItem.nomonth * curItem.month);
                   T = decqty * (curItem.nodays * curItem.day + curItem.nomonth * curItem.month);
                 }
                 return{
                   ...curItem,
                   max : decqty,
                   total : T,
-                  totalp : Ti,
+                  // totalp : Ti,
                 }
               }else{
                 return curItem;
               }
           });
-          return { ...state, cart:pdatedProduct , totalp: Ti };
+          return { ...state, cart:pdatedProduct  };
           case 'DDecrease':
-            let tdd;
+            // let tdd;
             let dd = state.cart.map((curItem) => {
                 if(curItem.id === action.payload){
                   let decqty = curItem.nodays - 1;
@@ -150,15 +152,15 @@ function useCart() {
                   if(decqty >= 30){
                     decqty = 30;
                     T = curItem.max * (decqty * curItem.day + curItem.nomonth * curItem.month);
-                    tdd = state.totalp
+                    // tdd = state.totalp
                   }
                   else if(decqty <= 1){
                     decqty =1;
                     T = curItem.max * (decqty * curItem.day + curItem.nomonth * curItem.month);
-                    tdd = state.totalp;
+                    // tdd = state.totalp;
                   }
                   else{
-                    tdd = state.totalp - Number(curItem.day);
+                    // tdd = state.totalp - Number(curItem.day);
                     let T = curItem.max * (decqty * curItem.day + curItem.nomonth * curItem.month);
                   }
                   return{
@@ -170,9 +172,9 @@ function useCart() {
                   return curItem;
                 }
             });
-            return { ...state, cart:dd, totalp:tdd  };
+            return { ...state, cart:dd };
           case 'DetIncrement':
-            let tdi;
+            // let tdi;
             let di = state.cart.map((curItem) => {
                 if(curItem.id === action.payload){
                   let decqty = curItem.nodays + 1;
@@ -180,16 +182,16 @@ function useCart() {
                  
                   if(decqty >= 30){
                     decqty = 30;
-                    tdi = state.totalp;
+                    // tdi = state.totalp;
                     T = curItem.max * (decqty * curItem.day + curItem.nomonth * curItem.month);
                   }
                   else if(decqty <= 1){
                     decqty = 1;
-                    tdi = state.totalp;
+                    // tdi = state.totalp;
                     T = curItem.max * (decqty * curItem.day + curItem.nomonth * curItem.month);
                   }
                   else{
-                    tdi = state.totalp + Number(curItem.day);
+                    // tdi = state.totalp + Number(curItem.day);
                     T = curItem.max * (decqty * curItem.day + curItem.nomonth * curItem.month);
                   }
                   return{
@@ -201,9 +203,9 @@ function useCart() {
                   return curItem;
                 }
             });
-            return { ...state, cart:di, totalp:tdi  };
+            return { ...state, cart:di,   };
               case 'MetDecrease':
-                let tmd;
+                // let tmd;
                 let md = state.cart.map((curItem) => {
                     if(curItem.id === action.payload){
                       let decqty = curItem.nomonth - 1;
@@ -212,15 +214,15 @@ function useCart() {
                       if(decqty >= 12){
                         decqty = 12;
                         T = curItem.max * (curItem.nodays * curItem.day + decqty * curItem.month);
-                        tmd = state.totalp;
+                        // tmd = state.totalp;
                       }
                       else if(decqty <= 0){
                         decqty = 0;
                         T = curItem.max * (curItem.nodays * curItem.day + decqty * curItem.month);
-                        tmd = state.totalp;
+                        // tmd = state.totalp;
                       }
                       else{
-                        tmd = state.totalp - Number(curItem.month);
+                        // tmd = state.totalp - Number(curItem.month);
                         T = curItem.max * (curItem.nodays * curItem.day + decqty * curItem.month);
                       }
                       return{
@@ -232,9 +234,9 @@ function useCart() {
                       return curItem;
                     }
                 });
-                return { ...state, cart:md, totalp:tmd  };
+                return { ...state, cart:md,  };
                 case 'MetIncrement':
-                  let tmi;
+                  // let tmi;
                   let mi = state.cart.map((curItem) => {
                       if(curItem.id === action.payload){
                         let decqty = curItem.nomonth + 1;
@@ -243,15 +245,15 @@ function useCart() {
                         if(decqty >= 12){
                           decqty = 12;
                           T = curItem.max * (curItem.nodays * curItem.day + decqty * curItem.month);
-                          tmi = state.totalp;
+                          // tmi = state.totalp;
                         }
                         else if(decqty <= 0){
                           decqty = 0;
                           T = curItem.max * (curItem.nodays * curItem.day + decqty * curItem.month);
-                          tmi = state.totalp;
+                          // tmi = state.totalp;
                         }
                         else{
-                          tmi = state.totalp + Number(curItem.month);
+                          // tmi = state.totalp + Number(curItem.month);
                           T = curItem.max * (curItem.nodays * curItem.day + decqty * curItem.month);
                         }
                         return{
@@ -263,16 +265,16 @@ function useCart() {
                         return curItem;
                       }
                   });
-                  return { ...state, cart:mi , totalp:tmi };
+                  return { ...state, cart:mi  };
       case 'totalprice':
-        let totalp = state.cart.reduce((Initial, curElem ) => {
-          let {total} = curElem;
-          Initial = Initial + total;
-          return Initial;
-        }, 0);
+        let amt=0;
+        state.cart.map((curElem ) => {
+          amt = amt + curElem.total;
+          return amt;
+        });
         return {
           ...state,
-          totalp,
+          totalp: amt,
         }
       default:
         return state;
@@ -319,6 +321,10 @@ function useCart() {
       const MetIncrement = (id) => {
         dispatch({ type: "MetIncrement", payload: id });
       }
+      
+      const final = () => {
+        dispatch({ type: "totalprice" });
+      };
 
   // to clear the cart
   const clearCart = () => {
@@ -357,9 +363,9 @@ const CartProvider = ({ children }) => {
     // const addToCart = (id,Name,Perdaycost,Permonthcost) => {
     //     setCart([...cart, {id:id,Name:Name,Perdaycost:Perdaycost,Permonthcost:Permonthcost}])
     // };
-    // useEffect(() => {
-    //   dispatch({type :"totalprice"})
-    // });
+    useEffect(() => {
+      dispatch({type :"totalprice"})
+    });
     
    
     return (<CartContext.Provider value={{cart, totalp, addToCart, removeItem, clearCart, setDecrease, setIncrement,DDecrease, DetIncrement, MetDecrease, MetIncrement}}>{ children }</CartContext.Provider>);
