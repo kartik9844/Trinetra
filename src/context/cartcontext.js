@@ -88,6 +88,11 @@ function useCart() {
           cart: updatedCart,
           // totalp: newTotal,
         };
+      case 'CLEAR_CART':
+        return{
+          ...state,
+          cart: [],
+        }
       case 'SET_DECREMENT':
         // let Td;
         let updatedProduct = state.cart.map((curItem) => {
@@ -359,7 +364,7 @@ function useCart() {
 // const [cart, setCart] = useState([]);
 
 const CartProvider = ({ children }) => {
-    const {cart,totalp, state, dispatch, setCart, addToCart, removeItem,  clearCart, setDecrease, setIncrement, DDecrease, DetIncrement, MetDecrease, MetIncrement,dispatchTotal } = useCart();
+    const {cart,totalp, state, dispatch, setCart,  addToCart, removeItem,  clearCart, setDecrease, setIncrement, DDecrease, DetIncrement, MetDecrease, MetIncrement,dispatchTotal } = useCart();
 
     // const addToCart = (id,Name,Perdaycost,Permonthcost) => {
     //     setCart([...cart, {id:id,Name:Name,Perdaycost:Perdaycost,Permonthcost:Permonthcost}])

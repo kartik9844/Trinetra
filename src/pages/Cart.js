@@ -12,16 +12,16 @@ import {
   addDoc,
   updateDoc,
   deleteDoc,
+  FirebaseFirestoreSwift,
   doc,query,where,
-} from "firebase/firestore";import { db} from "../components/firebase";
+} from "firebase/firestore";
+import { db} from "../components/firebase";
 
 const Cart = () => {
   const navigate = useNavigate();
-  const {cart, totalp, person, updatePerson,dispatchTotal} = useContext(CartContext);
-  const handleInputChange = (e) => {
-    const person = e.target.value;
-    updatePerson(person);
-  }
+  const {cart, totalp,state, dispatchTotal,clearCart} = useContext(CartContext);
+  const [person,setperson]= useState("")
+  
 
   useEffect(() => {
     dispatchTotal();
@@ -55,6 +55,56 @@ const Cart = () => {
   const onCa2ImageClick = useCallback(() => {
     navigate("/cart");
   }, [navigate]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // Handle form submission logic here
+    // const map1 = new Map(
+    //   cart.map(obj => {
+    //     return [obj.id, obj.name, obj.day, obj.month, obj.max, obj.qmax, obj.nodays, obj.nomonth, obj.total];
+    //   }),
+    // )
+    const cartMap = {};
+
+  cart.forEach((item, index) => {
+    cartMap[index] = {
+      id: item.id,
+      name: item.name,
+      cmonth: item.month,
+      dcost: item.day,
+      max: item.max,
+      qmax: item.qmax,
+      nodays: item.nodays,
+      nomonths: item.nomonth,
+      STotal: item.total,
+    };
+  });
+  console.log(cartMap)
+  const docData = {
+    Lab: "Smart lab",
+    Person: person,
+    Status: "Pending",
+    Totalamount: totalp,
+    cart: cartMap,
+    Uuid: localStorage.getItem("uuid"),
+  };
+    const docRef = await addDoc(collection(db, "Order history"), docData);
+    console.log("Document written with ID: ", docRef.id);
+    const docid = docRef.id;
+    console.log(docData);
+    for (const key in cartMap) {
+      const cartItem = cartMap[key];
+      const updatedCartItem = {
+        ...cartItem,
+        reference: `${docid}`
+      }
+      const docRefi = await addDoc(collection(db, "Order"), updatedCartItem);
+      console.log("Document written with ID: ", docRefi.id);
+    }
+    alert("rent order submited")
+    clearCart();
+    onLogoFramContainerClick();
+  };
 
   return (
     <div className="font-popins">
@@ -105,34 +155,15 @@ const Cart = () => {
               <input 
               type="text" 
               value={person}
-              onChange={handleInputChange}
+              onChange={(e) => setperson(e.target.value)}
               className="border border-black relative left-2"
               />
             </div>
             </div>
-            <button className="btn btn-primary relative top-2" >Rent Now</button>
+            <button className="btn btn-primary relative top-2" onClick={handleSubmit}  >Rent Now</button>
           </div>
-        </div>
-
-        {/* order total_amount */}
-
-        
-      </div>
-       {/* order total_amount */}
-       {/* <div className="lg:hidden mt-4">
-          <div className="border border-gray-200 p-4">
-            <div className="flex justify-between items-center mb-6">
-              <div>
-                <p>order total:</p>
-                <p>
-                  <FormatPrice price={10} />
-                </p>
-              </div>
-            </div>
-            <button className="btn btn-primary">Proceed to checkout</button>
-          </div>
-        </div> */}
-        
+        </div> 
+      </div>        
     </div>
   );
 };
