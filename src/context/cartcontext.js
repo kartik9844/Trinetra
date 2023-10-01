@@ -369,7 +369,7 @@ const CartProvider = ({ children }) => {
     // });
     
    
-    return (<CartContext.Provider value={{cart, totalp, addToCart, removeItem, clearCart, setDecrease, setIncrement,DDecrease, DetIncrement, MetDecrease, MetIncrement, dispatchTotal}}>{ children }</CartContext.Provider>);
+    return (<CartContext.Provider value={{cart, totalp,state, addToCart, removeItem, clearCart, setDecrease, setIncrement,DDecrease, DetIncrement, MetDecrease, MetIncrement, dispatchTotal}}>{ children }</CartContext.Provider>);
 };
 
 const useCartContext = () => {
