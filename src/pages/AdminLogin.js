@@ -70,7 +70,7 @@ const adminPassword = "password123";
             <div className="relative -top-12 -left-[0px] w-[250px] h-[91px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[6px]">
             <div className="relative -left-5 capitalize non-italic inline-block h-[30px] ml-5">
               <b>Password</b>
-              <b className="font-popins  text-firebrick">*</b>'\'
+              <b className="font-popins  text-firebrick">*</b>
             </div>
             <Form.Group className="[border:none] bg-[transparent] self-stretch h-[55px] ml-0">
               <Form.Control type="password" placeholder="Enter your password" value={password} onChange={e => setPassword(e.target.value)} />

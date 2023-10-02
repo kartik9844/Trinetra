@@ -9,6 +9,8 @@ import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
+import CheckIcon from '@mui/icons-material/Check';
+import ClearIcon from '@mui/icons-material/Clear';
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
@@ -22,29 +24,38 @@ import {
   addDoc,
   updateDoc,
   deleteDoc,
-  doc,
+  doc,query,where,
 } from "firebase/firestore";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Swal from "sweetalert2";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
+import StartupName from "../components/StartupName";
 
 
 
-export default function UsersList() {
+export default function RentRequest() {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [rows, setRows] = useState([]);
-  const empCollectionRef = collection(db, "User profile");
+  const empCollectionRef = collection(db, "Order");
+  const q = query(empCollectionRef, where("Status", "==", "Pending"));
 
   useEffect(() => {
     getUsers();
   }, []);
 
   const getUsers = async () => {
-    const data = await getDocs(empCollectionRef);
-    setRows(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    const data = await getDocs(q);
+    const filteredData = data.docs.map(doc => ({
+      ...doc.data(), 
+      id: doc.id
+    })).filter(request => {
+      return request.status !== 'OnRent' && request.status !== 'Rejected'; 
+    });
+    
+    setRows(filteredData);
   };
 
   const handleChangePage = (event, newPage) => {
@@ -55,6 +66,28 @@ export default function UsersList() {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
+
+  const handleCheckIconClick = async (id) => {
+
+    const orderRef = doc(db, "Order", id);
+  
+    await updateDoc(orderRef, {
+      Status: "OnRent"
+    });
+    getUsers();
+  
+  }
+
+  const handleClearIconClick = async (id) => {
+
+    const orderRef = doc(db, "Order", id);
+  
+    await updateDoc(orderRef, {
+      Status: "Rejected"
+    });
+    getUsers();
+  
+  }
 
   const deleteUser = (id) => {
     Swal.fire({
@@ -90,22 +123,13 @@ export default function UsersList() {
   return (
     <>
       {rows.length > 0 && (
-        <Paper sx={{ width: "98%", overflow: "hidden", padding: "12px" }}>
+        <Paper sx={{ width: "98%", overflow: "hidden", padding: "12px" }}
+        className="absolute top-[80px] left-4 ">
           
           <Divider />
           <Box height={10} />
           <Stack direction="row" spacing={2} className="my-2 mb-2">
-            {/* <Autocomplete
-              disablePortal
-              id="combo-box-demo"
-              options={rows}
-              sx={{ width: 300 }}
-              onChange={(e, v) => filterData(v)}
-              getOptionLabel={(rows) => rows.name || ""}
-              renderInput={(params) => (
-                <TextField {...params} size="small" label="Search Products" />
-              )}
-            /> */}
+            <h4 className="font-popins">Rent Request</h4>
             <Typography
               variant="h6"
               component="div"
@@ -121,20 +145,33 @@ export default function UsersList() {
               <TableHead>
                 <TableRow >
                   <TableCell align="left" style={{ minWidth: "100px" }}>
-                  StartupName
+                  Equipment Name
                   </TableCell>
                   <TableCell align="left" style={{ minWidth: "100px" }}>
-                  Email
+                  Quantity 
                   </TableCell>
                   <TableCell align="left" style={{ minWidth: "100px" }}>
-                  FounderName
+                  Days
                   </TableCell>
                   <TableCell align="left" style={{ minWidth: "100px" }}>
-                  FounderEmail
+                  Months
                   </TableCell>
-                  {/* <TableCell align="left" style={{ minWidth: "100px" }}>
-                    Action
-                  </TableCell> */}
+                  <TableCell align="left" style={{ minWidth: "100px" }}>
+                  Startup 
+                  </TableCell>
+                  <TableCell align="left" style={{ minWidth: "100px" }}>
+                  Person 
+                  </TableCell>
+                  <TableCell align="left" style={{ minWidth: "100px" }}>
+                  Price
+                  </TableCell>
+                  <TableCell align="left" style={{ minWidth: "100px" }}>
+                  Accept 
+                  </TableCell>
+                  <TableCell align="left" style={{ minWidth: "100px" }}>
+                  Reject
+                  </TableCell>
+                  
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -148,12 +185,16 @@ export default function UsersList() {
                         tabIndex={-1}
                         key={row.id}
                         style={{cursor: 'pointer'}}
-                        component={NavLink} to={`/user-details/${row.Uuid}`}
                       >
-                        <TableCell align="left">{row.StartupName}</TableCell>
-                        <TableCell align="left">{row.Email}</TableCell>
-                        <TableCell align="left">{row.FounderName}</TableCell>
-                        <TableCell align="left">{row.FounderEmail}</TableCell>
+                        <TableCell align="left">{row.name}</TableCell>
+                        <TableCell align="left">{row.max}</TableCell>
+                        <TableCell align="left">{row.nodays}</TableCell>
+                        <TableCell align="left">{row.nomonths}</TableCell>
+                        <TableCell align="left"><StartupName uuid={row.Uuid}/></TableCell>
+                        <TableCell align="left">{row.Person}</TableCell>
+                        <TableCell align="left">{row.STotal}</TableCell>
+                        <TableCell align="left" onClick={() => handleCheckIconClick(row.id)}><CheckIcon/> </TableCell>
+                        <TableCell align="left" onClick={() => handleClearIconClick(row.id)}><ClearIcon/></TableCell>
                         {/* <TableCell align="left">
                           <Stack spacing={2} direction="row">
                             <EditIcon

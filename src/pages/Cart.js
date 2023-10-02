@@ -16,12 +16,22 @@ import {
   doc,query,where,
 } from "firebase/firestore";
 import { db} from "../components/firebase";
+import firebase from 'firebase/compat/app';
 
 const Cart = () => {
   const navigate = useNavigate();
   const {cart, totalp,state, dispatchTotal,clearCart} = useContext(CartContext);
   const [person,setperson]= useState("")
   
+   // Current state
+   const [curr , setCurr] = useState('');
+    
+   // Function to get time and date
+   const getDate = () => {
+       const a = firebase.firestore.Timestamp.now();
+           console.log(a);
+       setCurr(a);
+   }
 
   useEffect(() => {
     dispatchTotal();
@@ -67,6 +77,7 @@ const Cart = () => {
     const cartMap = {};
 
   cart.forEach((item, index) => {
+    getDate();
     cartMap[index] = {
       id: item.id,
       name: item.name,
@@ -94,9 +105,14 @@ const Cart = () => {
     console.log(docData);
     for (const key in cartMap) {
       const cartItem = cartMap[key];
+      const { nodays, nomonths } = cartItem;
       const updatedCartItem = {
         ...cartItem,
-        reference: `${docid}`
+        reference: `${docid}`,
+        Person: person,
+        Status: "Pending",
+        Lab: "Smart lab",
+        Uuid: localStorage.getItem("uuid"),
       }
       const docRefi = await addDoc(collection(db, "Order"), updatedCartItem);
       console.log("Document written with ID: ", docRefi.id);

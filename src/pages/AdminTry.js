@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbaradmin from "../components/Navbaradmin";
 import ContainerFrameRequests from "../components/ContainerFrameRequests";
+import RentRequest from "../components/RentRequest";
 
 const AdminTry = () => {
   const navigate = useNavigate();
@@ -48,7 +49,7 @@ const AdminTry = () => {
         onMaxresdefault3ImageClick={onImageClick}
         onSingoutClick={onSingoutClick}
       />
-      <ContainerFrameRequests />
+      <RentRequest />
     </div>
   );
 };
