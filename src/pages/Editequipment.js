@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { doc, setDoc, Timestamp, addDoc, collection} from "firebase/firestore";
 import {db} from '../components/firebase';
 
-const editequipment = () => {
+const Editequipment = () => {
   const navigate = useNavigate();
 
   const onEquipmentsTextClick = useCallback(() => {
@@ -59,33 +59,33 @@ permonthcost:'',
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Handle form submission logic here
-    const docData = {
-   Name: equipmentData.name,
-   Status: equipmentData.status,
-   Lab: equipmentData.lab,
-   Make: equipmentData.make,
-   Modelno: equipmentData.modelno,
-   Quantity: equipmentData.quantity,
-   Assetno: equipmentData.assetno,
-   Perhourcost: equipmentData.perhourcost,
-   Perdaycost: equipmentData.perdaycost,
-   Permonthcost: equipmentData.permonthcost,
-};
-const docRef = await addDoc(collection(db, "Equipments"), docData);
-    console.log("Document written with ID: ", docRef.id);
-    console.log(equipmentData);
-    setequipmentData({
-      name:'',
-    status:'',
-    lab:'',
-    make:'',
-    modelno:'',
-    quantity:'',
-    assetno:'',
-  perhourcost:'',
-  perdaycost:'',
-permonthcost:'',
-    });
+//     const docData = {
+//    Name: equipmentData.name,
+//    Status: equipmentData.status,
+//    Lab: equipmentData.lab,
+//    Make: equipmentData.make,
+//    Modelno: equipmentData.modelno,
+//    Quantity: equipmentData.quantity,
+//    Assetno: equipmentData.assetno,
+//    Perhourcost: equipmentData.perhourcost,
+//    Perdaycost: equipmentData.perdaycost,
+//    Permonthcost: equipmentData.permonthcost,
+// };
+// const docRef = await addDoc(collection(db, "Equipments"), docData);
+//     console.log("Document written with ID: ", docRef.id);
+//     console.log(equipmentData);
+//     setequipmentData({
+//       name:'',
+//     status:'',
+//     lab:'',
+//     make:'',
+//     modelno:'',
+//     quantity:'',
+//     assetno:'',
+//   perhourcost:'',
+//   perdaycost:'',
+// permonthcost:'',
+//     });
   };
 
   return (
@@ -347,4 +347,4 @@ permonthcost:'',
   );
 };
 
-export default editequipment;
+export default Editequipment;

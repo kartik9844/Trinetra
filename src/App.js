@@ -30,6 +30,7 @@ import RegisterFrom from "./pages/RegisterFrom";
 import SignUp from "./pages/SignUp";
 import AdminLogin from "./pages/AdminLogin";
 import Register from "./pages/Register";
+import Editequipment from "./pages/Editequipment";
 import { useEffect } from "react";
 
 function App() {
@@ -191,6 +192,7 @@ function App() {
       <Route path="/register-from" element={<RegisterFrom />} />
       <Route path="/sign-up" element={<SignUp />} />
       <Route path="/admin-login" element={<AdminLogin />} />
+      <Route path="/edit-eq" element={<Editequipment />} />
       <Route path="/register" element={<Register />} />
     </Routes>
   );
