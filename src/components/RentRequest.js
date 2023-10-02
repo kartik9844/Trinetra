@@ -22,6 +22,7 @@ import {
   collection,
   getDocs,
   addDoc,
+  getDoc,
   updateDoc,
   deleteDoc,
   doc,query,where,
@@ -67,13 +68,20 @@ export default function RentRequest() {
     setPage(0);
   };
 
-  const handleCheckIconClick = async (id) => {
+  const handleCheckIconClick = async (id,pid,qty) => {
 
     const orderRef = doc(db, "Order", id);
   
     await updateDoc(orderRef, {
       Status: "OnRent"
     });
+     // Decrement quantity in Equipments collection
+  const equipmentRef = doc(db, "Equipments", pid);
+  const equipmentDoc = await getDoc(equipmentRef);
+  const prevQuantity = equipmentDoc.data().Quantity;
+  await updateDoc(equipmentRef, {
+    Quantity: prevQuantity - qty
+  });
     getUsers();
   
   }
@@ -85,6 +93,8 @@ export default function RentRequest() {
     await updateDoc(orderRef, {
       Status: "Rejected"
     });
+
+   
     getUsers();
   
   }
@@ -105,7 +115,7 @@ export default function RentRequest() {
     });
   };
 
-  const deleteApi = async (id) => {
+  const deleteApi = async (id,) => {
     const userDoc = doc(db, "products", id);
     await deleteDoc(userDoc);
     Swal.fire("Deleted!", "Your file has been deleted.", "success");
@@ -193,7 +203,7 @@ export default function RentRequest() {
                         <TableCell align="left"><StartupName uuid={row.Uuid}/></TableCell>
                         <TableCell align="left">{row.Person}</TableCell>
                         <TableCell align="left">{row.STotal}</TableCell>
-                        <TableCell align="left" onClick={() => handleCheckIconClick(row.id)}><CheckIcon/> </TableCell>
+                        <TableCell align="left" onClick={() => handleCheckIconClick(row.id,row.pid,row.max)}><CheckIcon/> </TableCell>
                         <TableCell align="left" onClick={() => handleClearIconClick(row.id)}><ClearIcon/></TableCell>
                         {/* <TableCell align="left">
                           <Stack spacing={2} direction="row">

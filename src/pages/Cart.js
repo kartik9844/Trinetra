@@ -79,7 +79,7 @@ const Cart = () => {
   cart.forEach((item, index) => {
     getDate();
     cartMap[index] = {
-      id: item.id,
+      pid: item.id,
       name: item.name,
       cmonth: item.month,
       dcost: item.day,
