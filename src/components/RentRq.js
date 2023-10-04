@@ -36,12 +36,12 @@ import StartupName from "../components/StartupName";
 
 
 
-export default function OnRent() {
+export default function RentRq() {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [rows, setRows] = useState([]);
   const empCollectionRef = collection(db, "Order");
-  const q = query(empCollectionRef, where("Status", "==", "OnRent"));
+  const q = query(empCollectionRef, where("Status", "==", "RentRequest"));
 
   useEffect(() => {
     getUsers();
@@ -139,7 +139,7 @@ export default function OnRent() {
           <Divider />
           <Box height={10} />
           <Stack direction="row" spacing={2} className="my-2 mb-2">
-            <h4 className="font-popins">On Rent</h4>
+            <h4 className="font-popins">Return Request</h4>
             <Typography
               variant="h6"
               component="div"
@@ -176,7 +176,7 @@ export default function OnRent() {
                   Sub Total
                   </TableCell>
                   <TableCell align="left" style={{ minWidth: "100px" }}>
-                  Action
+                  Status
                   </TableCell>
                 </TableRow>
               </TableHead>
@@ -199,9 +199,7 @@ export default function OnRent() {
                         <TableCell align="left">{row.dcost}</TableCell>
                         <TableCell align="left">{row.cmonth}</TableCell>
                         <TableCell align="left">{row.STotal}</TableCell>
-                        <TableCell align="left" onClick={() => handleCheckIconClick(row.id)}>
-                        <button className="btn btn-primary" >Rent Now</button>
-                           </TableCell>
+                        <TableCell align="left">{row.Status}</TableCell>
                         {/* <TableCell align="left">
                           <Stack spacing={2} direction="row">
                             <EditIcon

@@ -134,7 +134,7 @@ export default function RentRequest() {
     <>
       {rows.length > 0 && (
         <Paper sx={{ width: "98%", overflow: "hidden", padding: "12px" }}
-        className="absolute top-[80px] left-4 ">
+        className="relative top-[80px] left-4 ">
           
           <Divider />
           <Box height={10} />

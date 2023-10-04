@@ -1,12 +1,12 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbaradmin from "../components/Navbaradmin";
-import POnRent from "../components/POnRent";
+import AReturn from "../components/AReturn";
 import { Grid } from "@mui/material";
 import Item from "antd/lib/list/Item";
 import AOnRent from "../components/AOnRent";
 
-const Orders = () => {
+const OrdersRetruned = () => {
   const navigate = useNavigate();
 
   const onMaxresdefault3ImageClick = useCallback(() => {
@@ -34,7 +34,7 @@ const Orders = () => {
   }, [navigate]);
 
   const onTitleText1Click = useCallback(() => {
-    navigate("/orders-retruned");
+    navigate("/orders");
   }, [navigate]);
 
   return (
@@ -51,7 +51,9 @@ const Orders = () => {
                   😃
                 </div>
               </div>
-              <div className="flex-1 relative text-[22px] [text-decoration:underline] leading-[20px] font-medium font-popins text-left">
+              <div className="flex-1 relative text-[22px]  leading-[20px] font-medium font-popins text-left"
+              onClick={onTitleText1Click}
+              >
                 On Rent
               </div>
             </div>
@@ -62,8 +64,7 @@ const Orders = () => {
                 </div>
               </div>
               <div
-                className="flex-1 relative text-[26px] leading-[20px] font-medium font-popins text-left cursor-pointer"
-                onClick={onTitleText1Click}
+                className="flex-1 relative text-[26px] [text-decoration:underline] leading-[20px] font-medium font-popins text-left cursor-pointer"
               >
                 Rented
               </div>
@@ -74,7 +75,7 @@ const Orders = () => {
 </Grid>
 
      <Grid item xs={12}md={14}>
-      <Item><AOnRent/></Item>
+      <Item><AReturn/></Item>
      </Grid>
      </Grid>
      <Navbaradmin
@@ -100,4 +101,4 @@ const Orders = () => {
   );
 };
 
-export default Orders;
+export default OrdersRetruned;

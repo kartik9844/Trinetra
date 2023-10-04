@@ -1,6 +1,9 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import MainHeader from "../components/MainHeader";
+import POnRent from "../components/POnRent";
+import { Grid } from "@mui/material";
+import Item from "antd/lib/list/Item";
 
 const OnRentUser = () => {
   const navigate = useNavigate();
@@ -34,7 +37,10 @@ const OnRentUser = () => {
   }, [navigate]);
 
   return (
-      <div className="relative w-[1440px] h-[1016px]">
+      <div className="">
+        <Grid container spacing={2}>
+<Grid item xs={6}md={6}>
+  <Item>
         <div className="absolute top-[0px] left-[0px] bg-dwhite w-[1440px] h-[1016px] flex flex-col pt-20 pb-0 pr-0 pl-[220px] box-border items-center justify-center">
           <div className="self-stretch my-0 mx-[!important] absolute h-[calc(100%_-_68px)] top-[68px] bottom-[0px] left-[0px] bg-gray-800 overflow-hidden flex flex-col py-3 px-0 box-border items-center justify-start z-[0]">
             <div className="self-stretch flex flex-row py-4 px-5 items-center justify-center gap-[12px]">
@@ -62,9 +68,13 @@ const OnRentUser = () => {
             </div>
           </div>
         </div>
-        <div className="absolute top-[98px] left-[248px] text-17xl leading-[24px] uppercase font-extrabold font-poppins text-left inline-block w-[310px] h-[39px]">
-          On rent
-        </div>
+        </Item>
+</Grid>
+
+     <Grid item xs={12}md={14}>
+      <Item><POnRent/></Item>
+     </Grid>
+     </Grid>
         <MainHeader
           propCursor="unset"
           propCursor1="pointer"

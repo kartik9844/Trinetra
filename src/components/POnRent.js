@@ -36,9 +36,9 @@ import StartupName from "../components/StartupName";
 
 
 
-export default function OnRent() {
+export default function POnRent() {
   const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(5);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
   const [rows, setRows] = useState([]);
   const empCollectionRef = collection(db, "Order");
   const q = query(empCollectionRef, where("Status", "==", "OnRent"));
@@ -133,8 +133,8 @@ export default function OnRent() {
   return (
     <>
       {rows.length > 0 && (
-        <Paper sx={{ width: "98%", overflow: "hidden", padding: "12px" }}
-        className="relative top-[80px] left-4 ">
+        <Paper sx={{ width: "85%", overflow: "hidden", padding: "12px" }}
+        className="relative top-[30px] left-[220px] ">
           
           <Divider />
           <Box height={10} />

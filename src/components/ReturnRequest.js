@@ -36,12 +36,12 @@ import StartupName from "../components/StartupName";
 
 
 
-export default function OnRent() {
+export default function ReturnRequest() {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [rows, setRows] = useState([]);
   const empCollectionRef = collection(db, "Order");
-  const q = query(empCollectionRef, where("Status", "==", "OnRent"));
+  const q = query(empCollectionRef, where("Status", "==", "RentRequest"));
 
   useEffect(() => {
     getUsers();
@@ -53,7 +53,7 @@ export default function OnRent() {
       ...doc.data(), 
       id: doc.id
     })).filter(request => {
-      return request.Uuid == localStorage.getItem("uuid") ; 
+      return request.status !== 'OnRent' && request.status !== 'Rejected' && request.status !== 'Pending' && request.status !== 'Returned'; 
     });
     
     setRows(filteredData);
@@ -68,20 +68,20 @@ export default function OnRent() {
     setPage(0);
   };
 
-  const handleCheckIconClick = async (id) => {
+  const handleCheckIconClick = async (id,pid,qty) => {
 
     const orderRef = doc(db, "Order", id);
   
     await updateDoc(orderRef, {
-      Status: "RentRequest"
+      Status: "Returned"
     });
-     // Decrement quantity in Equipments collection
-  // const equipmentRef = doc(db, "Equipments", pid);
-  // const equipmentDoc = await getDoc(equipmentRef);
-  // const prevQuantity = equipmentDoc.data().Quantity;
-  // await updateDoc(equipmentRef, {
-  //   Quantity: prevQuantity - qty
-  // });
+     // increment quantity in Equipments collection
+  const equipmentRef = doc(db, "Equipments", pid);
+  const equipmentDoc = await getDoc(equipmentRef);
+  const prevQuantity = equipmentDoc.data().Quantity;
+  await updateDoc(equipmentRef, {
+    Quantity: prevQuantity + qty
+  });
     getUsers();
   
   }
@@ -139,7 +139,7 @@ export default function OnRent() {
           <Divider />
           <Box height={10} />
           <Stack direction="row" spacing={2} className="my-2 mb-2">
-            <h4 className="font-popins">On Rent</h4>
+            <h4 className="font-popins">Rent Request</h4>
             <Typography
               variant="h6"
               component="div"
@@ -167,17 +167,18 @@ export default function OnRent() {
                   Months
                   </TableCell>
                   <TableCell align="left" style={{ minWidth: "100px" }}>
-                  Day Cost
+                  Startup 
                   </TableCell>
                   <TableCell align="left" style={{ minWidth: "100px" }}>
-                  Month Cost
+                  Person 
                   </TableCell>
                   <TableCell align="left" style={{ minWidth: "100px" }}>
-                  Sub Total
+                  Price
                   </TableCell>
                   <TableCell align="left" style={{ minWidth: "100px" }}>
-                  Action
+                  Return 
                   </TableCell>
+                  
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -196,12 +197,10 @@ export default function OnRent() {
                         <TableCell align="left">{row.max}</TableCell>
                         <TableCell align="left">{row.nodays}</TableCell>
                         <TableCell align="left">{row.nomonths}</TableCell>
-                        <TableCell align="left">{row.dcost}</TableCell>
-                        <TableCell align="left">{row.cmonth}</TableCell>
+                        <TableCell align="left"><StartupName uuid={row.Uuid}/></TableCell>
+                        <TableCell align="left">{row.Person}</TableCell>
                         <TableCell align="left">{row.STotal}</TableCell>
-                        <TableCell align="left" onClick={() => handleCheckIconClick(row.id)}>
-                        <button className="btn btn-primary" >Rent Now</button>
-                           </TableCell>
+                        <TableCell align="left" onClick={() => handleCheckIconClick(row.id,row.pid,row.max)}><CheckIcon/> </TableCell>
                         {/* <TableCell align="left">
                           <Stack spacing={2} direction="row">
                             <EditIcon

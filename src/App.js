@@ -31,6 +31,7 @@ import SignUp from "./pages/SignUp";
 import AdminLogin from "./pages/AdminLogin";
 import Register from "./pages/Register";
 import Editequipment from "./pages/Editequipment";
+import OrdersRetruned from "./pages/OrdersRetruned";
 import { useEffect } from "react";
 
 function App() {
@@ -182,6 +183,7 @@ function App() {
       <Route path="/userprofile-admin" element={<UserprofileAdmin />} />
       <Route path="/payments" element={<Payments />} />
       <Route path="/orders" element={<Orders />} />
+      <Route path="/orders-retruned" element={<OrdersRetruned />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/user-home" element={<UserHome />} />
       <Route path="/user-details/:id" element={<WhenClicked />} />

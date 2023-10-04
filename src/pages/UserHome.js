@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import MainHeader from "../components/MainHeader";
 import OnRent from "../components/OnRent";
+import RentRq from "../components/RentRq";
 
 const UserHome = () => {
   const navigate = useNavigate();
@@ -52,6 +53,7 @@ const UserHome = () => {
         onSingoutClick={onSingoutClick}
       />
       <OnRent/>
+      <RentRq/>
     </div>
   );
 };

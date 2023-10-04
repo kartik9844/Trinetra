@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Navbaradmin from "../components/Navbaradmin";
 import ContainerFrameRequests from "../components/ContainerFrameRequests";
 import RentRequest from "../components/RentRequest";
+import ReturnRequest from "../components/ReturnRequest";
 
 const AdminTry = () => {
   const navigate = useNavigate();
@@ -50,6 +51,7 @@ const AdminTry = () => {
         onSingoutClick={onSingoutClick}
       />
       <RentRequest />
+      <ReturnRequest/>
     </div>
   );
 };
