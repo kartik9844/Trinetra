@@ -25,6 +25,10 @@ const Cart = () => {
   
    // Current state
    const [curr , setCurr] = useState('');
+   // Get current date
+  const today = new Date();
+  const dateObj = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+  // console.log(dateObj)
     
    // Function to get time and date
    const getDate = () => {
@@ -88,6 +92,9 @@ const Cart = () => {
       nodays: item.nodays,
       nomonths: item.nomonth,
       STotal: item.total,
+      OrderDate: dateObj,
+      Rentdate:null,
+      ReturnDate:null,
     };
   });
   console.log(cartMap)

@@ -42,6 +42,9 @@ export default function RentRequest() {
   const [rows, setRows] = useState([]);
   const empCollectionRef = collection(db, "Order");
   const q = query(empCollectionRef, where("Status", "==", "Pending"));
+     // Get current date
+     const today = new Date();
+     const dateObj = new Date(today.getFullYear(), today.getMonth(), today.getDate());
 
   useEffect(() => {
     getUsers();
@@ -80,7 +83,8 @@ export default function RentRequest() {
   const equipmentDoc = await getDoc(equipmentRef);
   const prevQuantity = equipmentDoc.data().Quantity;
   await updateDoc(equipmentRef, {
-    Quantity: prevQuantity - qty
+    Quantity: prevQuantity - qty,
+    Rentdate: dateObj
   });
     getUsers();
   
