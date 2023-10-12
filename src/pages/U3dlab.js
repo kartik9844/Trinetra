@@ -58,11 +58,7 @@ const U3dlab = () => {
               className="h-14 flex flex-row py-4 px-5 box-border items-center justify-center gap-[12px] cursor-pointer"
               onClick={onItemContainerClick}
             >
-              <div className="rounded-xl bg-gray-800 w-6 flex flex-col items-center justify-center">
-                <div className="self-stretch relative leading-[24px] flex items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap h-6 shrink-0">
-                  😃
-                </div>
-              </div>
+             
               <div
                 className="relative text-6xl leading-[20px] font-medium font-popins text-left inline-block w-36 shrink-0 cursor-pointer"
                 onClick={onTitleTextClick}
@@ -74,11 +70,7 @@ const U3dlab = () => {
               className="h-[55px] flex flex-row py-4 px-5 box-border items-center justify-center gap-[12px] cursor-pointer"
               onClick={onItemContainer1Click}
             >
-              <div className="rounded-xl bg-gray-800 w-6 flex flex-col items-center justify-center">
-                <div className="self-stretch relative leading-[24px] flex items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap h-6 shrink-0">
-                  😃
-                </div>
-              </div>
+             
               <div
                 className="relative text-6xl leading-[20px] font-medium font-poppins text-left inline-block w-36 shrink-0 cursor-pointer"
                 onClick={onTitleText1Click}
@@ -87,11 +79,7 @@ const U3dlab = () => {
               </div>
             </div>
             <div className="h-14 flex flex-row py-4 px-5 box-border items-center justify-center gap-[12px]">
-              <div className="rounded-xl bg-gray-800 w-6 flex flex-col items-center justify-center">
-                <div className="self-stretch relative leading-[24px] flex items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap h-6 shrink-0">
-                  😃
-                </div>
-              </div>
+             
               <div className="relative text-6xl [text-decoration:underline] leading-[20px] font-medium font-poppins text-left inline-block w-36 shrink-0">
                 3D Lab
               </div>

@@ -89,7 +89,7 @@ const MainHeader = ({
           Orders</div>
       </div>
       <div
-        className="absolute top-[calc(50%_-_16px)] top-[20] left-[1060px] leading-[25px] text-black font-bold text-base flex items-center w-40 h-7 cursor-pointer"
+        className="absolute top-[calc(50%_-_16px)] top-[20] left-[1060px] leading-[5px] text-black font-bold text-base flex items-center  h-7 cursor-pointer"
         onClick={onProductsTextClick}
         style={productsStyle}
       >
