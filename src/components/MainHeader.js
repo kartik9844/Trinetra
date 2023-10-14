@@ -73,13 +73,7 @@ const MainHeader = ({
           style={logoIconStyle}
         />
       </div>
-      <div
-        className="absolute top-[calc(50%_-_15px)]  right-[60px] left-[1170px] flex flex-row pt-0 px-0 pb-[0.5999999046325684px] box-border items-start justify-start"
-        style={contactStyle}
-        onClick={onContactContainerClick}
-      >
-        <div className="relative  leading-[25px] text-black font-bold text-base">Payments</div>
-      </div>
+      
       <div
         className="absolute top-[calc(50%_-_15px)] right-[190px] left-[885px]flex-row box-border items-start justify-start cursor-pointer"
         onClick={onContactContainer1Click}
@@ -89,7 +83,7 @@ const MainHeader = ({
           Orders</div>
       </div>
       <div
-        className="absolute top-[calc(50%_-_16px)] top-[20] left-[1060px] leading-[5px] text-black font-bold text-base flex items-center  h-7 cursor-pointer"
+        className="absolute top-[calc(50%_-_16px)] top-[20] left-[1180px] leading-[5px] text-black font-bold text-base flex items-center  h-7 cursor-pointer"
         onClick={onProductsTextClick}
         style={productsStyle}
       >
