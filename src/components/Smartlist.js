@@ -112,9 +112,9 @@ export default function Smartlist() {
               component="div"
               sx={{ flexGrow: 1 }}
             ></Typography>
-            { <Button variant="contained" endIcon={<AddCircleIcon />}>
+            {/* { <Button variant="contained" endIcon={<AddCircleIcon />}>
               Add
-            </Button>}
+            </Button>} */}
           </Stack>
           
           <Box height={50} />
@@ -175,7 +175,7 @@ export default function Smartlist() {
                         <TableCell align="left">{row.Permonthcost}</TableCell>
                         {<TableCell align="left">
                           <Stack spacing={2} direction="row">
-                            <EditIcon
+                            {/* <EditIcon
                               style={{
                                 fontSize: "20px",
                                 color: "blue",
@@ -183,7 +183,7 @@ export default function Smartlist() {
                               }}
                               className="cursor-pointer"
                               // onClick={() => editUser(row.id)}
-                            />
+                            /> */}
                             <DeleteIcon
                               style={{
                                 fontSize: "20px",

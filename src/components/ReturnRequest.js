@@ -143,7 +143,7 @@ export default function ReturnRequest() {
           <Divider />
           <Box height={10} />
           <Stack direction="row" spacing={2} className="my-2 mb-2">
-            <h4 className="font-popins">Rent Request</h4>
+            <h4 className="font-popins">Return Request</h4>
             <Typography
               variant="h6"
               component="div"
