@@ -200,7 +200,7 @@ export default function OnRent() {
                         <TableCell align="left">{row.cmonth}</TableCell>
                         <TableCell align="left">{row.STotal}</TableCell>
                         <TableCell align="left" onClick={() => handleCheckIconClick(row.id)}>
-                        <button className="btn btn-primary" >Rent Now</button>
+                        <button className="btn btn-primary" >Return Now</button>
                            </TableCell>
                         {/* <TableCell align="left">
                           <Stack spacing={2} direction="row">
