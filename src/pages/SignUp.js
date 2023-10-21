@@ -156,49 +156,13 @@ const Desktop2 = () => {
                 </div>
               </div>
               <div className="w-[500px] h-[123.03px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[18px] text-2xl">
-                <div className="relative w-[550px] h-[23px]">
-                  <img
-                    className="absolute top-[10px] -left-[6px] rounded-23xl w-[220px] h-[5px]"
-                    alt=""
-                    src="/line-11.svg"
-                  />
-                  <div className="relative top-[0px] left-[215px] capitalize inline-block w-[120px] h-[20px]">
-                    Or,Login with
-                  </div>
-                  <img
-                    className="absolute top-[10px] left-[332px] w-[220px] h-[5px]"
-                    alt=""
-                    src="/line-21.svg"
-                  />
-                </div>
                 <div className="w-[500px] h-[82.03px] overflow-hidden shrink-0 flex flex-col items-start justify-start gap-[11px] text-8xl">
-                {/* {value?<Register/>: */}
-               
-                  <div
-                    className="rounded-23xl  w-[480px]  h-12 flex flex-row pt-[8.009942054748535px] pb-[8.010161399841309px] pr-[71.39656829833984px] pl-[54px] box-border items-center justify-start gap-[29px] cursor-pointer -ml-[80px]"
-                    onClick={handleclick}
-                  >
-                   
-                    <img
-                      className="relative left-[75px] rounded-23xl w-7 h-7 object-cover"
-                      alt=""
-                      src="/google-logo@2x.png"
-                    />
-                     <Form.Group className="text-blue-600 w-[468px] [border:none] bg-[transparent]">
-                      <Button 
-                        variant="secondary" 
-                        className="w-[450px] bg-gray-600 text-black" 
-                      >
-                        Sign up with google
-                      </Button>
-                    </Form.Group>
-                  </div>
-                  
+                {/* {value?<Register/>: */}   
                   <div className="text-[15px] inline-block w-[344.2px] h-[23.028894424438477px] shrink-0 ml-36 text-black font-popins">
                     <span>
                       <span>
-                        <span className="capitalize">{`Don’t `}</span>
-                        <span className="lowercase">H</span>
+                        
+                        <span className="uppercase">H</span>
                         <span className="capitalize">{`ave `}</span>
                         <span className="lowercase">A</span>
                         <span className="capitalize">n a</span>
