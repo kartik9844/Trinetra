@@ -185,10 +185,15 @@ function useCart() {
                   let decqty = curItem.nodays + 1;
                   let T;
                  
-                  if(decqty >= 30){
+                  if(decqty >= 15){
+                    if(decqty >= 30){
                     decqty = 30;
                     // tdi = state.totalp;
-                    T = curItem.max * (decqty * curItem.day + curItem.nomonth * curItem.month);
+                    T = curItem.max * ( curItem.month);
+                  }
+                  else{
+                    T = curItem.max * ( curItem.month);
+                  }
                   }
                   else if(decqty <= 1){
                     decqty = 1;
@@ -325,6 +330,10 @@ function useCart() {
 
       const MetIncrement = (id) => {
         dispatch({ type: "MetIncrement", payload: id });
+      }
+
+      const updateDays = (id,de) => {
+        dispatch({ type: "updateDays", payload: {id,de} });
       }
       
       const final = () => {
