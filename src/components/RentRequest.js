@@ -82,10 +82,12 @@ export default function RentRequest() {
   const equipmentRef = doc(db, "Equipments", pid);
   const equipmentDoc = await getDoc(equipmentRef);
   const prevQuantity = equipmentDoc.data().Quantity;
+  if(prevQuantity != 0){
   await updateDoc(equipmentRef, {
     Quantity: prevQuantity - qty,
     Rentdate: dateObj
   });
+}
     getUsers();
   
   }
